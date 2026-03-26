@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demeurrer.com — Le filtre ultime</title>
+  <meta name="description" content="Un simple test pour savoir si vous méritez le meilleur du web.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-card: #15151f;
+      --bg-card-hover: #1e1e2e;
+      --accent: #7c5cfc;
+      --accent-glow: rgba(124, 92, 252, 0.35);
+      --accent-secondary: #fc5c9c;
+      --text-primary: #f0eff4;
+      --text-secondary: #9896a6;
+      --success: #4ade80;
+      --fail: #f87171;
+      --radius: 16px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(124, 92, 252, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(252, 92, 156, 0.08) 0%, transparent 60%),
+        var(--bg-primary);
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      text-align: center;
+      padding: 3rem 1.5rem 1rem;
+    }
+
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      margin-top: 0.75rem;
+      max-width: 520px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+
+    /* ========== GRID ========== */
+    .grid-section {
+      max-width: 1100px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .card-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 1.8rem 1rem 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: cardIn 0.5s ease forwards;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(124, 92, 252, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(124, 92, 252, 0.15);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-emoji {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-emoji { transform: scale(1.15) rotate(-4deg); }
+
+    .card-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      position: relative;
+      z-index: 1;
+      line-height: 1.4;
+    }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== OVERLAY / QUIZ ========== */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      max-width: 460px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .overlay.active .modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: var(--text-primary); }
+
+    .modal-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .quiz-question {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .quiz-input {
+      width: 100%;
+      max-width: 200px;
+      padding: 0.9rem 1.2rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .quiz-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .quiz-input::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.5;
+    }
+
+    .quiz-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #6246ea);
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .quiz-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .quiz-btn:active { transform: translateY(0); }
+
+    /* ========== RESULT SCREEN ========== */
+    .result-container { display: none; }
+    .result-container.show { display: block; }
+    .quiz-container.hide { display: none; }
+
+    .result-icon { font-size: 4rem; margin-bottom: 1rem; }
+
+    .result-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-title.smart { color: var(--success); }
+    .result-title.dumb { color: var(--fail); }
+
+    .result-message {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .result-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .result-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .result-link.smart {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.25);
+    }
+
+    .result-link.dumb {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(239, 68, 68, 0.25);
+    }
+
+    .result-link:hover.smart { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.35); }
+    .result-link:hover.dumb { box-shadow: 0 8px 30px rgba(239, 68, 68, 0.35); }
+
+    .result-site-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .result-site-name.smart {
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .result-site-name.dumb {
+      background: linear-gradient(135deg, #f87171, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .retry-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .retry-btn:hover {
+      color: var(--text-primary);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ========== UTILS ========== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+    }
+
+    .shake {
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    .confetti-piece {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 2000;
+      animation: confettiFall 1.5s ease forwards;
+    }
+
+    @keyframes confettiFall {
+      0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+      100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  <div class="bg-gradient"></div>
+
+  <header>
+    <h1>Demeurrer.com</h1>
+    <p>Choisissez un thème, répondez à une question élémentaire, et découvrez le site que vous méritez.</p>
+  </header>
+
+  <section class="grid-section">
+    <div class="card-grid" id="cardGrid"></div>
+  </section>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+
+      <!-- QUIZ -->
+      <div class="quiz-container" id="quizContainer">
+        <div class="modal-emoji" id="modalEmoji"></div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-subtitle">Prouvez que vous méritez le meilleur.</div>
+        <div class="quiz-question">2 + 2 = ?</div>
+        <input
+          type="number"
+          class="quiz-input"
+          id="quizInput"
+          placeholder="?"
+          autocomplete="off"
+          inputmode="numeric"
+        >
+        <br>
+        <button class="quiz-btn" id="quizBtn">
+          Valider
+          <span>→</span>
+        </button>
+      </div>
+
+      <!-- RESULT -->
+      <div class="result-container" id="resultContainer">
+        <div class="result-icon" id="resultIcon"></div>
+        <div class="result-title" id="resultTitle"></div>
+        <div class="result-site-name" id="resultSiteName"></div>
+        <div class="result-message" id="resultMessage"></div>
+        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">
+          Accéder au site →
+        </a>
+        <br>
+        <button class="retry-btn" id="retryBtn">← Choisir un autre thème</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Fait avec discernement — <a href="https://seventee.com" target="_blank">Seventee.com</a></p>
+  </footer>
+
+  <script>
+    const CATEGORIES = [
+      {
+        name: "Moteur de recherche",
+        emoji: "🔍",
+        smart: { name: "Google", url: "https://google.com" },
+        dumb:  { name: "Bing", url: "https://bing.com" }
+      },
+      {
+        name: "Location immobilière",
+        emoji: "🏠",
+        smart: { name: "Seventee", url: "https://seventee.com" },
+        dumb:  { name: "LeBonCoin", url: "https://leboncoin.fr" }
+      },
+      {
+        name: "Plateforme vidéo",
+        emoji: "🎬",
+        smart: { name: "YouTube", url: "https://youtube.com" },
+        dumb:  { name: "Dailymotion", url: "https://dailymotion.com" }
+      },
+      {
+        name: "Streaming musical",
+        emoji: "🎵",
+        smart: { name: "Spotify", url: "https://spotify.com" },
+        dumb:  { name: "Deezer", url: "https://deezer.com" }
+      },
+      {
+        name: "Messagerie",
+        emoji: "💬",
+        smart: { name: "WhatsApp", url: "https://whatsapp.com" },
+        dumb:  { name: "Skype", url: "https://skype.com" }
+      },
+      {
+        name: "Réseau social",
+        emoji: "📱",
+        smart: { name: "Instagram", url: "https://instagram.com" },
+        dumb:  { name: "Facebook", url: "https://facebook.com" }
+      },
+      {
+        name: "Shopping en ligne",
+        emoji: "🛒",
+        smart: { name: "Amazon", url: "https://amazon.fr" },
+        dumb:  { name: "Wish", url: "https://wish.com" }
+      },
+      {
+        name: "GPS & Navigation",
+        emoji: "🗺️",
+        smart: { name: "Waze", url: "https://waze.com" },
+        dumb:  { name: "Mappy", url: "https://mappy.com" }
+      },
+      {
+        name: "Boîte mail",
+        emoji: "📧",
+        smart: { name: "Gmail", url: "https://mail.google.com" },
+        dumb:  { name: "Yahoo Mail", url: "https://mail.yahoo.com" }
+      },
+      {
+        name: "Livraison de repas",
+        emoji: "🍔",
+        smart: { name: "Uber Eats", url: "https://ubereats.com" },
+        dumb:  { name: "Just Eat", url: "https://just-eat.fr" }
+      },
+      {
+        name: "VTC",
+        emoji: "🚗",
+        smart: { name: "Uber", url: "https://uber.com" },
+        dumb:  { name: "Bolt", url: "https://bolt.eu" }
+      },
+      {
+        name: "Films & Séries",
+        emoji: "🎥",
+        smart: { name: "Netflix", url: "https://netflix.com" },
+        dumb:  { name: "Pluto TV", url: "https://pluto.tv" }
+      },
+      {
+        name: "Réservation hôtel",
+        emoji: "🏨",
+        smart: { name: "Booking.com", url: "https://booking.com" },
+        dumb:  { name: "Trivago", url: "https://trivago.fr" }
+      },
+      {
+        name: "Réserver un vol",
+        emoji: "✈️",
+        smart: { name: "Google Flights", url: "https://google.com/travel/flights" },
+        dumb:  { name: "Lastminute", url: "https://lastminute.com" }
+      },
+      {
+        name: "Hébergement de code",
+        emoji: "💻",
+        smart: { name: "GitHub", url: "https://github.com" },
+        dumb:  { name: "SourceForge", url: "https://sourceforge.net" }
+      },
+      {
+        name: "Design graphique",
+        emoji: "🎨",
+        smart: { name: "Figma", url: "https://figma.com" },
+        dumb:  { name: "Canva", url: "https://canva.com" }
+      },
+      {
+        name: "Intelligence artificielle",
+        emoji: "🤖",
+        smart: { name: "ChatGPT", url: "https://chatgpt.com" },
+        dumb:  { name: "Copilot", url: "https://copilot.microsoft.com" }
+      },
+      {
+        name: "Actualités",
+        emoji: "📰",
+        smart: { name: "Google News", url: "https://news.google.com" },
+        dumb:  { name: "Yahoo Actu", url: "https://fr.news.yahoo.com" }
+      },
+      {
+        name: "Paiement en ligne",
+        emoji: "💳",
+        smart: { name: "PayPal", url: "https://paypal.com" },
+        dumb:  { name: "Paylib", url: "https://paylib.fr" }
+      },
+      {
+        name: "Jeux vidéo",
+        emoji: "🎮",
+        smart: { name: "Steam", url: "https://store.steampowered.com" },
+        dumb:  { name: "Epic Games", url: "https://store.epicgames.com" }
+      }
+    ];
+
+    const SMART_MESSAGES = [
+      "Bravo, vous faites partie de l'élite intellectuelle.",
+      "Félicitations, votre QI est au-dessus de la moyenne.",
+      "Bien joué. Vous méritez ce qu'il y a de mieux.",
+      "Évidemment que c'est 4. Voici votre récompense.",
+      "Un esprit brillant mérite un outil brillant."
+    ];
+
+    const DUMB_MESSAGES = [
+      "Hmm… Peut-être que celui-ci est plus adapté à votre niveau.",
+      "Pas grave. On a tous des jours sans. Voici votre alternative.",
+      "C'était 4. Mais ne vous inquiétez pas, on a pensé à vous.",
+      "Bon… On va vous orienter vers quelque chose de plus… accessible.",
+      "La réponse était 4. Mais on ne juge pas (enfin, un peu)."
+    ];
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    let currentCategory = null;
+
+    const grid = document.getElementById("cardGrid");
+    const overlay = document.getElementById("overlay");
+    const modalClose = document.getElementById("modalClose");
+    const quizContainer = document.getElementById("quizContainer");
+    const resultContainer = document.getElementById("resultContainer");
+    const modalEmoji = document.getElementById("modalEmoji");
+    const modalTitle = document.getElementById("modalTitle");
+    const quizInput = document.getElementById("quizInput");
+    const quizBtn = document.getElementById("quizBtn");
+    const resultIcon = document.getElementById("resultIcon");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultSiteName = document.getElementById("resultSiteName");
+    const resultMessage = document.getElementById("resultMessage");
+    const resultLink = document.getElementById("resultLink");
+    const retryBtn = document.getElementById("retryBtn");
+
+    CATEGORIES.forEach((cat, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.animationDelay = `${i * 0.05}s`;
+      card.innerHTML = `
+        <span class="card-emoji">${cat.emoji}</span>
+        <span class="card-label">${cat.name}</span>
+      `;
+      card.addEventListener("click", () => openQuiz(cat));
+      grid.appendChild(card);
+    });
+
+    function openQuiz(category) {
+      currentCategory = category;
+      modalEmoji.textContent = category.emoji;
+      modalTitle.textContent = category.name;
+
+      quizContainer.classList.remove("hide");
+      resultContainer.classList.remove("show");
+      quizInput.value = "";
+
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => quizInput.focus(), 400);
+    }
+
+    function closeOverlay() {
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+      currentCategory = null;
+    }
+
+    function showResult(isCorrect) {
+      const cat = currentCategory;
+      const choice = isCorrect ? cat.smart : cat.dumb;
+
+      quizContainer.classList.add("hide");
+      resultContainer.classList.add("show");
+
+      const cls = isCorrect ? "smart" : "dumb";
+
+      resultIcon.textContent = isCorrect ? "🏆" : "🫠";
+      resultTitle.className = `result-title ${cls}`;
+      resultTitle.textContent = isCorrect ? "Bonne réponse !" : "Mauvaise réponse…";
+      resultSiteName.className = `result-site-name ${cls}`;
+      resultSiteName.textContent = choice.name;
+      resultMessage.textContent = pickRandom(isCorrect ? SMART_MESSAGES : DUMB_MESSAGES);
+      resultLink.className = `result-link ${cls}`;
+      resultLink.href = choice.url;
+
+      if (isCorrect) spawnConfetti();
+    }
+
+    function submitAnswer() {
+      const val = parseInt(quizInput.value, 10);
+      if (isNaN(val)) {
+        quizInput.classList.add("shake");
+        setTimeout(() => quizInput.classList.remove("shake"), 400);
+        return;
+      }
+      showResult(val === 4);
+    }
+
+    quizBtn.addEventListener("click", submitAnswer);
+    quizInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") submitAnswer();
+    });
+
+    modalClose.addEventListener("click", closeOverlay);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeOverlay();
+    });
+
+    retryBtn.addEventListener("click", closeOverlay);
+
+    function spawnConfetti() {
+      const colors = ["#7c5cfc", "#fc5c9c", "#4ade80", "#facc15", "#38bdf8", "#fb923c"];
+      for (let i = 0; i < 40; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti-piece";
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.top = `${-10 + Math.random() * 20}px`;
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = `${Math.random() * 0.6}s`;
+        piece.style.animationDuration = `${1 + Math.random() * 1.5}s`;
+        piece.style.width = `${6 + Math.random() * 6}px`;
+        piece.style.height = `${6 + Math.random() * 6}px`;
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 3000);
+      }
+    }
+  </script>
+</body>
+</html>
