@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demeurrer.com — Le filtre ultime</title>
+  <title>2+2.com — Le filtre ultime</title>
   <meta name="description" content="Un simple test pour savoir si vous méritez le meilleur du web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&family=DM+Serif+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
+    :root,
+    [data-theme="neon"] {
       --bg-primary: #0a0a0f;
       --bg-card: #15151f;
       --bg-card-hover: #1e1e2e;
@@ -22,6 +23,87 @@
       --fail: #f87171;
       --radius: 16px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --card-border: rgba(255, 255, 255, 0.06);
+      --card-border-hover: rgba(124, 92, 252, 0.3);
+      --card-shadow-hover: 0 12px 40px rgba(124, 92, 252, 0.15);
+      --overlay-bg: rgba(10, 10, 15, 0.85);
+      --modal-border: rgba(255, 255, 255, 0.08);
+      --gradient-bg-1: radial-gradient(ellipse 60% 50% at 20% 10%, rgba(124, 92, 252, 0.12) 0%, transparent 60%);
+      --gradient-bg-2: radial-gradient(ellipse 50% 40% at 80% 80%, rgba(252, 92, 156, 0.08) 0%, transparent 60%);
+    }
+
+    [data-theme="minimal"] {
+      --bg-primary: #fafaf9;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f5f5f4;
+      --accent: #18181b;
+      --accent-glow: rgba(24, 24, 27, 0.08);
+      --accent-secondary: #a1a1aa;
+      --text-primary: #18181b;
+      --text-secondary: #71717a;
+      --success: #16a34a;
+      --fail: #dc2626;
+      --radius: 12px;
+      --transition: 0.25s ease;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --card-border: rgba(0, 0, 0, 0.08);
+      --card-border-hover: rgba(0, 0, 0, 0.18);
+      --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.06);
+      --overlay-bg: rgba(250, 250, 249, 0.9);
+      --modal-border: rgba(0, 0, 0, 0.08);
+      --gradient-bg-1: none;
+      --gradient-bg-2: none;
+    }
+
+    [data-theme="vintage"] {
+      --bg-primary: #1a1410;
+      --bg-card: #2a2118;
+      --bg-card-hover: #382d22;
+      --accent: #e8a838;
+      --accent-glow: rgba(232, 168, 56, 0.25);
+      --accent-secondary: #c45d3e;
+      --text-primary: #f5e6d0;
+      --text-secondary: #a89880;
+      --success: #8fbc5a;
+      --fail: #c45d3e;
+      --radius: 8px;
+      --transition: 0.3s ease;
+      --font-heading: 'DM Serif Display', serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --card-border: rgba(232, 168, 56, 0.12);
+      --card-border-hover: rgba(232, 168, 56, 0.35);
+      --card-shadow-hover: 0 10px 35px rgba(232, 168, 56, 0.1);
+      --overlay-bg: rgba(26, 20, 16, 0.9);
+      --modal-border: rgba(232, 168, 56, 0.15);
+      --gradient-bg-1: radial-gradient(ellipse 60% 50% at 30% 20%, rgba(232, 168, 56, 0.07) 0%, transparent 60%);
+      --gradient-bg-2: radial-gradient(ellipse 50% 40% at 70% 80%, rgba(196, 93, 62, 0.05) 0%, transparent 60%);
+    }
+
+    [data-theme="brutalist"] {
+      --bg-primary: #f0f0e8;
+      --bg-card: #ffffff;
+      --bg-card-hover: #e8e8d8;
+      --accent: #ff3300;
+      --accent-glow: rgba(255, 51, 0, 0.15);
+      --accent-secondary: #0033ff;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --success: #00aa44;
+      --fail: #ff3300;
+      --radius: 0px;
+      --transition: 0.1s linear;
+      --font-heading: 'Space Mono', monospace;
+      --font-body: 'Space Mono', monospace;
+      --card-border: 2px solid #111111;
+      --card-border-hover: 2px solid #ff3300;
+      --card-shadow-hover: 4px 4px 0 #111111;
+      --overlay-bg: rgba(240, 240, 232, 0.95);
+      --modal-border: 2px solid #111111;
+      --gradient-bg-1: none;
+      --gradient-bg-2: none;
     }
 
     * {
@@ -31,11 +113,12 @@
     }
 
     body {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-body);
       background: var(--bg-primary);
       color: var(--text-primary);
       min-height: 100vh;
       overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
     .noise-overlay {
@@ -53,8 +136,8 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(124, 92, 252, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(252, 92, 156, 0.08) 0%, transparent 60%),
+        var(--gradient-bg-1, none),
+        var(--gradient-bg-2, none),
         var(--bg-primary);
     }
 
@@ -65,7 +148,7 @@
     }
 
     header h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 800;
       font-size: clamp(2rem, 5vw, 3.5rem);
       letter-spacing: -0.02em;
@@ -107,12 +190,12 @@
     .card {
       position: relative;
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 1.8rem 1rem 1.4rem;
       text-align: center;
       cursor: pointer;
-      transition: var(--transition);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       overflow: hidden;
       opacity: 0;
       transform: translateY(24px);
@@ -131,9 +214,9 @@
 
     .card:hover {
       background: var(--bg-card-hover);
-      border-color: rgba(124, 92, 252, 0.3);
+      border-color: var(--card-border-hover);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(124, 92, 252, 0.15);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .card:hover::before { opacity: 1; }
@@ -170,7 +253,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(10, 10, 15, 0.85);
+      background: var(--overlay-bg);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       opacity: 0;
@@ -185,7 +268,7 @@
 
     .modal {
       background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--modal-border);
       border-radius: 24px;
       padding: 3rem 2.5rem;
       max-width: 460px;
@@ -221,7 +304,7 @@
     }
 
     .modal-title {
-      font-family: 'Syne', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 700;
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
@@ -235,7 +318,7 @@
     }
 
     .quiz-question {
-      font-family: 'Syne', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 800;
       font-size: 2.8rem;
       margin-bottom: 1.5rem;
@@ -253,7 +336,7 @@
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-primary);
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-body);
       font-size: 1.4rem;
       text-align: center;
       outline: none;
@@ -280,7 +363,7 @@
       border-radius: 12px;
       background: linear-gradient(135deg, var(--accent), #6246ea);
       color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-body);
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
@@ -302,7 +385,7 @@
     .result-icon { font-size: 4rem; margin-bottom: 1rem; }
 
     .result-title {
-      font-family: 'Syne', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 700;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
@@ -324,7 +407,7 @@
       gap: 0.5rem;
       padding: 0.85rem 2rem;
       border-radius: 12px;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-body);
       font-weight: 600;
       font-size: 1rem;
       text-decoration: none;
@@ -351,7 +434,7 @@
     .result-link:hover.dumb { box-shadow: 0 8px 30px rgba(239, 68, 68, 0.35); }
 
     .result-site-name {
-      font-family: 'Syne', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 800;
       font-size: 2rem;
       margin-bottom: 0.25rem;
@@ -379,7 +462,7 @@
       border-radius: 8px;
       background: transparent;
       color: var(--text-secondary);
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.85rem;
       cursor: pointer;
       transition: color 0.2s, border-color 0.2s;
@@ -404,6 +487,69 @@
     }
 
     footer a:hover { text-decoration: underline; }
+
+    /* ========== THEME SWITCHER ========== */
+    .theme-switcher {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.2rem;
+      z-index: 900;
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.35rem;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .theme-btn {
+      width: 28px;
+      height: 28px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+      position: relative;
+    }
+
+    .theme-btn:hover { transform: scale(1.15); }
+
+    .theme-btn.active {
+      border-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .theme-btn[data-pick="neon"] {
+      background: linear-gradient(135deg, #0a0a0f 50%, #7c5cfc 50%);
+    }
+
+    .theme-btn[data-pick="minimal"] {
+      background: linear-gradient(135deg, #fafaf9 50%, #18181b 50%);
+    }
+
+    .theme-btn[data-pick="vintage"] {
+      background: linear-gradient(135deg, #1a1410 50%, #e8a838 50%);
+    }
+
+    .theme-btn[data-pick="brutalist"] {
+      background: linear-gradient(135deg, #f0f0e8 50%, #ff3300 50%);
+    }
+
+    .theme-label {
+      display: none;
+      position: absolute;
+      bottom: -1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      white-space: nowrap;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+    }
+
+    .theme-btn:hover .theme-label { display: block; }
 
     /* ========== UTILS ========== */
     .sr-only {
@@ -447,9 +593,24 @@
   <div class="noise-overlay"></div>
   <div class="bg-gradient"></div>
 
+  <nav class="theme-switcher" aria-label="Direction artistique">
+    <button class="theme-btn active" data-pick="neon" aria-label="Thème Neon">
+      <span class="theme-label">Neon</span>
+    </button>
+    <button class="theme-btn" data-pick="minimal" aria-label="Thème Minimal">
+      <span class="theme-label">Minimal</span>
+    </button>
+    <button class="theme-btn" data-pick="vintage" aria-label="Thème Vintage">
+      <span class="theme-label">Vintage</span>
+    </button>
+    <button class="theme-btn" data-pick="brutalist" aria-label="Thème Brutalist">
+      <span class="theme-label">Brutalist</span>
+    </button>
+  </nav>
+
   <header>
-    <h1>Demeurrer.com</h1>
-    <p>Choisissez un thème, répondez à une question élémentaire, et découvrez le site que vous méritez.</p>
+    <h1>2+2.com</h1>
+    <p>Découvrez le site que vous méritez.</p>
   </header>
 
   <section class="grid-section">
@@ -498,7 +659,7 @@
   </div>
 
   <footer>
-    <p>Fait avec discernement — <a href="https://seventee.com" target="_blank">Seventee.com</a></p>
+    <p>Fait avec discernement — <a href="https://www.seventee.com" target="_blank">Seventee.com</a></p>
   </footer>
 
   <script>
@@ -512,7 +673,7 @@
       {
         name: "Location immobilière",
         emoji: "🏠",
-        smart: { name: "Seventee", url: "https://seventee.com" },
+        smart: { name: "Seventee", url: "https://www.seventee.com" },
         dumb:  { name: "LeBonCoin", url: "https://leboncoin.fr" }
       },
       {
@@ -622,6 +783,30 @@
         emoji: "🎮",
         smart: { name: "Steam", url: "https://store.steampowered.com" },
         dumb:  { name: "Epic Games", url: "https://store.epicgames.com" }
+      },
+      {
+        name: "Compte prorata",
+        emoji: "📊",
+        smart: { name: "The Fair Cost", url: "https://www.thefaircost.com" },
+        dumb:  { name: "SAEBTP", url: "https://www.saebtp.fr" }
+      },
+      {
+        name: "Traduction",
+        emoji: "🌍",
+        smart: { name: "DeepL", url: "https://www.deepl.com" },
+        dumb:  { name: "Google Traduction", url: "https://translate.google.com" }
+      },
+      {
+        name: "Visioconférence",
+        emoji: "📹",
+        smart: { name: "Google Meet", url: "https://meet.google.com" },
+        dumb:  { name: "Microsoft Teams", url: "https://teams.microsoft.com" }
+      },
+      {
+        name: "Stockage cloud",
+        emoji: "☁️",
+        smart: { name: "Google Drive", url: "https://drive.google.com" },
+        dumb:  { name: "OneDrive", url: "https://onedrive.live.com" }
       }
     ];
 
@@ -638,7 +823,7 @@
       "Pas grave. On a tous des jours sans. Voici votre alternative.",
       "C'était 4. Mais ne vous inquiétez pas, on a pensé à vous.",
       "Bon… On va vous orienter vers quelque chose de plus… accessible.",
-      "La réponse était 4. Mais on ne juge pas (enfin, un peu)."
+      "La réponse était 4. Voici votre alternative."
     ];
 
     function pickRandom(arr) {
@@ -666,6 +851,9 @@
     CATEGORIES.forEach((cat, i) => {
       const card = document.createElement("div");
       card.className = "card";
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-label", cat.name);
       card.style.animationDelay = `${i * 0.05}s`;
       card.innerHTML = `
         <span class="card-emoji">${cat.emoji}</span>
@@ -741,6 +929,24 @@
     });
 
     retryBtn.addEventListener("click", closeOverlay);
+
+    document.querySelectorAll(".theme-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const theme = btn.dataset.pick;
+        document.documentElement.setAttribute("data-theme", theme);
+        document.querySelectorAll(".theme-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        localStorage.setItem("theme", theme);
+      });
+    });
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.querySelectorAll(".theme-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.pick === savedTheme);
+      });
+    }
 
     function spawnConfetti() {
       const colors = ["#7c5cfc", "#fc5c9c", "#4ade80", "#facc15", "#38bdf8", "#fb923c"];
