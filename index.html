@@ -685,7 +685,7 @@
       <!-- RESULT (standard) -->
       <div class="result-container" id="resultContainer">
         <div class="result-site-name" id="resultSiteName"></div>
-        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">→</a>
+        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">Accéder au site →</a>
         <br>
         <button class="retry-btn" id="retryBtn">←</button>
       </div>
@@ -700,7 +700,7 @@
   </div>
 
   <footer>
-    <p>Fait avec discernement — <a href="https://www.seventee.com" target="_blank">Seventee.com</a></p>
+    <p>Fait avec discernement — <a href="https://www.seventee.com" target="_blank" rel="noopener noreferrer">Accéder au site — Seventee.com</a></p>
   </footer>
 
   <script>
@@ -856,6 +856,8 @@
       }
     ];
 
+    const RESULT_LINK_LABEL = "Accéder au site →";
+
     let currentCategory = null;
 
     const grid = document.getElementById("cardGrid");
@@ -925,6 +927,7 @@
       resultLink.className = "result-link egg";
       resultLink.style.cssText = "";
       resultLink.href = "https://fr.wikipedia.org/wiki/1984_(roman)";
+      resultLink.textContent = RESULT_LINK_LABEL;
     }
 
     function showPoliticalResult() {
@@ -951,6 +954,7 @@
       resultLink.className = `result-link ${cls}`;
       resultLink.style.cssText = "";
       resultLink.href = choice.url;
+      resultLink.textContent = RESULT_LINK_LABEL;
     }
 
     function submitAnswer() {

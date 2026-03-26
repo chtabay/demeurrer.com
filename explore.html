@@ -696,7 +696,7 @@
 
       <div class="result-container" id="resultContainer">
         <div class="result-site-name" id="resultSiteName"></div>
-        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">→</a>
+        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">Accéder au site →</a>
         <br>
         <button class="retry-btn" id="retryBtn">←</button>
       </div>
@@ -710,13 +710,15 @@
   </div>
 
   <footer>
-    <p>Fait avec discernement — <a href="https://www.seventee.com" target="_blank">Seventee.com</a></p>
+    <p>Fait avec discernement — <a href="https://www.seventee.com" target="_blank" rel="noopener noreferrer">Accéder au site — Seventee.com</a></p>
   </footer>
 
   <script>
     function pickRandom(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     }
+
+    const RESULT_LINK_LABEL = "Accéder au site →";
 
     function normalize(str) {
       return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -928,6 +930,7 @@
       resultSiteName.textContent = outcome.result.name;
       resultLink.className = `result-link ${cls}`;
       resultLink.href = outcome.result.url;
+      resultLink.textContent = RESULT_LINK_LABEL;
     }
 
     function submitAnswer() {

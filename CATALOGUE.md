@@ -177,7 +177,7 @@ Routage "dumb" = **pool aléatoire**. Le site ne tranche pas entre les mauvaises
 Le résultat ne comporte jamais de commentaire. Deux éléments uniquement :
 
 1. **Le nom du site** (typographie stylée selon le type : vert/smart, rouge/dumb, accent/egg)
-2. **Un lien** (`→`)
+2. **Un lien** : « Accéder au site → »
 
 Pas d'emoji de verdict. Pas de message. Pas d'encouragement.
 Le site énonce. L'utilisateur en fait ce qu'il veut.
