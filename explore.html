@@ -225,13 +225,6 @@
     }
     .drawer-section-title:first-child { margin-top: 0; }
 
-    .drawer-hint {
-      font-size: 0.85rem;
-      line-height: 1.55;
-      color: var(--text-secondary);
-      margin-bottom: 0.5rem;
-    }
-
     .theme-switcher-drawer {
       display: flex;
       flex-direction: column;
@@ -310,16 +303,6 @@
 
     .explore-main.has-results {
       padding-top: calc(4.5rem + 2vh);
-    }
-
-    .page-lead {
-      width: 100%;
-      max-width: 560px;
-      margin: 0 auto 1rem;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--text-secondary);
-      text-align: center;
     }
 
     .search-wrapper {
@@ -731,8 +714,6 @@
   <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu">
     <div class="drawer-panel" id="drawerPanel">
-      <p class="drawer-section-title">Mise en page</p>
-      <p class="drawer-hint">La recherche est l’action principale : tapez un mot-clé ou un tag. Les accents sont ignorés. Jusqu’à 24 suggestions — affinez si la liste est longue. Le dé à côté du compteur ouvre un thème au hasard.</p>
       <p class="drawer-section-title">Direction artistique</p>
       <div class="theme-switcher-drawer" role="group" aria-label="Direction artistique">
         <button type="button" class="theme-row active" data-pick="neon"><span class="theme-swatch" aria-hidden="true"></span> Neon</button>
@@ -749,7 +730,6 @@
   </aside>
 
   <main class="explore-main" id="exploreMain">
-    <p class="page-lead" id="pageLead">Chargement du catalogue…</p>
     <div class="search-wrapper">
       <input
         type="text"
@@ -851,7 +831,6 @@
     const btnGauche     = document.getElementById('btnGauche');
     const btnDroite     = document.getElementById('btnDroite');
 
-    const pageLead = document.getElementById('pageLead');
     const menuToggle = document.getElementById('menuToggle');
     const drawer = document.getElementById('drawer');
     const drawerBackdrop = document.getElementById('drawerBackdrop');
@@ -918,13 +897,8 @@
       .then(([base, bulk]) => {
         allCategories = [...base, ...bulk];
         themeCount.textContent = `${allCategories.length} thèmes`;
-        if (pageLead) {
-          pageLead.textContent =
-            `${allCategories.length} thèmes — cherchez par mot ou tag (accents ignorés). Jusqu’à 24 suggestions ; affinez si besoin. Le dé ouvre un thème au hasard.`;
-        }
       })
       .catch(() => {
-        if (pageLead) pageLead.textContent = 'Catalogue indisponible.';
         themeCount.textContent = '—';
       });
 

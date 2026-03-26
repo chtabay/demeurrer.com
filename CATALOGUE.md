@@ -19,7 +19,7 @@
 ### Mise en page (Explorer + Évidences)
 
 - **Barre fixe en haut** : navigation primaire (grille / loupe) — centre : titre de page (`Explorer` ou `2+2`) — droite : **menu ☰**.
-- **Menu latéral** : consignes d’usage, **direction artistique** (DA) avec libellés visibles, **partage** (copier l’URL, Web Share API si disponible).
+- **Menu latéral** : **direction artistique** (DA) avec libellés visibles, **partage** (copier l’URL, Web Share API si disponible).
 - **Recherche** : action principale sous la barre, champ large ; pas de concurrence visuelle avec les pastilles DA.
 - **Quiz** : `z-index` au-dessus du menu (overlay modale).
 
