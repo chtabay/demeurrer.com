@@ -284,13 +284,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .modal-subtitle {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-    }
-
     .quiz-question {
       font-family: var(--font-heading);
       font-weight: 800;
@@ -356,25 +349,6 @@
     .result-container.show { display: block; }
     .quiz-container.hide { display: none; }
 
-    .result-icon { font-size: 4rem; margin-bottom: 1rem; }
-
-    .result-title {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .result-title.smart { color: var(--success); }
-    .result-title.dumb { color: var(--fail); }
-
-    .result-message {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.8rem;
-      line-height: 1.6;
-    }
-
     .result-link {
       display: inline-flex;
       align-items: center;
@@ -428,6 +402,21 @@
       background-clip: text;
     }
 
+    .result-site-name.egg {
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .result-link.egg {
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .result-link:hover.egg { box-shadow: 0 8px 30px var(--accent-glow); }
+
     .retry-btn {
       display: inline-block;
       margin-top: 1rem;
@@ -462,12 +451,40 @@
 
     footer a:hover { text-decoration: underline; }
 
-    /* ========== THEME SWITCHER ========== */
-    .theme-switcher {
+    /* ========== TOP NAV ========== */
+    .top-nav {
       position: fixed;
       top: 1.2rem;
       right: 1.2rem;
       z-index: 900;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-explore {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition), border-color var(--transition);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .nav-explore:hover {
+      color: var(--text-primary);
+      border-color: var(--card-border-hover);
+    }
+
+    /* ========== THEME SWITCHER ========== */
+    .theme-switcher {
       display: flex;
       gap: 0.35rem;
       padding: 0.35rem;
@@ -605,19 +622,27 @@
   <div class="noise-overlay"></div>
   <div class="bg-gradient"></div>
 
-  <nav class="theme-switcher" aria-label="Direction artistique">
-    <button class="theme-btn active" data-pick="neon" aria-label="Thème Neon">
-      <span class="theme-label">Neon</span>
-    </button>
-    <button class="theme-btn" data-pick="minimal" aria-label="Thème Minimal">
-      <span class="theme-label">Minimal</span>
-    </button>
-    <button class="theme-btn" data-pick="vintage" aria-label="Thème Vintage">
-      <span class="theme-label">Vintage</span>
-    </button>
-    <button class="theme-btn" data-pick="brutalist" aria-label="Thème Brutalist">
-      <span class="theme-label">Brutalist</span>
-    </button>
+  <nav class="top-nav" aria-label="Navigation">
+    <a href="explore.html" class="nav-explore" aria-label="Explorer tous les thèmes">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="7.5" cy="7.5" r="5.5"/>
+        <line x1="11.5" y1="11.5" x2="16" y2="16"/>
+      </svg>
+    </a>
+    <div class="theme-switcher" aria-label="Direction artistique">
+      <button class="theme-btn active" data-pick="neon" aria-label="Thème Neon">
+        <span class="theme-label">Neon</span>
+      </button>
+      <button class="theme-btn" data-pick="minimal" aria-label="Thème Minimal">
+        <span class="theme-label">Minimal</span>
+      </button>
+      <button class="theme-btn" data-pick="vintage" aria-label="Thème Vintage">
+        <span class="theme-label">Vintage</span>
+      </button>
+      <button class="theme-btn" data-pick="brutalist" aria-label="Thème Brutalist">
+        <span class="theme-label">Brutalist</span>
+      </button>
+    </div>
   </nav>
 
   <section class="grid-section">
@@ -633,7 +658,6 @@
       <div class="quiz-container" id="quizContainer">
         <div class="modal-emoji" id="modalEmoji"></div>
         <div class="modal-title" id="modalTitle"></div>
-        <div class="modal-subtitle" id="modalSubtitle">Prouvez que vous méritez le meilleur.</div>
         <div class="quiz-question" id="quizQuestion">2 + 2 = ?</div>
         <div id="standardInput">
           <input
@@ -660,15 +684,10 @@
 
       <!-- RESULT (standard) -->
       <div class="result-container" id="resultContainer">
-        <div class="result-icon" id="resultIcon"></div>
-        <div class="result-title" id="resultTitle"></div>
         <div class="result-site-name" id="resultSiteName"></div>
-        <div class="result-message" id="resultMessage"></div>
-        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">
-          Accéder au site →
-        </a>
+        <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">→</a>
         <br>
-        <button class="retry-btn" id="retryBtn">← Choisir un autre thème</button>
+        <button class="retry-btn" id="retryBtn">←</button>
       </div>
 
       <!-- RESULT (political) -->
@@ -837,26 +856,6 @@
       }
     ];
 
-    const SMART_MESSAGES = [
-      "Bravo, vous faites partie de l'élite intellectuelle.",
-      "Félicitations, votre QI est au-dessus de la moyenne.",
-      "Bien joué. Vous méritez ce qu'il y a de mieux.",
-      "Évidemment que c'est 4. Voici votre récompense.",
-      "Un esprit brillant mérite un outil brillant."
-    ];
-
-    const DUMB_MESSAGES = [
-      "Hmm… Peut-être que celui-ci est plus adapté à votre niveau.",
-      "Pas grave. On a tous des jours sans. Voici votre alternative.",
-      "C'était 4. Mais ne vous inquiétez pas, on a pensé à vous.",
-      "Bon… On va vous orienter vers quelque chose de plus… accessible.",
-      "La réponse était 4. Voici votre alternative."
-    ];
-
-    function pickRandom(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
-
     let currentCategory = null;
 
     const grid = document.getElementById("cardGrid");
@@ -868,10 +867,7 @@
     const modalTitle = document.getElementById("modalTitle");
     const quizInput = document.getElementById("quizInput");
     const quizBtn = document.getElementById("quizBtn");
-    const resultIcon = document.getElementById("resultIcon");
-    const resultTitle = document.getElementById("resultTitle");
     const resultSiteName = document.getElementById("resultSiteName");
-    const resultMessage = document.getElementById("resultMessage");
     const resultLink = document.getElementById("resultLink");
     const retryBtn = document.getElementById("retryBtn");
 
@@ -894,7 +890,6 @@
     const politicalInput = document.getElementById("politicalInput");
     const politicalResult = document.getElementById("politicalResult");
     const quizQuestion = document.getElementById("quizQuestion");
-    const modalSubtitle = document.getElementById("modalSubtitle");
     const btnGauche = document.getElementById("btnGauche");
     const btnDroite = document.getElementById("btnDroite");
     const retryBtnPolitical = document.getElementById("retryBtnPolitical");
@@ -913,12 +908,23 @@
       standardInput.style.display = isPolitical ? "none" : "";
       politicalInput.style.display = isPolitical ? "" : "none";
       quizQuestion.textContent = isPolitical ? "Pour qui voter ?" : "2 + 2 = ?";
-      modalSubtitle.textContent = isPolitical ? "" : "Prouvez que vous méritez le meilleur.";
 
       overlay.classList.add("active");
       document.body.style.overflow = "hidden";
 
       if (!isPolitical) setTimeout(() => quizInput.focus(), 400);
+    }
+
+    function showEasterEgg() {
+      quizContainer.classList.add("hide");
+      resultContainer.classList.add("show");
+
+      resultSiteName.className = "result-site-name egg";
+      resultSiteName.style.cssText = "";
+      resultSiteName.textContent = "1984 (George Orwell)";
+      resultLink.className = "result-link egg";
+      resultLink.style.cssText = "";
+      resultLink.href = "https://fr.wikipedia.org/wiki/1984_(roman)";
     }
 
     function showPoliticalResult() {
@@ -933,24 +939,18 @@
     }
 
     function showResult(isCorrect) {
-      const cat = currentCategory;
-      const choice = isCorrect ? cat.smart : cat.dumb;
+      const choice = isCorrect ? currentCategory.smart : currentCategory.dumb;
+      const cls = isCorrect ? "smart" : "dumb";
 
       quizContainer.classList.add("hide");
       resultContainer.classList.add("show");
 
-      const cls = isCorrect ? "smart" : "dumb";
-
-      resultIcon.textContent = isCorrect ? "🏆" : "🫠";
-      resultTitle.className = `result-title ${cls}`;
-      resultTitle.textContent = isCorrect ? "Bonne réponse !" : "Mauvaise réponse…";
       resultSiteName.className = `result-site-name ${cls}`;
+      resultSiteName.style.cssText = "";
       resultSiteName.textContent = choice.name;
-      resultMessage.textContent = pickRandom(isCorrect ? SMART_MESSAGES : DUMB_MESSAGES);
       resultLink.className = `result-link ${cls}`;
+      resultLink.style.cssText = "";
       resultLink.href = choice.url;
-
-      if (isCorrect) spawnConfetti();
     }
 
     function submitAnswer() {
@@ -960,7 +960,11 @@
         setTimeout(() => quizInput.classList.remove("shake"), 400);
         return;
       }
-      showResult(val === 4);
+      if (val === 5) {
+        showEasterEgg();
+      } else {
+        showResult(val === 4);
+      }
     }
 
     quizBtn.addEventListener("click", submitAnswer);

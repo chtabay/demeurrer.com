@@ -2,42 +2,79 @@
 
 ## Le concept
 
-Un site qui pose la question "2+2=?" et oriente l'utilisateur vers le "bon" ou le "mauvais" site web selon sa réponse. Pas de titre, pas d'explication, pas de mode d'emploi. La grille de cartes parle d'elle-même.
+Un site qui pose une question mathématique et oriente l'utilisateur vers le "bon" ou le "mauvais" site web selon sa réponse. Pas de titre, pas d'explication, pas de mode d'emploi.
 
 ## L'esprit
 
 Le comique repose sur trois couches :
 
-- **L'absurdité du filtre binaire** : l'idée qu'une addition d'école primaire puisse trier le bon du mauvais dans n'importe quel domaine. Google EST mieux que Bing. C'est une vérité, pas une opinion.
+- **L'absurdité du filtre binaire** : l'idée qu'une formule mathématique puisse trier le bon du mauvais dans n'importe quel domaine. Google EST mieux que Bing. C'est une vérité, pas une opinion.
 - **L'aplomb de la certitude** : le site ne nuance jamais, ne s'excuse jamais, ne se justifie jamais. Il énonce.
 - **La pub grossièrement planquée** : Seventee.com au milieu de Google, Netflix et Spotify, avec exactement le même traitement. Le camouflage est tellement fin qu'il en devient transparent.
 
-La carte **Politique** est le méta-commentaire : on casse la mécanique (pas de bonne réponse), on applique le même jugement binaire, et on répond toujours "Faux." — quel que soit le choix. Ce qui renvoie l'utilisateur à l'absurdité de tout le reste.
-
 Le sarcasme est structurel, jamais verbalisé. Le site est explicitement ironique.
 
-## Les catégories
+## Architecture
 
-25 cartes, dont 24 catégories standard (quiz 2+2) et 1 carte spéciale (Politique).
+### Page A — Les évidences (`index.html`)
 
-Les catégories standard opposent un leader à une alternative perçue comme inférieure. Seventee.com et TheFairCost.com sont noyés parmi les autres avec le même traitement.
+25 cartes en grille fixe, 24 catégories standard (quiz 2+2=?) et 1 carte spéciale (Politique). Un musée de certitudes immuables. Rien ne bouge, rien ne s'explique.
 
-La carte Politique demande "Gauche ou Droite ?" et répond toujours "Faux." — sans lien, sans explication.
+La carte Politique demande "Pour qui voter ?" et répond toujours "Faux." — quel que soit le choix.
+
+### Page B — Explorer (`explore.html`)
+
+Des dizaines de thèmes (extensible à des milliers) accessibles via une barre de recherche. Pas de grille au chargement — le champ est l'unique porte d'entrée. Un bouton "au hasard" (🎲) pour la découverte.
+
+Les formules varient selon la difficulté du thème :
+- **Évidences** (difficulté 1) : `2+2`, `8-4`, `√16`
+- **Intermédiaires** (difficulté 2) : `√144 - 8`, `7!/1260`, `log₁₀(10000)`
+- **Complexes** (difficulté 3) : intégrales, déterminants, fonctions Gamma
+
+Les formules sont rendues via KaTeX.
+
+### Navigation
+
+Une icône loupe (Page A → Page B) et une icône grille (Page B → Page A) dans le coin supérieur droit, à côté du toggle DA.
+
+## Données (`categories.json`)
+
+Chaque thème est défini par :
+- `slug`, `name`, `emoji`, `difficulty` (1-3)
+- `formula` (LaTeX), `correctAnswer` (nombre)
+- `smart` : le site "correct" (nom + URL)
+- `dumb` : le site "incorrect", soit fixe (`type: "fixed"`) soit aléatoire parmi un pool (`type: "random"`)
+- `easterEggs` : réponses alternatives qui débloquent des liens cachés
+- `tags` : mots-clés pour la recherche
+
+### Thèmes "touchy"
+
+Religion, politique, cuisine, langue, pays... La formule est volontairement complexe, la réponse correcte est volontairement provocatrice, et les mauvaises réponses piochent aléatoirement dans un pool de pages Wikipedia.
+
+### Easter eggs
+
+- **5 → 1984** : sur toute formule `2+2`, répondre 5 mène à la page Wikipedia de 1984 (George Orwell). Ne fonctionne qu'avec 2+2 — c'est la référence.
+- **0 → Nihilisme** : sur le thème Religion, répondre 0 mène à la page Wikipedia du Nihilisme.
+- **42 → La Grande Question** : sur certains thèmes, répondre 42 mène à la page Wikipedia de la réponse ultime (Guide du voyageur galactique).
+
+Aucun signal visuel n'indique qu'un easter egg existe. La découverte est organique.
 
 ## Directions artistiques
 
-Toggle en haut à droite, 4 DA disponibles. C'est un outil de mise au point : les DA actuelles sont des points de départ pour itérer, pas des versions finales. Le toggle permet d'empiler et tester de nouvelles DA facilement.
+Toggle en haut à droite, 4 DA disponibles. C'est un outil de mise au point : les DA actuelles sont des points de départ pour itérer. Le toggle permet d'empiler et tester de nouvelles DA. Le thème choisi est partagé entre les deux pages via `localStorage`.
 
 ## Stack technique
 
-- Un seul fichier : `index.html`
-- Aucune dépendance
+- `index.html` : page des évidences (autonome, aucune dépendance)
+- `explore.html` : page d'exploration (charge `categories.json`, KaTeX via CDN)
+- `categories.json` : catalogue des thèmes
 - Fonts : Google Fonts (Space Grotesk, Syne, DM Serif Display, Space Mono)
+- Formules : KaTeX (CDN)
 - Hébergement cible : GitHub Pages
 
 ## Déploiement
 
 1. Créer un repo GitHub
-2. Pousser `index.html` à la racine
+2. Pousser tous les fichiers à la racine
 3. Activer GitHub Pages (Settings > Pages > Source: main)
 4. Lier un domaine personnalisé si besoin

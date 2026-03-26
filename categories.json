@@ -1,0 +1,857 @@
+[
+  {
+    "slug": "moteur-de-recherche",
+    "name": "Moteur de recherche",
+    "emoji": "🔍",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google", "url": "https://google.com" },
+    "dumb": { "type": "fixed", "name": "Bing", "url": "https://bing.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["google", "bing", "search", "chercher", "recherche"]
+  },
+  {
+    "slug": "location-immobiliere",
+    "name": "Location immobilière",
+    "emoji": "🏠",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Seventee", "url": "https://www.seventee.com" },
+    "dumb": { "type": "fixed", "name": "LeBonCoin", "url": "https://leboncoin.fr" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["louer", "logement", "appartement", "maison", "immobilier", "annonce", "seventee", "leboncoin"]
+  },
+  {
+    "slug": "plateforme-video",
+    "name": "Plateforme vidéo",
+    "emoji": "🎬",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "YouTube", "url": "https://youtube.com" },
+    "dumb": { "type": "fixed", "name": "Dailymotion", "url": "https://dailymotion.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["youtube", "dailymotion", "video", "vidéo", "stream"]
+  },
+  {
+    "slug": "streaming-musical",
+    "name": "Streaming musical",
+    "emoji": "🎵",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Spotify", "url": "https://spotify.com" },
+    "dumb": { "type": "fixed", "name": "Deezer", "url": "https://deezer.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["musique", "spotify", "deezer", "écouter", "playlist"]
+  },
+  {
+    "slug": "messagerie",
+    "name": "Messagerie",
+    "emoji": "💬",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "WhatsApp", "url": "https://whatsapp.com" },
+    "dumb": { "type": "fixed", "name": "Skype", "url": "https://skype.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["message", "chat", "whatsapp", "skype", "discuter"]
+  },
+  {
+    "slug": "reseau-social",
+    "name": "Réseau social",
+    "emoji": "📱",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Instagram", "url": "https://instagram.com" },
+    "dumb": { "type": "fixed", "name": "Facebook", "url": "https://facebook.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["instagram", "facebook", "social", "réseau", "followers"]
+  },
+  {
+    "slug": "shopping-en-ligne",
+    "name": "Shopping en ligne",
+    "emoji": "🛒",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Amazon", "url": "https://amazon.fr" },
+    "dumb": { "type": "fixed", "name": "Wish", "url": "https://wish.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["acheter", "commander", "amazon", "wish", "shopping", "achat"]
+  },
+  {
+    "slug": "gps-navigation",
+    "name": "GPS & Navigation",
+    "emoji": "🗺️",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Waze", "url": "https://waze.com" },
+    "dumb": { "type": "fixed", "name": "Mappy", "url": "https://mappy.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["gps", "itinéraire", "route", "waze", "mappy", "trajet"]
+  },
+  {
+    "slug": "boite-mail",
+    "name": "Boîte mail",
+    "emoji": "📧",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Gmail", "url": "https://mail.google.com" },
+    "dumb": { "type": "fixed", "name": "Yahoo Mail", "url": "https://mail.yahoo.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["email", "mail", "courrier", "gmail", "yahoo"]
+  },
+  {
+    "slug": "livraison-repas",
+    "name": "Livraison de repas",
+    "emoji": "🍔",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Uber Eats", "url": "https://ubereats.com" },
+    "dumb": { "type": "fixed", "name": "Just Eat", "url": "https://just-eat.fr" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["manger", "livrer", "uber eats", "just eat", "commande", "restaurant"]
+  },
+  {
+    "slug": "vtc",
+    "name": "VTC",
+    "emoji": "🚗",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Uber", "url": "https://uber.com" },
+    "dumb": { "type": "fixed", "name": "Bolt", "url": "https://bolt.eu" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["taxi", "uber", "bolt", "chauffeur", "transport"]
+  },
+  {
+    "slug": "films-series",
+    "name": "Films & Séries",
+    "emoji": "🎥",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Netflix", "url": "https://netflix.com" },
+    "dumb": { "type": "fixed", "name": "Pluto TV", "url": "https://pluto.tv" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["netflix", "pluto", "film", "série", "regarder", "streaming"]
+  },
+  {
+    "slug": "reservation-hotel",
+    "name": "Réservation hôtel",
+    "emoji": "🏨",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Booking.com", "url": "https://booking.com" },
+    "dumb": { "type": "fixed", "name": "Trivago", "url": "https://trivago.fr" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["hôtel", "booking", "trivago", "réserver", "voyage", "séjour"]
+  },
+  {
+    "slug": "reserver-vol",
+    "name": "Réserver un vol",
+    "emoji": "✈️",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google Flights", "url": "https://google.com/travel/flights" },
+    "dumb": { "type": "fixed", "name": "Lastminute", "url": "https://lastminute.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["avion", "vol", "billet", "google flights", "lastminute", "voyage"]
+  },
+  {
+    "slug": "hebergement-code",
+    "name": "Hébergement de code",
+    "emoji": "💻",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "GitHub", "url": "https://github.com" },
+    "dumb": { "type": "fixed", "name": "SourceForge", "url": "https://sourceforge.net" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["github", "sourceforge", "git", "code", "repository", "développeur"]
+  },
+  {
+    "slug": "design-graphique",
+    "name": "Design graphique",
+    "emoji": "🎨",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Figma", "url": "https://figma.com" },
+    "dumb": { "type": "fixed", "name": "Canva", "url": "https://canva.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["figma", "canva", "design", "graphisme", "maquette", "ui"]
+  },
+  {
+    "slug": "intelligence-artificielle",
+    "name": "Intelligence artificielle",
+    "emoji": "🤖",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "ChatGPT", "url": "https://chatgpt.com" },
+    "dumb": { "type": "fixed", "name": "Copilot", "url": "https://copilot.microsoft.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["ia", "ai", "chatgpt", "copilot", "intelligence", "artificielle", "robot"]
+  },
+  {
+    "slug": "actualites",
+    "name": "Actualités",
+    "emoji": "📰",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google News", "url": "https://news.google.com" },
+    "dumb": { "type": "fixed", "name": "Yahoo Actu", "url": "https://fr.news.yahoo.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["news", "info", "journal", "presse", "google news", "yahoo"]
+  },
+  {
+    "slug": "paiement-en-ligne",
+    "name": "Paiement en ligne",
+    "emoji": "💳",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "PayPal", "url": "https://paypal.com" },
+    "dumb": { "type": "fixed", "name": "Paylib", "url": "https://paylib.fr" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["payer", "paypal", "paylib", "paiement", "argent", "carte"]
+  },
+  {
+    "slug": "jeux-video",
+    "name": "Jeux vidéo",
+    "emoji": "🎮",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Steam", "url": "https://store.steampowered.com" },
+    "dumb": { "type": "fixed", "name": "Epic Games", "url": "https://store.epicgames.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["jeu", "gaming", "steam", "epic", "jouer", "gamer"]
+  },
+  {
+    "slug": "compte-prorata",
+    "name": "Compte prorata",
+    "emoji": "📊",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "The Fair Cost", "url": "https://www.thefaircost.com" },
+    "dumb": { "type": "fixed", "name": "SAEBTP", "url": "https://www.saebtp.fr" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["prorata", "btp", "chantier", "thefaircost", "saebtp", "construction"]
+  },
+  {
+    "slug": "traduction",
+    "name": "Traduction",
+    "emoji": "🌍",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "DeepL", "url": "https://www.deepl.com" },
+    "dumb": { "type": "fixed", "name": "Google Traduction", "url": "https://translate.google.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["traduire", "deepl", "google translate", "langue", "traducteur"]
+  },
+  {
+    "slug": "visioconference",
+    "name": "Visioconférence",
+    "emoji": "📹",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google Meet", "url": "https://meet.google.com" },
+    "dumb": { "type": "fixed", "name": "Microsoft Teams", "url": "https://teams.microsoft.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["visio", "meet", "teams", "zoom", "réunion", "appel"]
+  },
+  {
+    "slug": "stockage-cloud",
+    "name": "Stockage cloud",
+    "emoji": "☁️",
+    "difficulty": 1,
+    "formula": "2+2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google Drive", "url": "https://drive.google.com" },
+    "dumb": { "type": "fixed", "name": "OneDrive", "url": "https://onedrive.live.com" },
+    "easterEggs": [
+      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+    ],
+    "tags": ["cloud", "drive", "onedrive", "stockage", "fichier", "sauvegarde"]
+  },
+  {
+    "slug": "politique",
+    "name": "Politique",
+    "emoji": "🗳️",
+    "type": "political",
+    "difficulty": 1,
+    "tags": ["vote", "voter", "élection", "gauche", "droite", "parti", "politique"]
+  },
+  {
+    "slug": "navigateur-web",
+    "name": "Navigateur web",
+    "emoji": "🌐",
+    "difficulty": 1,
+    "formula": "8-4",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Chrome", "url": "https://google.com/chrome" },
+    "dumb": { "type": "fixed", "name": "Internet Explorer", "url": "https://fr.wikipedia.org/wiki/Internet_Explorer" },
+    "easterEggs": [],
+    "tags": ["chrome", "internet explorer", "navigateur", "browser", "firefox", "safari"]
+  },
+  {
+    "slug": "os-mobile",
+    "name": "OS mobile",
+    "emoji": "📲",
+    "difficulty": 1,
+    "formula": "6-2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "iOS", "url": "https://apple.com/ios" },
+    "dumb": { "type": "fixed", "name": "Windows Phone", "url": "https://fr.wikipedia.org/wiki/Windows_Phone" },
+    "easterEggs": [],
+    "tags": ["iphone", "android", "ios", "windows phone", "mobile", "smartphone"]
+  },
+  {
+    "slug": "reseau-social-pro",
+    "name": "Réseau social professionnel",
+    "emoji": "👔",
+    "difficulty": 1,
+    "formula": "1+3",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "LinkedIn", "url": "https://linkedin.com" },
+    "dumb": { "type": "fixed", "name": "Viadeo", "url": "https://fr.wikipedia.org/wiki/Viadeo" },
+    "easterEggs": [],
+    "tags": ["linkedin", "viadeo", "professionnel", "emploi", "cv", "recrutement"]
+  },
+  {
+    "slug": "gestion-projet",
+    "name": "Gestion de projet",
+    "emoji": "📋",
+    "difficulty": 1,
+    "formula": "20 \\div 5",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Notion", "url": "https://notion.so" },
+    "dumb": { "type": "fixed", "name": "Trello", "url": "https://trello.com" },
+    "easterEggs": [],
+    "tags": ["notion", "trello", "projet", "organisation", "tâche", "kanban"]
+  },
+  {
+    "slug": "encyclopedie",
+    "name": "Encyclopédie en ligne",
+    "emoji": "📚",
+    "difficulty": 1,
+    "formula": "2^2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Wikipédia", "url": "https://fr.wikipedia.org" },
+    "dumb": { "type": "fixed", "name": "Encarta", "url": "https://fr.wikipedia.org/wiki/Encarta" },
+    "easterEggs": [],
+    "tags": ["wikipedia", "encyclopédie", "savoir", "connaissance", "encarta"]
+  },
+  {
+    "slug": "banque-en-ligne",
+    "name": "Banque en ligne",
+    "emoji": "🏦",
+    "difficulty": 1,
+    "formula": "\\sqrt{16}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Boursorama", "url": "https://boursorama.com" },
+    "dumb": { "type": "fixed", "name": "Monabanq", "url": "https://monabanq.com" },
+    "easterEggs": [],
+    "tags": ["banque", "boursorama", "monabanq", "compte", "argent", "épargne"]
+  },
+  {
+    "slug": "editeur-code",
+    "name": "Éditeur de code",
+    "emoji": "⌨️",
+    "difficulty": 1,
+    "formula": "16 \\div 4",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "VS Code", "url": "https://code.visualstudio.com" },
+    "dumb": { "type": "fixed", "name": "Notepad", "url": "https://fr.wikipedia.org/wiki/Bloc-notes_(Windows)" },
+    "easterEggs": [],
+    "tags": ["vscode", "notepad", "éditeur", "code", "développement", "ide"]
+  },
+  {
+    "slug": "tableur",
+    "name": "Tableur",
+    "emoji": "📊",
+    "difficulty": 1,
+    "formula": "2 \\times 2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Google Sheets", "url": "https://sheets.google.com" },
+    "dumb": { "type": "fixed", "name": "Excel", "url": "https://office.live.com/start/Excel.aspx" },
+    "easterEggs": [],
+    "tags": ["excel", "sheets", "tableau", "calcul", "données", "cellule"]
+  },
+  {
+    "slug": "pizza",
+    "name": "Pizza",
+    "emoji": "🍕",
+    "difficulty": 1,
+    "formula": "12-8",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Margherita", "url": "https://fr.wikipedia.org/wiki/Pizza_Margherita" },
+    "dumb": { "type": "fixed", "name": "Hawaïenne", "url": "https://fr.wikipedia.org/wiki/Pizza_hawa%C3%AFenne" },
+    "easterEggs": [],
+    "tags": ["pizza", "margherita", "hawaïenne", "ananas", "manger", "italien"]
+  },
+  {
+    "slug": "super-heros",
+    "name": "Super-héros",
+    "emoji": "🦇",
+    "difficulty": 1,
+    "formula": "7-3",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Batman", "url": "https://fr.wikipedia.org/wiki/Batman" },
+    "dumb": { "type": "fixed", "name": "Aquaman", "url": "https://fr.wikipedia.org/wiki/Aquaman" },
+    "easterEggs": [],
+    "tags": ["batman", "aquaman", "comics", "dc", "marvel", "héros"]
+  },
+  {
+    "slug": "animal-compagnie",
+    "name": "Animal de compagnie",
+    "emoji": "🐱",
+    "difficulty": 1,
+    "formula": "3!-2",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Chat", "url": "https://fr.wikipedia.org/wiki/Chat" },
+    "dumb": { "type": "fixed", "name": "Poisson rouge", "url": "https://fr.wikipedia.org/wiki/Poisson_rouge" },
+    "easterEggs": [],
+    "tags": ["chat", "chien", "animal", "poisson", "compagnie", "pet"]
+  },
+  {
+    "slug": "boisson-chaude",
+    "name": "Boisson chaude",
+    "emoji": "☕",
+    "difficulty": 1,
+    "formula": "9-5",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Café", "url": "https://fr.wikipedia.org/wiki/Caf%C3%A9_(boisson)" },
+    "dumb": { "type": "fixed", "name": "Chicorée", "url": "https://fr.wikipedia.org/wiki/Chicor%C3%A9e" },
+    "easterEggs": [],
+    "tags": ["café", "thé", "chicorée", "boire", "matin", "expresso"]
+  },
+  {
+    "slug": "fromage",
+    "name": "Fromage",
+    "emoji": "🧀",
+    "difficulty": 1,
+    "formula": "28 \\div 7",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Comté", "url": "https://fr.wikipedia.org/wiki/Comt%C3%A9_(fromage)" },
+    "dumb": { "type": "fixed", "name": "Babybel", "url": "https://fr.wikipedia.org/wiki/Mini_Babybel" },
+    "easterEggs": [],
+    "tags": ["fromage", "comté", "babybel", "france", "lait", "plateau"]
+  },
+  {
+    "slug": "langage-programmation",
+    "name": "Langage de programmation",
+    "emoji": "🐍",
+    "difficulty": 2,
+    "formula": "\\sqrt{144} - 8",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Python", "url": "https://python.org" },
+    "dumb": { "type": "fixed", "name": "PHP", "url": "https://php.net" },
+    "easterEggs": [
+      { "answer": 42, "name": "42 (la réponse)", "url": "https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l%27univers_et_le_reste" }
+    ],
+    "tags": ["python", "php", "code", "développer", "programme", "langage"]
+  },
+  {
+    "slug": "framework-js",
+    "name": "Framework JavaScript",
+    "emoji": "⚛️",
+    "difficulty": 2,
+    "formula": "\\frac{7!}{1260}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "React", "url": "https://react.dev" },
+    "dumb": { "type": "fixed", "name": "jQuery", "url": "https://jquery.com" },
+    "easterEggs": [],
+    "tags": ["react", "jquery", "javascript", "js", "frontend", "web"]
+  },
+  {
+    "slug": "base-donnees",
+    "name": "Base de données",
+    "emoji": "🗄️",
+    "difficulty": 2,
+    "formula": "\\log_{10}(10000)",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "PostgreSQL", "url": "https://postgresql.org" },
+    "dumb": { "type": "fixed", "name": "Access", "url": "https://fr.wikipedia.org/wiki/Microsoft_Access" },
+    "easterEggs": [],
+    "tags": ["postgresql", "access", "sql", "base", "données", "database"]
+  },
+  {
+    "slug": "cybersecurite",
+    "name": "Cybersécurité",
+    "emoji": "🛡️",
+    "difficulty": 2,
+    "formula": "\\lceil \\pi \\rceil",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Proton", "url": "https://proton.me" },
+    "dumb": { "type": "fixed", "name": "Norton", "url": "https://norton.com" },
+    "easterEggs": [],
+    "tags": ["proton", "norton", "sécurité", "antivirus", "vie privée", "vpn"]
+  },
+  {
+    "slug": "crypto-monnaie",
+    "name": "Crypto-monnaie",
+    "emoji": "₿",
+    "difficulty": 2,
+    "formula": "2^3 - \\sqrt{16}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Bitcoin", "url": "https://bitcoin.org" },
+    "dumb": { "type": "fixed", "name": "Dogecoin", "url": "https://dogecoin.com" },
+    "easterEggs": [],
+    "tags": ["bitcoin", "dogecoin", "crypto", "blockchain", "monnaie", "trading"]
+  },
+  {
+    "slug": "hebergement-web",
+    "name": "Hébergement web",
+    "emoji": "🖥️",
+    "difficulty": 2,
+    "formula": "\\frac{24}{6}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Vercel", "url": "https://vercel.com" },
+    "dumb": { "type": "fixed", "name": "OVH", "url": "https://ovhcloud.com" },
+    "easterEggs": [],
+    "tags": ["vercel", "ovh", "hébergement", "serveur", "deploy", "hosting"]
+  },
+  {
+    "slug": "photo-stock",
+    "name": "Banque d'images",
+    "emoji": "📷",
+    "difficulty": 2,
+    "formula": "\\frac{\\sqrt{64}}{2}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Unsplash", "url": "https://unsplash.com" },
+    "dumb": { "type": "fixed", "name": "Shutterstock", "url": "https://shutterstock.com" },
+    "easterEggs": [],
+    "tags": ["unsplash", "shutterstock", "photo", "image", "libre", "stock"]
+  },
+  {
+    "slug": "podcast",
+    "name": "Podcast",
+    "emoji": "🎙️",
+    "difficulty": 2,
+    "formula": "\\binom{4}{3}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Spotify Podcasts", "url": "https://podcasters.spotify.com" },
+    "dumb": { "type": "fixed", "name": "Apple Podcasts", "url": "https://podcasts.apple.com" },
+    "easterEggs": [],
+    "tags": ["podcast", "écouter", "spotify", "apple", "émission", "audio"]
+  },
+  {
+    "slug": "clavier",
+    "name": "Disposition clavier",
+    "emoji": "⌨️",
+    "difficulty": 2,
+    "formula": "\\frac{2^4}{4}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "AZERTY", "url": "https://fr.wikipedia.org/wiki/AZERTY" },
+    "dumb": { "type": "fixed", "name": "QWERTY", "url": "https://fr.wikipedia.org/wiki/QWERTY" },
+    "easterEggs": [],
+    "tags": ["azerty", "qwerty", "clavier", "taper", "disposition", "bépo"]
+  },
+  {
+    "slug": "console-jeux",
+    "name": "Console de jeux",
+    "emoji": "🕹️",
+    "difficulty": 2,
+    "formula": "\\log_2(32)",
+    "correctAnswer": 5,
+    "inputMode": "decimal",
+    "smart": { "name": "PC", "url": "https://fr.wikipedia.org/wiki/Jeu_vid%C3%A9o_sur_ordinateur_personnel" },
+    "dumb": { "type": "fixed", "name": "Stadia", "url": "https://fr.wikipedia.org/wiki/Google_Stadia" },
+    "easterEggs": [],
+    "tags": ["pc", "stadia", "console", "playstation", "xbox", "nintendo", "gaming"]
+  },
+  {
+    "slug": "religion",
+    "name": "Religion",
+    "emoji": "🙏",
+    "difficulty": 3,
+    "formula": "\\int_0^{\\pi} \\sin(x)\\,dx",
+    "correctAnswer": 2,
+    "inputMode": "decimal",
+    "smart": { "name": "Athéisme", "url": "https://fr.wikipedia.org/wiki/Ath%C3%A9isme" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Christianisme", "url": "https://fr.wikipedia.org/wiki/Christianisme" },
+        { "name": "Islam", "url": "https://fr.wikipedia.org/wiki/Islam" },
+        { "name": "Bouddhisme", "url": "https://fr.wikipedia.org/wiki/Bouddhisme" },
+        { "name": "Hindouisme", "url": "https://fr.wikipedia.org/wiki/Hindouisme" },
+        { "name": "Judaïsme", "url": "https://fr.wikipedia.org/wiki/Juda%C3%AFsme" },
+        { "name": "Sikhisme", "url": "https://fr.wikipedia.org/wiki/Sikhisme" },
+        { "name": "Shintoïsme", "url": "https://fr.wikipedia.org/wiki/Shinto%C3%AFsme" },
+        { "name": "Jaïnisme", "url": "https://fr.wikipedia.org/wiki/Ja%C3%AFnisme" }
+      ]
+    },
+    "easterEggs": [
+      { "answer": 0, "name": "Nihilisme", "url": "https://fr.wikipedia.org/wiki/Nihilisme" }
+    ],
+    "tags": ["dieu", "foi", "croyance", "athéisme", "église", "prière", "spiritualité"]
+  },
+  {
+    "slug": "meilleure-cuisine",
+    "name": "Meilleure cuisine",
+    "emoji": "👨‍🍳",
+    "difficulty": 3,
+    "formula": "\\prod_{k=1}^{3} k",
+    "correctAnswer": 6,
+    "inputMode": "decimal",
+    "smart": { "name": "Cuisine française", "url": "https://fr.wikipedia.org/wiki/Cuisine_fran%C3%A7aise" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Cuisine italienne", "url": "https://fr.wikipedia.org/wiki/Cuisine_italienne" },
+        { "name": "Cuisine chinoise", "url": "https://fr.wikipedia.org/wiki/Cuisine_chinoise" },
+        { "name": "Cuisine indienne", "url": "https://fr.wikipedia.org/wiki/Cuisine_indienne" },
+        { "name": "Cuisine mexicaine", "url": "https://fr.wikipedia.org/wiki/Cuisine_mexicaine" },
+        { "name": "Cuisine japonaise", "url": "https://fr.wikipedia.org/wiki/Cuisine_japonaise" },
+        { "name": "Cuisine thaïlandaise", "url": "https://fr.wikipedia.org/wiki/Cuisine_tha%C3%AFlandaise" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["gastronomie", "cuisine", "nourriture", "restaurant", "chef", "recette", "manger"]
+  },
+  {
+    "slug": "meilleur-pays",
+    "name": "Meilleur pays pour vivre",
+    "emoji": "🏔️",
+    "difficulty": 3,
+    "formula": "\\ln(e^3)",
+    "correctAnswer": 3,
+    "inputMode": "decimal",
+    "smart": { "name": "Suisse", "url": "https://fr.wikipedia.org/wiki/Suisse" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "France", "url": "https://fr.wikipedia.org/wiki/France" },
+        { "name": "États-Unis", "url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis" },
+        { "name": "Canada", "url": "https://fr.wikipedia.org/wiki/Canada" },
+        { "name": "Japon", "url": "https://fr.wikipedia.org/wiki/Japon" },
+        { "name": "Australie", "url": "https://fr.wikipedia.org/wiki/Australie" },
+        { "name": "Norvège", "url": "https://fr.wikipedia.org/wiki/Norv%C3%A8ge" },
+        { "name": "Nouvelle-Zélande", "url": "https://fr.wikipedia.org/wiki/Nouvelle-Z%C3%A9lande" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["pays", "vivre", "émigrer", "suisse", "qualité de vie", "expatrié"]
+  },
+  {
+    "slug": "meilleure-langue",
+    "name": "Meilleure langue",
+    "emoji": "🗣️",
+    "difficulty": 3,
+    "formula": "\\frac{d}{dx}(x^4)\\bigg|_{x=1}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Français", "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ais" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Anglais", "url": "https://fr.wikipedia.org/wiki/Anglais" },
+        { "name": "Espagnol", "url": "https://fr.wikipedia.org/wiki/Espagnol" },
+        { "name": "Mandarin", "url": "https://fr.wikipedia.org/wiki/Mandarin_(langue)" },
+        { "name": "Arabe", "url": "https://fr.wikipedia.org/wiki/Arabe" },
+        { "name": "Allemand", "url": "https://fr.wikipedia.org/wiki/Allemand" },
+        { "name": "Portugais", "url": "https://fr.wikipedia.org/wiki/Portugais" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["langue", "français", "parler", "linguistique", "idiome", "dialecte"]
+  },
+  {
+    "slug": "meilleur-sport",
+    "name": "Meilleur sport",
+    "emoji": "⚽",
+    "difficulty": 3,
+    "formula": "\\det\\begin{pmatrix} 3 & 1 \\\\ 2 & 4 \\end{pmatrix}",
+    "correctAnswer": 10,
+    "inputMode": "decimal",
+    "smart": { "name": "Football", "url": "https://fr.wikipedia.org/wiki/Football" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Rugby", "url": "https://fr.wikipedia.org/wiki/Rugby_%C3%A0_XV" },
+        { "name": "Tennis", "url": "https://fr.wikipedia.org/wiki/Tennis" },
+        { "name": "Basketball", "url": "https://fr.wikipedia.org/wiki/Basket-ball" },
+        { "name": "Cricket", "url": "https://fr.wikipedia.org/wiki/Cricket" },
+        { "name": "Golf", "url": "https://fr.wikipedia.org/wiki/Golf" },
+        { "name": "Pétanque", "url": "https://fr.wikipedia.org/wiki/P%C3%A9tanque" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["sport", "football", "foot", "match", "équipe", "jouer"]
+  },
+  {
+    "slug": "forme-art",
+    "name": "Meilleure forme d'art",
+    "emoji": "🎭",
+    "difficulty": 3,
+    "formula": "\\sum_{n=1}^{\\infty} \\frac{1}{2^n}",
+    "correctAnswer": 1,
+    "inputMode": "decimal",
+    "smart": { "name": "Cinéma", "url": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Peinture", "url": "https://fr.wikipedia.org/wiki/Peinture_(art)" },
+        { "name": "Sculpture", "url": "https://fr.wikipedia.org/wiki/Sculpture" },
+        { "name": "Musique", "url": "https://fr.wikipedia.org/wiki/Musique" },
+        { "name": "Danse", "url": "https://fr.wikipedia.org/wiki/Danse" },
+        { "name": "Photographie", "url": "https://fr.wikipedia.org/wiki/Photographie" },
+        { "name": "Théâtre", "url": "https://fr.wikipedia.org/wiki/Th%C3%A9%C3%A2tre" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["art", "cinéma", "culture", "musée", "artiste", "création"]
+  },
+  {
+    "slug": "regime-politique",
+    "name": "Régime politique",
+    "emoji": "🏛️",
+    "difficulty": 3,
+    "formula": "\\frac{\\Gamma(5)}{6}",
+    "correctAnswer": 4,
+    "inputMode": "decimal",
+    "smart": { "name": "Démocratie", "url": "https://fr.wikipedia.org/wiki/D%C3%A9mocratie" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Monarchie", "url": "https://fr.wikipedia.org/wiki/Monarchie" },
+        { "name": "Oligarchie", "url": "https://fr.wikipedia.org/wiki/Oligarchie" },
+        { "name": "Théocratie", "url": "https://fr.wikipedia.org/wiki/Th%C3%A9ocratie" },
+        { "name": "Autocratie", "url": "https://fr.wikipedia.org/wiki/Autocratie" },
+        { "name": "Anarchie", "url": "https://fr.wikipedia.org/wiki/Anarchie" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["régime", "démocratie", "gouvernement", "pouvoir", "état", "constitution"]
+  },
+  {
+    "slug": "meilleur-os",
+    "name": "Meilleur système d'exploitation",
+    "emoji": "🐧",
+    "difficulty": 3,
+    "formula": "\\int_0^2 x\\,dx",
+    "correctAnswer": 2,
+    "inputMode": "decimal",
+    "smart": { "name": "Linux", "url": "https://fr.wikipedia.org/wiki/Linux" },
+    "dumb": {
+      "type": "random",
+      "pool": [
+        { "name": "Windows", "url": "https://fr.wikipedia.org/wiki/Microsoft_Windows" },
+        { "name": "macOS", "url": "https://fr.wikipedia.org/wiki/MacOS" },
+        { "name": "ChromeOS", "url": "https://fr.wikipedia.org/wiki/Chrome_OS" },
+        { "name": "FreeBSD", "url": "https://fr.wikipedia.org/wiki/FreeBSD" }
+      ]
+    },
+    "easterEggs": [],
+    "tags": ["linux", "windows", "macos", "os", "système", "exploitation", "ubuntu"]
+  }
+]
