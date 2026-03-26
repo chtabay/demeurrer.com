@@ -7,7 +7,40 @@
 | Page | Fichier | Rôle |
 |---|---|---|
 | Évidences | `index.html` | 25 cartes fixes, formule unique `2+2`, easter egg Orwell |
-| Explorer | `explore.html` | Catalogue étendu, formules variables, recherche, `categories.json` |
+| Explorer | `explore.html` | Catalogue étendu, recherche, fusion `categories.json` + `categories-bulk.json` |
+
+### Échelle (~1000 thèmes)
+
+- **`categories.json`** : catalogue éditorial (56 entrées : évidences + variantes + questions « touchy »).
+- **`categories-bulk.json`** : entrées générées par `scripts/generate-categories-bulk.mjs` (944 entrées, paires comparatives + liens Wikipédia). Total chargé ≈ **1000**.
+- Pour régénérer le bulk : `node scripts/generate-categories-bulk.mjs`  
+- Si `categories-bulk.json` est absent (404), Explorer ne charge que `categories.json`.
+
+### Mise en page (Explorer + Évidences)
+
+- **Barre fixe en haut** : navigation primaire (grille / loupe) — centre : titre de page (`Explorer` ou `2+2`) — droite : **menu ☰**.
+- **Menu latéral** : consignes d’usage, **direction artistique** (DA) avec libellés visibles, **partage** (copier l’URL, Web Share API si disponible).
+- **Recherche** : action principale sous la barre, champ large ; pas de concurrence visuelle avec les pastilles DA.
+- **Quiz** : `z-index` au-dessus du menu (overlay modale).
+
+---
+
+## Réponses correctes numériques (`correctAnswer`)
+
+**Non**, tout n’est pas `4`. Dans `categories.json` seuls, les exceptions suivantes existent :
+
+| Thème | Formule (résumé) | `correctAnswer` |
+|---|---|---|
+| Religion | ∫₀^π sin(x) dx | **2** |
+| Meilleur OS | ∫₀² x dx | **2** |
+| Meilleure forme d’art | Σ 1/2ⁿ → 1 | **1** |
+| Meilleur pays | ln(e³) | **3** |
+| Meilleure cuisine | ∏₁³ k | **6** |
+| Meilleur sport | det(matrice 2×2) | **10** |
+| Console de jeux | log₂(32) | **5** |
+| Langage, Régime politique, Meilleure langue, … | divers | **4** |
+
+Le fichier **`categories-bulk.json`** fait tourner une liste de formules (souvent équivalentes à 4 pour la blague « 2+2 ») ; l’easter egg **5 → 1984** n’est présent que là où la formule affichée est exactement `2+2`.
 
 ---
 
