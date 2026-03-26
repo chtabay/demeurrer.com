@@ -7,14 +7,13 @@
 | Page | Fichier | Rôle |
 |---|---|---|
 | Évidences | `index.html` | 25 cartes fixes, formule unique `2+2`, easter egg Orwell |
-| Explorer | `explore.html` | Catalogue étendu, recherche, fusion `categories.json` + `categories-bulk.json` |
+| Explorer | `explore.html` | Catalogue étendu (100 thèmes), recherche, `categories.json` |
 
-### Échelle (~1000 thèmes)
+### Échelle (100 thèmes)
 
-- **`categories.json`** : catalogue éditorial (56 entrées : évidences + variantes + questions « touchy »).
-- **`categories-bulk.json`** : entrées générées par `scripts/generate-categories-bulk.mjs` (944 entrées, paires comparatives + liens Wikipédia). Total chargé ≈ **1000**.
-- Pour régénérer le bulk : `node scripts/generate-categories-bulk.mjs`  
-- Si `categories-bulk.json` est absent (404), Explorer ne charge que `categories.json`.
+- **`categories.json`** : catalogue éditorial unique — **100 entrées**.
+  - 25 évidences (Page A), 13 variantes difficulté 1, 10 intermédiaires difficulté 2, 8 questions « touchy » difficulté 3, **44 sites web réels** (difficulté 1–2).
+- **`categories-bulk.json`** : absent (fallback `[]` géré par Explorer).
 
 ### Mise en page (Explorer + Évidences)
 
@@ -96,7 +95,7 @@ Exception : répondre **5** → 1984 (George Orwell), Wikipédia.
 
 ## Page B — Le Catalogue Étendu (`explore.html`)
 
-Source : `categories.json` — 56 entrées.
+Source : `categories.json` — 100 entrées.
 
 ### Niveaux de difficulté
 
@@ -156,6 +155,106 @@ S'y ajoutent :
 
 ---
 
+### 44 nouveaux thèmes — Sites web réels (difficulté 1–2)
+
+Noms opaques (ne révèlent pas la paire smart/dumb). Formules variées, toutes = 4. Easter egg `5 → 1984` uniquement sur les formules `2+2`.
+
+#### E-commerce / Marketplace
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 👗 Vente entre particuliers | `2+2` | Vinted | eBay |
+| 🏷️ Comparateur de prix | `8-4` | Idealo | Google Shopping |
+| 🧶 Artisanat en ligne | `1+3` | Etsy | Amazon Handmade |
+| 👠 Mode en ligne | `6-2` | Zalando | Shein |
+| 🚙 Voiture d'occasion | `2²` | La Centrale | AutoScout24 |
+
+#### Finance
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 💸 Néo-banque | `√16` | Revolut | N26 |
+| 📈 Investissement en bourse | `20÷5` | Trading 212 | eToro |
+| 🧮 Gestion de budget | `2×2` | Bankin | Linxo |
+| 🤝 Financement participatif | `12-8` | KissKissBankBank | Ulule |
+| 🛡️ Assurance en ligne | `7-3` | Alan | Luko |
+
+#### Productivité
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 📝 Traitement de texte en ligne | `9-5` | Google Docs | Word Online |
+| 📊 Présentation en ligne | `28÷7` | Google Slides | Prezi |
+| 🗒️ Prise de notes | `24/6` | Obsidian | Evernote |
+| ⚙️ Automatisation | `√144-8` | Zapier | IFTTT |
+| 🔐 Gestionnaire de mots de passe | `log₁₀(10000)` | 1Password | LastPass |
+| ✍️ Signature électronique | `16÷4` | DocuSign | Yousign |
+| 📋 Formulaire en ligne | `3!-2` | Typeform | Google Forms |
+| 🤖 CRM | `2³-√16` | HubSpot | Salesforce |
+
+#### Communication
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 📬 Newsletter | `2+2` | Substack | Mailchimp |
+| 💬 Messagerie d'équipe | `8-4` | Slack | Discord |
+| 🐦 Microblogging | `1+3` | X (Twitter) | Threads |
+| 💭 Forum en ligne | `6-2` | Reddit | Quora |
+
+#### Développement
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 🔄 CI/CD | `√64/2` | GitHub Actions | Jenkins |
+| 📡 Monitoring applicatif | `C(4,3)` | Datadog | New Relic |
+| 🐳 Conteneurisation | `2⁴/4` | Docker | Podman |
+| 🌐 DNS et CDN | `⌈π⌉` | Cloudflare | GoDaddy |
+| 🔌 Client API | `log₂(16)` | Postman | Insomnia |
+
+#### Voyage
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 🏖️ Location de vacances | `2+2` | Airbnb | Abritel |
+| 🚗 Location de voiture | `2²` | Getaround | Sixt |
+| 🚐 Covoiturage | `√16` | BlaBlaCar | Karos |
+
+#### Éducation
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 🎓 MOOC | `20÷5` | Coursera | Udemy |
+| 🗣️ Apprentissage des langues | `2×2` | Duolingo | Babbel |
+
+#### Emploi
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 💼 Site d'emploi | `12-8` | Indeed | France Travail |
+| 🧑‍💻 Plateforme freelance | `7-3` | Malt | Fiverr |
+
+#### Santé / Sport
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 🩺 Rendez-vous médical | `9-5` | Doctolib | Maiia |
+| 🏃 Suivi sportif | `28÷7` | Strava | Nike Run Club |
+
+#### Quotidien
+
+| Thème | Formule | Smart | Dumb |
+|---|---|---|---|
+| 👨‍🍳 Recette de cuisine | `2+2` | Marmiton | 750g |
+| 🌦️ Météo | `16÷4` | Météo France | AccuWeather |
+| 🗺️ Cartographie | `3!-2` | Google Maps | OpenStreetMap |
+| ⭐ Avis en ligne | `8-4` | Trustpilot | TripAdvisor |
+| 🎫 Billetterie événements | `1+3` | Ticketmaster | Fnac Spectacles |
+| 📖 Livres numériques | `6-2` | Kindle | Kobo |
+| 📌 Petites annonces | `2+2` | Leboncoin | ParuVendu |
+| 🔥 Bons plans et promos | `√16` | Dealabs | iGraal |
+
+---
+
 ### Difficulté 3 — Les questions touchy
 
 Routage "dumb" = **pool aléatoire**. Le site ne tranche pas entre les mauvaises réponses.
@@ -178,7 +277,7 @@ Routage "dumb" = **pool aléatoire**. Le site ne tranche pas entre les mauvaises
 | Formule concernée | Réponse | Destination | Logique |
 |---|---|---|---|
 | `2+2` (toutes les entrées) | 5 | 1984 (George Orwell) | Référence culturelle directe : "2+2=5" dans le roman |
-| `√144 - 8` (Langage prog.) | 42 | La grande question sur la vie, l'univers et le reste | Référence au Guide du voyageur galactique |
+| `√144 - 8` (Langage prog., Automatisation) | 42 | La grande question sur la vie, l'univers et le reste | Référence au Guide du voyageur galactique |
 | `∫₀^π sin(x) dx` (Religion) | 0 | Nihilisme | Si rien n'existe → nihilisme |
 
 ---
