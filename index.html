@@ -141,36 +141,10 @@
         var(--bg-primary);
     }
 
-    /* ========== HEADER ========== */
-    header {
-      text-align: center;
-      padding: 3rem 1.5rem 1rem;
-    }
-
-    header h1 {
-      font-family: var(--font-heading);
-      font-weight: 800;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    header p {
-      color: var(--text-secondary);
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      margin-top: 0.75rem;
-      max-width: 520px;
-      margin-inline: auto;
-      line-height: 1.6;
-    }
-
     /* ========== GRID ========== */
     .grid-section {
       max-width: 1100px;
-      margin: 2rem auto 4rem;
+      margin: 3.5rem auto 4rem;
       padding: 0 1.5rem;
     }
 
@@ -551,6 +525,44 @@
 
     .theme-btn:hover .theme-label { display: block; }
 
+    /* ========== POLITICAL CARD ========== */
+    .political-choice {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .political-btn {
+      padding: 0.85rem 2.2rem;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, color 0.2s;
+    }
+
+    .political-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .political-btn:active { transform: translateY(0); }
+
+    .faux-verdict {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 4rem;
+      color: var(--fail);
+      margin: 1rem 0;
+      letter-spacing: -0.02em;
+    }
+
     /* ========== UTILS ========== */
     .sr-only {
       position: absolute;
@@ -608,11 +620,6 @@
     </button>
   </nav>
 
-  <header>
-    <h1>2+2.com</h1>
-    <p>Découvrez le site que vous méritez.</p>
-  </header>
-
   <section class="grid-section">
     <div class="card-grid" id="cardGrid"></div>
   </section>
@@ -622,28 +629,36 @@
     <div class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
 
-      <!-- QUIZ -->
+      <!-- QUIZ (standard) -->
       <div class="quiz-container" id="quizContainer">
         <div class="modal-emoji" id="modalEmoji"></div>
         <div class="modal-title" id="modalTitle"></div>
-        <div class="modal-subtitle">Prouvez que vous méritez le meilleur.</div>
-        <div class="quiz-question">2 + 2 = ?</div>
-        <input
-          type="number"
-          class="quiz-input"
-          id="quizInput"
-          placeholder="?"
-          autocomplete="off"
-          inputmode="numeric"
-        >
-        <br>
-        <button class="quiz-btn" id="quizBtn">
-          Valider
-          <span>→</span>
-        </button>
+        <div class="modal-subtitle" id="modalSubtitle">Prouvez que vous méritez le meilleur.</div>
+        <div class="quiz-question" id="quizQuestion">2 + 2 = ?</div>
+        <div id="standardInput">
+          <input
+            type="number"
+            class="quiz-input"
+            id="quizInput"
+            placeholder="?"
+            autocomplete="off"
+            inputmode="numeric"
+          >
+          <br>
+          <button class="quiz-btn" id="quizBtn">
+            Valider
+            <span>→</span>
+          </button>
+        </div>
+        <div id="politicalInput" style="display:none">
+          <div class="political-choice">
+            <button class="political-btn" id="btnGauche">Gauche</button>
+            <button class="political-btn" id="btnDroite">Droite</button>
+          </div>
+        </div>
       </div>
 
-      <!-- RESULT -->
+      <!-- RESULT (standard) -->
       <div class="result-container" id="resultContainer">
         <div class="result-icon" id="resultIcon"></div>
         <div class="result-title" id="resultTitle"></div>
@@ -654,6 +669,13 @@
         </a>
         <br>
         <button class="retry-btn" id="retryBtn">← Choisir un autre thème</button>
+      </div>
+
+      <!-- RESULT (political) -->
+      <div class="result-container" id="politicalResult">
+        <div class="faux-verdict">Faux.</div>
+        <br>
+        <button class="retry-btn" id="retryBtnPolitical">←</button>
       </div>
     </div>
   </div>
@@ -807,6 +829,11 @@
         emoji: "☁️",
         smart: { name: "Google Drive", url: "https://drive.google.com" },
         dumb:  { name: "OneDrive", url: "https://onedrive.live.com" }
+      },
+      {
+        name: "Politique",
+        emoji: "🗳️",
+        type: "political"
       }
     ];
 
@@ -863,6 +890,15 @@
       grid.appendChild(card);
     });
 
+    const standardInput = document.getElementById("standardInput");
+    const politicalInput = document.getElementById("politicalInput");
+    const politicalResult = document.getElementById("politicalResult");
+    const quizQuestion = document.getElementById("quizQuestion");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const btnGauche = document.getElementById("btnGauche");
+    const btnDroite = document.getElementById("btnDroite");
+    const retryBtnPolitical = document.getElementById("retryBtnPolitical");
+
     function openQuiz(category) {
       currentCategory = category;
       modalEmoji.textContent = category.emoji;
@@ -870,12 +906,24 @@
 
       quizContainer.classList.remove("hide");
       resultContainer.classList.remove("show");
+      politicalResult.classList.remove("show");
       quizInput.value = "";
+
+      const isPolitical = category.type === "political";
+      standardInput.style.display = isPolitical ? "none" : "";
+      politicalInput.style.display = isPolitical ? "" : "none";
+      quizQuestion.textContent = isPolitical ? "Pour qui voter ?" : "2 + 2 = ?";
+      modalSubtitle.textContent = isPolitical ? "" : "Prouvez que vous méritez le meilleur.";
 
       overlay.classList.add("active");
       document.body.style.overflow = "hidden";
 
-      setTimeout(() => quizInput.focus(), 400);
+      if (!isPolitical) setTimeout(() => quizInput.focus(), 400);
+    }
+
+    function showPoliticalResult() {
+      quizContainer.classList.add("hide");
+      politicalResult.classList.add("show");
     }
 
     function closeOverlay() {
@@ -929,6 +977,9 @@
     });
 
     retryBtn.addEventListener("click", closeOverlay);
+    retryBtnPolitical.addEventListener("click", closeOverlay);
+    btnGauche.addEventListener("click", showPoliticalResult);
+    btnDroite.addEventListener("click", showPoliticalResult);
 
     document.querySelectorAll(".theme-btn").forEach(btn => {
       btn.addEventListener("click", () => {
