@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="neon">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,120 +7,11 @@
   <meta name="description" content="Des milliers de thèmes. Une seule bonne réponse.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Nunito+Sans:wght@400;600;700&family=Oxanium:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="themes.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <style>
-    :root,
-    [data-theme="encre"] {
-      --bg-primary: #0c0e14;
-      --bg-card: #131824;
-      --bg-card-hover: #1a2033;
-      --accent: #ff5c45;
-      --accent-glow: rgba(255, 92, 69, 0.28);
-      --accent-secondary: #e8b84a;
-      --text-primary: #eceaf2;
-      --text-secondary: #8b90a8;
-      --success: #5fd89a;
-      --fail: #ff6b6b;
-      --radius: 14px;
-      --transition: 0.28s cubic-bezier(0.33, 1, 0.68, 1);
-      --font-heading: 'Fraunces', Georgia, serif;
-      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
-      --card-border: rgba(255, 255, 255, 0.06);
-      --card-border-hover: rgba(255, 92, 69, 0.35);
-      --card-shadow-hover: 0 14px 48px rgba(255, 92, 69, 0.12);
-      --overlay-bg: rgba(12, 14, 20, 0.88);
-      --modal-border: rgba(255, 255, 255, 0.08);
-      --gradient-bg-1: radial-gradient(ellipse 80% 55% at 85% 8%, rgba(255, 92, 69, 0.09) 0%, transparent 55%);
-      --gradient-bg-2: radial-gradient(ellipse 50% 45% at 12% 88%, rgba(91, 123, 199, 0.14) 0%, transparent 60%);
-      --pattern-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg stroke='%235d7cb8' stroke-width='0.35' opacity='0.14'%3E%3Cline x1='0' y1='24' x2='48' y2='24'/%3E%3Cline x1='24' y1='0' x2='24' y2='48'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 48px 48px;
-      --input-bg: rgba(255, 255, 255, 0.04);
-      --input-border: rgba(255, 255, 255, 0.12);
-    }
-
-    [data-theme="halftone"] {
-      --bg-primary: #f3efe6;
-      --bg-card: #fffdf8;
-      --bg-card-hover: #f7f2e8;
-      --accent: #0d0d0d;
-      --accent-glow: rgba(0, 0, 0, 0.1);
-      --accent-secondary: #b31928;
-      --text-primary: #121212;
-      --text-secondary: #5c5850;
-      --success: #1a7f4c;
-      --fail: #b31928;
-      --radius: 4px;
-      --transition: 0.22s ease;
-      --font-heading: 'Newsreader', Georgia, serif;
-      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
-      --card-border: rgba(0, 0, 0, 0.1);
-      --card-border-hover: rgba(179, 25, 40, 0.4);
-      --card-shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.08);
-      --overlay-bg: rgba(243, 239, 230, 0.92);
-      --modal-border: rgba(0, 0, 0, 0.1);
-      --gradient-bg-1: linear-gradient(180deg, rgba(179, 25, 40, 0.04) 0%, transparent 28%);
-      --gradient-bg-2: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 55%);
-      --pattern-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Ccircle cx='6' cy='6' r='1.25' fill='%23000' opacity='0.05'/%3E%3C/svg%3E") 0 0 / 12px 12px;
-      --input-bg: rgba(0, 0, 0, 0.03);
-      --input-border: rgba(0, 0, 0, 0.14);
-    }
-
-    [data-theme="bifleur"] {
-      --bg-primary: #080808;
-      --bg-card: #101010;
-      --bg-card-hover: #161616;
-      --accent: #dfff3a;
-      --accent-glow: rgba(223, 255, 58, 0.22);
-      --accent-secondary: #ff2d9c;
-      --text-primary: #f8f8f0;
-      --text-secondary: #9a9a8a;
-      --success: #dfff3a;
-      --fail: #ff2d9c;
-      --radius: 0;
-      --transition: 0.12s cubic-bezier(0.7, 0, 0.3, 1);
-      --font-heading: 'Archivo Black', Impact, sans-serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --card-border: rgba(223, 255, 58, 0.22);
-      --card-border-hover: rgba(223, 255, 58, 0.55);
-      --card-shadow-hover: 0 0 32px rgba(223, 255, 58, 0.15);
-      --overlay-bg: rgba(8, 8, 8, 0.92);
-      --modal-border: rgba(223, 255, 58, 0.35);
-      --gradient-bg-1: conic-gradient(from 200deg at 50% 120%, rgba(255, 45, 156, 0.14), transparent 38%, rgba(223, 255, 58, 0.07), transparent 72%);
-      --gradient-bg-2: radial-gradient(circle at 12% 18%, rgba(255, 45, 156, 0.11) 0%, transparent 42%);
-      --pattern-bg: repeating-linear-gradient(-52deg, transparent, transparent 6px, rgba(223, 255, 58, 0.04) 6px, rgba(223, 255, 58, 0.04) 7px),
-        repeating-linear-gradient(128deg, transparent, transparent 9px, rgba(255, 45, 156, 0.028) 9px, rgba(255, 45, 156, 0.028) 10px);
-      --input-bg: rgba(223, 255, 58, 0.06);
-      --input-border: rgba(223, 255, 58, 0.35);
-    }
-
-    [data-theme="gres"] {
-      --bg-primary: #e5dbd2;
-      --bg-card: #efe6dc;
-      --bg-card-hover: #f5ebe2;
-      --accent: #6b3d2e;
-      --accent-glow: rgba(107, 61, 46, 0.18);
-      --accent-secondary: #c87654;
-      --text-primary: #2a1f1a;
-      --text-secondary: #6e5a52;
-      --success: #4a7c59;
-      --fail: #a34a3d;
-      --radius: 6px;
-      --transition: 0.3s ease;
-      --font-heading: 'Libre Baskerville', Georgia, serif;
-      --font-body: 'Source Sans 3', system-ui, sans-serif;
-      --card-border: rgba(107, 61, 46, 0.15);
-      --card-border-hover: rgba(200, 118, 84, 0.45);
-      --card-shadow-hover: 0 10px 40px rgba(107, 61, 46, 0.1);
-      --overlay-bg: rgba(229, 219, 210, 0.93);
-      --modal-border: rgba(107, 61, 46, 0.2);
-      --gradient-bg-1: radial-gradient(ellipse 90% 60% at 100% 80%, rgba(200, 118, 84, 0.12) 0%, transparent 50%);
-      --gradient-bg-2: radial-gradient(ellipse 60% 50% at 0% 0%, rgba(107, 61, 46, 0.06) 0%, transparent 50%);
-      --pattern-bg: repeating-linear-gradient(178deg, rgba(107, 61, 46, 0.028) 0px, rgba(107, 61, 46, 0.028) 1px, transparent 1px, transparent 5px);
-      --input-bg: rgba(107, 61, 46, 0.06);
-      --input-border: rgba(107, 61, 46, 0.22);
-    }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -136,15 +27,6 @@
       position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
       background-repeat: repeat;
-    }
-
-    [data-theme="halftone"] .noise-overlay,
-    [data-theme="gres"] .noise-overlay {
-      opacity: 0.018;
-    }
-
-    [data-theme="bifleur"] .noise-overlay {
-      opacity: 0.045;
     }
 
     .bg-gradient {
@@ -247,6 +129,9 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      max-height: min(52vh, 26rem);
+      overflow-y: auto;
+      padding-right: 0.25rem;
     }
 
     .theme-row {
@@ -274,6 +159,18 @@
       flex-shrink: 0;
       border: 2px solid var(--card-border);
     }
+    .theme-row[data-pick="neon"] .theme-swatch {
+      background: linear-gradient(135deg, #0a0a0f 45%, #7c5cfc 45%, #fc5c9c);
+    }
+    .theme-row[data-pick="minimal"] .theme-swatch {
+      background: linear-gradient(135deg, #fafaf9 50%, #18181b 50%);
+    }
+    .theme-row[data-pick="vintage"] .theme-swatch {
+      background: linear-gradient(135deg, #1a1410 50%, #e8a838 50%);
+    }
+    .theme-row[data-pick="brutalist"] .theme-swatch {
+      background: linear-gradient(135deg, #f0f0e8 50%, #ff3300 50%);
+    }
     .theme-row[data-pick="encre"] .theme-swatch {
       background:
         linear-gradient(90deg, transparent 48%, rgba(93, 124, 184, 0.35) 48%, rgba(93, 124, 184, 0.35) 52%, transparent 52%),
@@ -289,6 +186,24 @@
     }
     .theme-row[data-pick="gres"] .theme-swatch {
       background: repeating-linear-gradient(0deg, #e5dbd2, #e5dbd2 2px, #c87654 2px, #c87654 3px);
+    }
+    .theme-row[data-pick="ligne-claire"] .theme-swatch {
+      background: linear-gradient(180deg, #9fd4ef 40%, #fff8ee 40%, #0c2a45);
+    }
+    .theme-row[data-pick="riso"] .theme-swatch {
+      background: linear-gradient(120deg, #0a5f5f 40%, transparent 40%), linear-gradient(-40deg, #e85d04 35%, #f4eee4 35%);
+    }
+    .theme-row[data-pick="metal"] .theme-swatch {
+      background: repeating-linear-gradient(-20deg, #1a1f27, #1a1f27 2px, #7ec8e3 2px, #7ec8e3 3px);
+    }
+    .theme-row[data-pick="op-art"] .theme-swatch {
+      background: repeating-conic-gradient(#000 0deg 10deg, #fff 10deg 20deg);
+    }
+    .theme-row[data-pick="deco"] .theme-swatch {
+      background: conic-gradient(from 0deg, #d4af37, #0c0a08, #d4af37);
+    }
+    .theme-row[data-pick="chlorophylle"] .theme-swatch {
+      background: radial-gradient(circle at 30% 30%, #c8f27a 0%, transparent 45%), #0d1f14;
     }
 
     .share-row {
@@ -738,10 +653,20 @@
     <div class="drawer-panel" id="drawerPanel">
       <p class="drawer-section-title">Direction artistique</p>
       <div class="theme-switcher-drawer" role="group" aria-label="Direction artistique">
-        <button type="button" class="theme-row active" data-pick="encre"><span class="theme-swatch" aria-hidden="true"></span> Encre &amp; calque</button>
+        <button type="button" class="theme-row active" data-pick="neon"><span class="theme-swatch" aria-hidden="true"></span> Neon</button>
+        <button type="button" class="theme-row" data-pick="minimal"><span class="theme-swatch" aria-hidden="true"></span> Minimal</button>
+        <button type="button" class="theme-row" data-pick="vintage"><span class="theme-swatch" aria-hidden="true"></span> Vintage</button>
+        <button type="button" class="theme-row" data-pick="brutalist"><span class="theme-swatch" aria-hidden="true"></span> Brutalist</button>
+        <button type="button" class="theme-row" data-pick="encre"><span class="theme-swatch" aria-hidden="true"></span> Encre &amp; calque</button>
         <button type="button" class="theme-row" data-pick="halftone"><span class="theme-swatch" aria-hidden="true"></span> Pointillé</button>
         <button type="button" class="theme-row" data-pick="bifleur"><span class="theme-swatch" aria-hidden="true"></span> Bifleur</button>
         <button type="button" class="theme-row" data-pick="gres"><span class="theme-swatch" aria-hidden="true"></span> Grès</button>
+        <button type="button" class="theme-row" data-pick="ligne-claire"><span class="theme-swatch" aria-hidden="true"></span> Ligne claire</button>
+        <button type="button" class="theme-row" data-pick="riso"><span class="theme-swatch" aria-hidden="true"></span> Risographie</button>
+        <button type="button" class="theme-row" data-pick="metal"><span class="theme-swatch" aria-hidden="true"></span> Métal brossé</button>
+        <button type="button" class="theme-row" data-pick="op-art"><span class="theme-swatch" aria-hidden="true"></span> Op-art</button>
+        <button type="button" class="theme-row" data-pick="deco"><span class="theme-swatch" aria-hidden="true"></span> Art déco</button>
+        <button type="button" class="theme-row" data-pick="chlorophylle"><span class="theme-swatch" aria-hidden="true"></span> Chlorophylle</button>
       </div>
       <p class="drawer-section-title">Partager</p>
       <div class="share-row">
@@ -1143,10 +1068,13 @@
       });
     });
 
-    const LEGACY_THEMES = { neon: 'encre', minimal: 'halftone', vintage: 'gres', brutalist: 'bifleur' };
+    const VALID_THEMES = new Set([
+      'neon', 'minimal', 'vintage', 'brutalist', 'encre', 'halftone', 'bifleur', 'gres',
+      'ligne-claire', 'riso', 'metal', 'op-art', 'deco', 'chlorophylle'
+    ]);
     let savedTheme = localStorage.getItem('theme');
-    if (savedTheme && LEGACY_THEMES[savedTheme]) {
-      savedTheme = LEGACY_THEMES[savedTheme];
+    if (savedTheme && !VALID_THEMES.has(savedTheme)) {
+      savedTheme = 'neon';
       localStorage.setItem('theme', savedTheme);
     }
     if (savedTheme) {
