@@ -18,7 +18,7 @@ Le sarcasme est structurel, jamais verbalisé. Le site est explicitement ironiqu
 
 ### Page A — Les évidences (`index.html`)
 
-25 cartes en grille fixe, 24 catégories standard (quiz 2+2=?) et 1 carte spéciale (Politique). Un musée de certitudes immuables. Rien ne bouge, rien ne s'explique.
+Grille compacte des **100 thèmes** (données `categories.json`) : mêmes règles que l’explorateur (formule KaTeX, easter eggs, `dumb` fixe ou aléatoire), plus la carte **Politique**. Pastille discrète sur les cartes qui ont au moins un easter egg.
 
 La carte Politique demande "Pour qui voter ?" et répond toujours "Faux." — quel que soit le choix.
 
@@ -57,16 +57,16 @@ Religion, politique, cuisine, langue, pays... La formule est volontairement comp
 - **0 → Nihilisme** : sur le thème Religion, répondre 0 mène à la page Wikipedia du Nihilisme.
 - **42 → La Grande Question** : sur certains thèmes, répondre 42 mène à la page Wikipedia de la réponse ultime (Guide du voyageur galactique).
 
-Aucun signal visuel n'indique qu'un easter egg existe. La découverte est organique.
+Sur la page d’accueil, une petite pastille (couleur secondaire) marque les thèmes qui ont au moins un easter egg ; sur Explorer, pas d’indicateur.
 
 ## Directions artistiques
 
-Toggle en haut à droite, 4 DA disponibles. C'est un outil de mise au point : les DA actuelles sont des points de départ pour itérer. Le toggle permet d'empiler et tester de nouvelles DA. Le thème choisi est partagé entre les deux pages via `localStorage`.
+Menu latéral : plusieurs DA (classiques + atelier + pixel, voxel, etc.). C'est un outil de mise au point : les DA actuelles sont des points de départ pour itérer. Le toggle permet d'empiler et tester de nouvelles DA. Le thème choisi est partagé entre les deux pages via `localStorage`.
 
 ## Stack technique
 
-- `index.html` : page des évidences (autonome, aucune dépendance)
-- `explore.html` : page d'exploration (charge `categories.json`, KaTeX via CDN)
+- `index.html` : page des évidences (charge `categories.json`, KaTeX via CDN, `themes.css`)
+- `explore.html` : page d'exploration (idem + recherche)
 - `categories.json` : catalogue des thèmes
 - Fonts : Google Fonts (Space Grotesk, Syne, DM Serif Display, Space Mono)
 - Formules : KaTeX (CDN)

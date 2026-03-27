@@ -7,7 +7,7 @@
   <meta name="description" content="Des milliers de thèmes. Une seule bonne réponse.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Nunito+Sans:wght@400;600;700&family=Oxanium:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Nunito+Sans:wght@400;600;700&family=Oxanium:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;600&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="themes.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -204,6 +204,12 @@
     }
     .theme-row[data-pick="chlorophylle"] .theme-swatch {
       background: radial-gradient(circle at 30% 30%, #c8f27a 0%, transparent 45%), #0d1f14;
+    }
+    .theme-row[data-pick="pixel"] .theme-swatch {
+      background: repeating-conic-gradient(#ff6b9d 0% 25%, #1a0d2e 0% 50%) 0 0 / 6px 6px;
+    }
+    .theme-row[data-pick="voxel"] .theme-swatch {
+      background: linear-gradient(180deg, #87ceeb 35%, #5a9638 35%, #3d2914 100%);
     }
 
     .share-row {
@@ -423,7 +429,7 @@
     .modal {
       background: var(--bg-card);
       border: 1px solid var(--modal-border);
-      border-radius: 24px;
+      border-radius: var(--radius);
       padding: 3rem 2.5rem;
       max-width: 500px;
       width: 90%;
@@ -667,6 +673,8 @@
         <button type="button" class="theme-row" data-pick="op-art"><span class="theme-swatch" aria-hidden="true"></span> Op-art</button>
         <button type="button" class="theme-row" data-pick="deco"><span class="theme-swatch" aria-hidden="true"></span> Art déco</button>
         <button type="button" class="theme-row" data-pick="chlorophylle"><span class="theme-swatch" aria-hidden="true"></span> Chlorophylle</button>
+        <button type="button" class="theme-row" data-pick="pixel"><span class="theme-swatch" aria-hidden="true"></span> Pixel art</button>
+        <button type="button" class="theme-row" data-pick="voxel"><span class="theme-swatch" aria-hidden="true"></span> Voxel</button>
       </div>
       <p class="drawer-section-title">Partager</p>
       <div class="share-row">
@@ -1070,7 +1078,7 @@
 
     const VALID_THEMES = new Set([
       'neon', 'minimal', 'vintage', 'brutalist', 'encre', 'halftone', 'bifleur', 'gres',
-      'ligne-claire', 'riso', 'metal', 'op-art', 'deco', 'chlorophylle'
+      'ligne-claire', 'riso', 'metal', 'op-art', 'deco', 'chlorophylle', 'pixel', 'voxel'
     ]);
     let savedTheme = localStorage.getItem('theme');
     if (savedTheme && !VALID_THEMES.has(savedTheme)) {

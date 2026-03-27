@@ -6,7 +6,7 @@
 
 | Page | Fichier | Rôle |
 |---|---|---|
-| Évidences | `index.html` | 25 cartes fixes, formule unique `2+2`, easter egg Orwell |
+| Évidences | `index.html` | 100 cartes compactes (`categories.json`), formules KaTeX, easter eggs ; pastille si egg |
 | Explorer | `explore.html` | Catalogue étendu (100 thèmes), recherche, `categories.json` |
 
 ### Échelle (100 thèmes)

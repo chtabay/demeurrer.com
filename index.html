@@ -7,8 +7,9 @@
   <meta name="description" content="Un simple test pour savoir si vous méritez le meilleur du web.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Nunito+Sans:wght@400;600;700&family=Oxanium:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:ital,wght@0,400;0,600;0,700&family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Josefin+Sans:wght@400;600;700&family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Newsreader:ital,opsz,wght@0,400;0,700&family=Nunito+Sans:wght@400;600;700&family=Oxanium:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+3:wght@400;600;700&family=Unbounded:wght@600;700;800&family=Work+Sans:wght@400;600&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <style>
     * {
       margin: 0;
@@ -46,24 +47,25 @@
         var(--bg-primary);
     }
 
-    /* ========== GRID ========== */
+    /* ========== GRID (100 cartes compactes) ========== */
     .grid-section {
-      max-width: 1100px;
-      margin: calc(4.5rem + 0.75rem) auto 4rem;
-      padding: 0 1.5rem;
+      max-width: min(1200px, 100%);
+      margin: calc(4.5rem + 0.75rem) auto 3rem;
+      padding: 0 1rem;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+      gap: 0.45rem;
     }
 
-    @media (max-width: 900px) {
-      .card-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (min-width: 600px) {
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
     }
-    @media (max-width: 600px) {
-      .card-grid { grid-template-columns: repeat(2, 1fr); }
+
+    @media (min-width: 1100px) {
+      .card-grid { grid-template-columns: repeat(10, 1fr); }
     }
 
     .card {
@@ -71,14 +73,27 @@
       background: var(--bg-card);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 1.8rem 1rem 1.4rem;
+      padding: 0.5rem 0.35rem 0.45rem;
       text-align: center;
       cursor: pointer;
       transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
       overflow: hidden;
       opacity: 0;
-      transform: translateY(24px);
-      animation: cardIn 0.5s ease forwards;
+      transform: translateY(12px);
+      animation: cardIn 0.4s ease forwards;
+    }
+
+    .card--has-egg::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      opacity: 0.75;
+      pointer-events: none;
     }
 
     .card::before {
@@ -101,23 +116,29 @@
     .card:hover::before { opacity: 1; }
 
     .card-emoji {
-      font-size: 2.6rem;
+      font-size: 1.35rem;
       display: block;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.3rem;
       position: relative;
       z-index: 1;
       transition: transform 0.3s ease;
     }
 
-    .card:hover .card-emoji { transform: scale(1.15) rotate(-4deg); }
+    .card:hover .card-emoji { transform: scale(1.12) rotate(-3deg); }
 
     .card-label {
-      font-size: 0.85rem;
+      font-size: 0.62rem;
       font-weight: 600;
       color: var(--text-primary);
       position: relative;
       z-index: 1;
-      line-height: 1.4;
+      line-height: 1.2;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      hyphens: auto;
+      word-break: break-word;
     }
 
     @keyframes cardIn {
@@ -148,7 +169,7 @@
     .modal {
       background: var(--bg-card);
       border: 1px solid var(--modal-border);
-      border-radius: 24px;
+      border-radius: var(--radius);
       padding: 3rem 2.5rem;
       max-width: 460px;
       width: 90%;
@@ -189,15 +210,24 @@
       margin-bottom: 0.5rem;
     }
 
-    .quiz-question {
-      font-family: var(--font-heading);
-      font-weight: 800;
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .quiz-formula {
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+      padding: 0.35rem 0;
+      color: var(--accent);
+    }
+
+    .quiz-formula .katex-display {
+      margin: 0;
+    }
+
+    .quiz-formula .katex {
+      font-size: clamp(1.1rem, 4vw, 2rem);
+      color: var(--accent);
+    }
+
+    .quiz-formula .katex * {
+      color: inherit;
     }
 
     .quiz-input {
@@ -528,6 +558,12 @@
     .theme-row[data-pick="chlorophylle"] .theme-swatch {
       background: radial-gradient(circle at 30% 30%, #c8f27a 0%, transparent 45%), #0d1f14;
     }
+    .theme-row[data-pick="pixel"] .theme-swatch {
+      background: repeating-conic-gradient(#ff6b9d 0% 25%, #1a0d2e 0% 50%) 0 0 / 6px 6px;
+    }
+    .theme-row[data-pick="voxel"] .theme-swatch {
+      background: linear-gradient(180deg, #87ceeb 35%, #5a9638 35%, #3d2914 100%);
+    }
 
     .share-row {
       display: flex;
@@ -668,6 +704,8 @@
         <button type="button" class="theme-row" data-pick="op-art"><span class="theme-swatch" aria-hidden="true"></span> Op-art</button>
         <button type="button" class="theme-row" data-pick="deco"><span class="theme-swatch" aria-hidden="true"></span> Art déco</button>
         <button type="button" class="theme-row" data-pick="chlorophylle"><span class="theme-swatch" aria-hidden="true"></span> Chlorophylle</button>
+        <button type="button" class="theme-row" data-pick="pixel"><span class="theme-swatch" aria-hidden="true"></span> Pixel art</button>
+        <button type="button" class="theme-row" data-pick="voxel"><span class="theme-swatch" aria-hidden="true"></span> Voxel</button>
       </div>
       <p class="drawer-section-title">Partager</p>
       <div class="share-row">
@@ -690,15 +728,15 @@
       <div class="quiz-container" id="quizContainer">
         <div class="modal-emoji" id="modalEmoji"></div>
         <div class="modal-title" id="modalTitle"></div>
-        <div class="quiz-question" id="quizQuestion">2 + 2 = ?</div>
+        <div class="quiz-formula" id="quizFormula"></div>
         <div id="standardInput">
           <input
-            type="number"
+            type="text"
             class="quiz-input"
             id="quizInput"
             placeholder="?"
             autocomplete="off"
-            inputmode="numeric"
+            inputmode="decimal"
           >
           <br>
           <button class="quiz-btn" id="quizBtn">
@@ -731,162 +769,12 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script>
-    const CATEGORIES = [
-      {
-        name: "Moteur de recherche",
-        emoji: "🔍",
-        smart: { name: "Google", url: "https://google.com" },
-        dumb:  { name: "Bing", url: "https://bing.com" }
-      },
-      {
-        name: "Location immobilière",
-        emoji: "🏠",
-        smart: { name: "Seventee", url: "https://www.seventee.com" },
-        dumb:  { name: "LeBonCoin", url: "https://leboncoin.fr" }
-      },
-      {
-        name: "Plateforme vidéo",
-        emoji: "🎬",
-        smart: { name: "YouTube", url: "https://youtube.com" },
-        dumb:  { name: "Dailymotion", url: "https://dailymotion.com" }
-      },
-      {
-        name: "Streaming musical",
-        emoji: "🎵",
-        smart: { name: "Spotify", url: "https://spotify.com" },
-        dumb:  { name: "Deezer", url: "https://deezer.com" }
-      },
-      {
-        name: "Messagerie",
-        emoji: "💬",
-        smart: { name: "WhatsApp", url: "https://whatsapp.com" },
-        dumb:  { name: "Skype", url: "https://skype.com" }
-      },
-      {
-        name: "Réseau social",
-        emoji: "📱",
-        smart: { name: "Instagram", url: "https://instagram.com" },
-        dumb:  { name: "Facebook", url: "https://facebook.com" }
-      },
-      {
-        name: "Shopping en ligne",
-        emoji: "🛒",
-        smart: { name: "Amazon", url: "https://amazon.fr" },
-        dumb:  { name: "Wish", url: "https://wish.com" }
-      },
-      {
-        name: "GPS & Navigation",
-        emoji: "🗺️",
-        smart: { name: "Waze", url: "https://waze.com" },
-        dumb:  { name: "Mappy", url: "https://mappy.com" }
-      },
-      {
-        name: "Boîte mail",
-        emoji: "📧",
-        smart: { name: "Gmail", url: "https://mail.google.com" },
-        dumb:  { name: "Yahoo Mail", url: "https://mail.yahoo.com" }
-      },
-      {
-        name: "Livraison de repas",
-        emoji: "🍔",
-        smart: { name: "Uber Eats", url: "https://ubereats.com" },
-        dumb:  { name: "Just Eat", url: "https://just-eat.fr" }
-      },
-      {
-        name: "VTC",
-        emoji: "🚗",
-        smart: { name: "Uber", url: "https://uber.com" },
-        dumb:  { name: "Bolt", url: "https://bolt.eu" }
-      },
-      {
-        name: "Films & Séries",
-        emoji: "🎥",
-        smart: { name: "Netflix", url: "https://netflix.com" },
-        dumb:  { name: "Pluto TV", url: "https://pluto.tv" }
-      },
-      {
-        name: "Réservation hôtel",
-        emoji: "🏨",
-        smart: { name: "Booking.com", url: "https://booking.com" },
-        dumb:  { name: "Trivago", url: "https://trivago.fr" }
-      },
-      {
-        name: "Réserver un vol",
-        emoji: "✈️",
-        smart: { name: "Google Flights", url: "https://google.com/travel/flights" },
-        dumb:  { name: "Lastminute", url: "https://lastminute.com" }
-      },
-      {
-        name: "Hébergement de code",
-        emoji: "💻",
-        smart: { name: "GitHub", url: "https://github.com" },
-        dumb:  { name: "SourceForge", url: "https://sourceforge.net" }
-      },
-      {
-        name: "Design graphique",
-        emoji: "🎨",
-        smart: { name: "Figma", url: "https://figma.com" },
-        dumb:  { name: "Canva", url: "https://canva.com" }
-      },
-      {
-        name: "Intelligence artificielle",
-        emoji: "🤖",
-        smart: { name: "ChatGPT", url: "https://chatgpt.com" },
-        dumb:  { name: "Copilot", url: "https://copilot.microsoft.com" }
-      },
-      {
-        name: "Actualités",
-        emoji: "📰",
-        smart: { name: "Google News", url: "https://news.google.com" },
-        dumb:  { name: "Yahoo Actu", url: "https://fr.news.yahoo.com" }
-      },
-      {
-        name: "Paiement en ligne",
-        emoji: "💳",
-        smart: { name: "PayPal", url: "https://paypal.com" },
-        dumb:  { name: "Paylib", url: "https://paylib.fr" }
-      },
-      {
-        name: "Jeux vidéo",
-        emoji: "🎮",
-        smart: { name: "Steam", url: "https://store.steampowered.com" },
-        dumb:  { name: "Epic Games", url: "https://store.epicgames.com" }
-      },
-      {
-        name: "Compte prorata",
-        emoji: "📊",
-        smart: { name: "The Fair Cost", url: "https://www.thefaircost.com" },
-        dumb:  { name: "SAEBTP", url: "https://www.saebtp.fr" }
-      },
-      {
-        name: "Traduction",
-        emoji: "🌍",
-        smart: { name: "DeepL", url: "https://www.deepl.com" },
-        dumb:  { name: "Google Traduction", url: "https://translate.google.com" }
-      },
-      {
-        name: "Visioconférence",
-        emoji: "📹",
-        smart: { name: "Google Meet", url: "https://meet.google.com" },
-        dumb:  { name: "Microsoft Teams", url: "https://teams.microsoft.com" }
-      },
-      {
-        name: "Stockage cloud",
-        emoji: "☁️",
-        smart: { name: "Google Drive", url: "https://drive.google.com" },
-        dumb:  { name: "OneDrive", url: "https://onedrive.live.com" }
-      },
-      {
-        name: "Politique",
-        emoji: "🗳️",
-        type: "political"
-      }
-    ];
-
     const RESULT_LINK_LABEL = "Accéder au site →";
 
     let currentCategory = null;
+    let categories = [];
 
     const grid = document.getElementById("cardGrid");
     const overlay = document.getElementById("overlay");
@@ -956,25 +844,64 @@
       });
     }
 
-    CATEGORIES.forEach((cat, i) => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.setAttribute("role", "button");
-      card.setAttribute("tabindex", "0");
-      card.setAttribute("aria-label", cat.name);
-      card.style.animationDelay = `${i * 0.05}s`;
-      card.innerHTML = `
-        <span class="card-emoji">${cat.emoji}</span>
-        <span class="card-label">${cat.name}</span>
-      `;
-      card.addEventListener("click", () => openQuiz(cat));
-      grid.appendChild(card);
-    });
+    function pickRandom(pool) {
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    function renderFormula(formula) {
+      quizFormula.innerHTML = "";
+      if (typeof katex !== "undefined") {
+        katex.render(formula + " = \\,?", quizFormula, {
+          throwOnError: false,
+          displayMode: true
+        });
+      } else {
+        quizFormula.textContent = formula + " = ?";
+      }
+    }
+
+    function buildGrid(list) {
+      grid.innerHTML = "";
+      list.forEach((cat, i) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        if (cat.easterEggs && cat.easterEggs.length) card.classList.add("card--has-egg");
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("aria-label", cat.name);
+        card.style.animationDelay = `${Math.min(i * 0.015, 1.2)}s`;
+        card.innerHTML = `
+          <span class="card-emoji">${cat.emoji}</span>
+          <span class="card-label">${cat.name}</span>
+        `;
+        card.addEventListener("click", () => openQuiz(cat));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openQuiz(cat);
+          }
+        });
+        grid.appendChild(card);
+      });
+    }
+
+    async function loadCategories() {
+      try {
+        const r = await fetch("categories.json");
+        if (!r.ok) throw new Error(r.status);
+        categories = await r.json();
+      } catch {
+        categories = [];
+      }
+      if (categories.length) buildGrid(categories);
+    }
+
+    loadCategories();
 
     const standardInput = document.getElementById("standardInput");
     const politicalInput = document.getElementById("politicalInput");
     const politicalResult = document.getElementById("politicalResult");
-    const quizQuestion = document.getElementById("quizQuestion");
+    const quizFormula = document.getElementById("quizFormula");
     const btnGauche = document.getElementById("btnGauche");
     const btnDroite = document.getElementById("btnDroite");
     const retryBtnPolitical = document.getElementById("retryBtnPolitical");
@@ -992,26 +919,26 @@
       const isPolitical = category.type === "political";
       standardInput.style.display = isPolitical ? "none" : "";
       politicalInput.style.display = isPolitical ? "" : "none";
-      quizQuestion.textContent = isPolitical ? "Pour qui voter ?" : "2 + 2 = ?";
+
+      if (isPolitical) {
+        quizFormula.innerHTML = "";
+        const q = document.createElement("div");
+        q.style.cssText =
+          "font-family:var(--font-heading);font-weight:800;font-size:clamp(1.2rem,4vw,2rem);" +
+          "background:linear-gradient(135deg,var(--accent),var(--accent-secondary));" +
+          "-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;";
+        q.textContent = "Pour qui voter ?";
+        quizFormula.appendChild(q);
+      } else {
+        renderFormula(category.formula);
+        quizInput.setAttribute("inputmode", category.inputMode || "decimal");
+      }
 
       overlay.classList.add("active");
       document.body.style.overflow = "hidden";
       setDrawerOpen(false);
 
       if (!isPolitical) setTimeout(() => quizInput.focus(), 400);
-    }
-
-    function showEasterEgg() {
-      quizContainer.classList.add("hide");
-      resultContainer.classList.add("show");
-
-      resultSiteName.className = "result-site-name egg";
-      resultSiteName.style.cssText = "";
-      resultSiteName.textContent = "1984 (George Orwell)";
-      resultLink.className = "result-link egg";
-      resultLink.style.cssText = "";
-      resultLink.href = "https://fr.wikipedia.org/wiki/1984_(roman)";
-      resultLink.textContent = RESULT_LINK_LABEL;
     }
 
     function showPoliticalResult() {
@@ -1025,34 +952,55 @@
       currentCategory = null;
     }
 
-    function showResult(isCorrect) {
-      const choice = isCorrect ? currentCategory.smart : currentCategory.dumb;
-      const cls = isCorrect ? "smart" : "dumb";
+    function checkAnswer(input, category) {
+      const trimmed = input.trim().replace(",", ".");
+      const numericVal = parseFloat(trimmed);
 
+      for (const egg of category.easterEggs || []) {
+        const eggAnswer = typeof egg.answer === "number" ? egg.answer : String(egg.answer);
+        if (typeof eggAnswer === "number" && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {
+          return { type: "egg", result: egg };
+        }
+        if (String(eggAnswer).toLowerCase() === trimmed.toLowerCase()) {
+          return { type: "egg", result: egg };
+        }
+      }
+
+      if (!isNaN(numericVal) && Math.abs(numericVal - category.correctAnswer) < 0.01) {
+        return { type: "smart", result: category.smart };
+      }
+
+      if (category.dumb.type === "random") {
+        return { type: "dumb", result: pickRandom(category.dumb.pool) };
+      }
+
+      return { type: "dumb", result: { name: category.dumb.name, url: category.dumb.url } };
+    }
+
+    function showResult(outcome) {
       quizContainer.classList.add("hide");
       resultContainer.classList.add("show");
 
+      const cls = outcome.type;
       resultSiteName.className = `result-site-name ${cls}`;
       resultSiteName.style.cssText = "";
-      resultSiteName.textContent = choice.name;
+      resultSiteName.textContent = outcome.result.name;
       resultLink.className = `result-link ${cls}`;
       resultLink.style.cssText = "";
-      resultLink.href = choice.url;
+      resultLink.href = outcome.result.url;
       resultLink.textContent = RESULT_LINK_LABEL;
     }
 
     function submitAnswer() {
-      const val = parseInt(quizInput.value, 10);
-      if (isNaN(val)) {
+      if (!currentCategory || currentCategory.type === "political") return;
+      const val = quizInput.value;
+      if (!val.trim()) {
         quizInput.classList.add("shake");
         setTimeout(() => quizInput.classList.remove("shake"), 400);
         return;
       }
-      if (val === 5) {
-        showEasterEgg();
-      } else {
-        showResult(val === 4);
-      }
+      const outcome = checkAnswer(val, currentCategory);
+      showResult(outcome);
     }
 
     quizBtn.addEventListener("click", submitAnswer);
@@ -1088,7 +1036,7 @@
 
     const VALID_THEMES = new Set([
       "neon", "minimal", "vintage", "brutalist", "encre", "halftone", "bifleur", "gres",
-      "ligne-claire", "riso", "metal", "op-art", "deco", "chlorophylle"
+      "ligne-claire", "riso", "metal", "op-art", "deco", "chlorophylle", "pixel", "voxel"
     ]);
     let savedTheme = localStorage.getItem("theme");
     if (savedTheme && !VALID_THEMES.has(savedTheme)) {

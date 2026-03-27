@@ -394,6 +394,125 @@
   --input-border: rgba(125, 223, 154, 0.22);
 }
 
+/* Pixel art — grille 8-bit, néon rétro */
+[data-theme="pixel"] {
+  --bg-primary: #1a0d2e;
+  --bg-card: #251538;
+  --bg-card-hover: #321f4a;
+  --accent: #ff6b9d;
+  --accent-glow: rgba(255, 107, 157, 0.35);
+  --accent-secondary: #00e5ff;
+  --text-primary: #f0e8ff;
+  --text-secondary: #9b8cb8;
+  --success: #5cf59b;
+  --fail: #ff6b6b;
+  --radius: 0;
+  --transition: 0.12s steps(2);
+  --font-heading: 'Press Start 2P', system-ui, cursive;
+  --font-body: 'VT323', monospace;
+  --card-border: rgba(0, 229, 255, 0.35);
+  --card-border-hover: rgba(255, 107, 157, 0.65);
+  --card-shadow-hover: 0 0 0 3px rgba(255, 107, 157, 0.2), 4px 4px 0 rgba(0, 0, 0, 0.4);
+  --overlay-bg: rgba(26, 13, 46, 0.92);
+  --modal-border: rgba(0, 229, 255, 0.4);
+  --gradient-bg-1: radial-gradient(ellipse 55% 45% at 85% 15%, rgba(255, 107, 157, 0.18) 0%, transparent 55%);
+  --gradient-bg-2: radial-gradient(ellipse 45% 40% at 12% 88%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
+  --pattern-bg: repeating-conic-gradient(#3d2b5c 0% 25%, #241a3d 0% 50%) 0 0 / 14px 14px;
+  --input-bg: rgba(0, 229, 255, 0.08);
+  --input-border: rgba(0, 229, 255, 0.45);
+}
+
+/* Voxel / Minecraft-like — ciel, herbe, terre, grille de blocs */
+[data-theme="voxel"] {
+  --bg-primary: #3d2914;
+  --bg-card: #4d3d2a;
+  --bg-card-hover: #5c4a35;
+  --accent: #f4d03f;
+  --accent-glow: rgba(244, 208, 63, 0.3);
+  --accent-secondary: #58d68d;
+  --text-primary: #fff8e8;
+  --text-secondary: #c4b59a;
+  --success: #58d68d;
+  --fail: #e74c3c;
+  --radius: 6px;
+  --transition: 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-heading: 'Press Start 2P', system-ui, cursive;
+  --font-body: 'VT323', monospace;
+  --card-border: rgba(0, 0, 0, 0.45);
+  --card-border-hover: #f4d03f;
+  --card-shadow-hover: 0 6px 0 rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --overlay-bg: rgba(45, 35, 20, 0.94);
+  --modal-border: rgba(244, 208, 63, 0.45);
+  --gradient-bg-1: linear-gradient(
+    180deg,
+    #7ec0ee 0%,
+    #87ceeb 14%,
+    #6fb04a 14%,
+    #5a9638 42%,
+    #6b5030 42%,
+    #4a3520 78%,
+    #3d2914 100%
+  );
+  --gradient-bg-2: radial-gradient(ellipse 120% 60% at 50% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 45%);
+  --pattern-bg:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 16px);
+  --input-bg: rgba(0, 0, 0, 0.25);
+  --input-border: rgba(244, 208, 63, 0.5);
+}
+
+[data-theme="pixel"] .card,
+[data-theme="pixel"] .modal,
+[data-theme="pixel"] .header-nav-btn,
+[data-theme="pixel"] .theme-row,
+[data-theme="pixel"] .share-btn,
+[data-theme="pixel"] .quiz-input {
+  border-width: 2px;
+}
+
+[data-theme="pixel"] .site-header {
+  border-bottom-width: 2px;
+}
+
+[data-theme="pixel"] .random-btn,
+[data-theme="pixel"] .political-btn {
+  border-width: 2px;
+}
+
+[data-theme="voxel"] .card,
+[data-theme="voxel"] .modal,
+[data-theme="voxel"] .header-nav-btn,
+[data-theme="voxel"] .theme-row,
+[data-theme="voxel"] .share-btn,
+[data-theme="voxel"] .political-btn,
+[data-theme="voxel"] .random-btn,
+[data-theme="voxel"] .quiz-input {
+  border-width: 3px;
+}
+
+[data-theme="voxel"] .site-header {
+  border-bottom-width: 3px;
+}
+
+[data-theme="pixel"] .card,
+[data-theme="pixel"] .header-nav-btn,
+[data-theme="voxel"] .card,
+[data-theme="voxel"] .header-nav-btn {
+  image-rendering: pixelated;
+}
+
+html[data-theme="pixel"] body,
+html[data-theme="voxel"] body {
+  font-size: 1.2rem;
+}
+
+[data-theme="pixel"] .header-brand,
+[data-theme="voxel"] .header-brand {
+  font-size: 0.62rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
 /* Brutalist : contours épais cohérents avec border: 1px solid */
 [data-theme="brutalist"] .card,
 [data-theme="brutalist"] .modal,
@@ -452,4 +571,103 @@
 
 [data-theme="bifleur"] .noise-overlay {
   opacity: 0.045;
+}
+
+[data-theme="pixel"] .noise-overlay,
+[data-theme="voxel"] .noise-overlay {
+  opacity: 0.035;
+}
+
+/* ——— Animations légères (désactivées si prefers-reduced-motion) ——— */
+@media (prefers-reduced-motion: no-preference) {
+  .card .card-emoji {
+    animation: da-emoji-float 5.5s ease-in-out infinite;
+  }
+
+  .card:nth-child(5n + 1) .card-emoji {
+    animation-delay: -0.8s;
+  }
+  .card:nth-child(5n + 2) .card-emoji {
+    animation-delay: -1.6s;
+  }
+  .card:nth-child(5n + 3) .card-emoji {
+    animation-delay: -2.4s;
+  }
+  .card:nth-child(5n + 4) .card-emoji {
+    animation-delay: -3.2s;
+  }
+  .card:nth-child(5n) .card-emoji {
+    animation-delay: -4s;
+  }
+
+  .card:hover .card-emoji {
+    animation-play-state: paused;
+  }
+
+  @keyframes da-emoji-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .bg-gradient {
+    animation: da-bg-drift 28s ease-in-out infinite;
+  }
+
+  @keyframes da-bg-drift {
+    0%,
+    100% {
+      filter: saturate(1) brightness(1);
+    }
+    50% {
+      filter: saturate(1.04) brightness(1.02);
+    }
+  }
+
+  [data-theme="pixel"] .bg-gradient {
+    animation: da-pixel-bg 36s linear infinite, da-bg-drift 28s ease-in-out infinite;
+    background-size: 14px 14px, auto, auto, auto;
+  }
+
+  @keyframes da-pixel-bg {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 14px 14px, 0 0, 0 0, 0 0;
+    }
+  }
+
+  [data-theme="voxel"] .bg-gradient {
+    animation: da-voxel-grid 42s linear infinite, da-bg-drift 28s ease-in-out infinite;
+    background-size: 16px 16px, 16px 16px, auto, auto, auto;
+  }
+
+  @keyframes da-voxel-grid {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 16px 0, 0 16px, 0 0, 0 0, 0 0;
+    }
+  }
+
+  [data-theme="pixel"] .header-brand,
+  [data-theme="voxel"] .header-brand {
+    animation: da-brand-soft 6s ease-in-out infinite;
+  }
+
+  @keyframes da-brand-soft {
+    0%,
+    100% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.12);
+    }
+  }
 }
