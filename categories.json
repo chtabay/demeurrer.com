@@ -863,13 +863,7 @@
       "name": "Monabanq",
       "url": "https://monabanq.com"
     },
-    "easterEggs": [
-      {
-        "answer": -4,
-        "name": "Équation du second degré",
-        "url": "https://fr.wikipedia.org/wiki/%C3%89quation_du_second_degr%C3%A9"
-      }
-    ],
+    "easterEggs": [],
     "tags": [
       "banque",
       "boursorama",
@@ -2587,9 +2581,11 @@
     "easterEggs": [
       {
         "answer": -4,
-        "chainSlug": "egg-covoiturage-suite",
-        "name": "Autre voie",
-        "url": "#"
+        "chainReveal": {
+          "hint": "Sur la carte « MOOC », la division est un leurre : enchaîne « 20 » et « 5 » comme un seul entier écrit.",
+          "targetSlug": "mooc",
+          "targetLabel": "MOOC"
+        }
       }
     ],
     "tags": [
@@ -2599,30 +2595,6 @@
       "trajet",
       "partage",
       "conducteur"
-    ]
-  },
-  {
-    "slug": "egg-covoiturage-suite",
-    "name": "Suite",
-    "emoji": "◇",
-    "difficulty": 1,
-    "hidden": true,
-    "formula": "(-4)^2",
-    "correctAnswer": 16,
-    "inputMode": "decimal",
-    "smart": {
-      "name": "√16 n'est pas la seule racine de 16 au sens de x² = 16. Sur « Banque en ligne », donne l'autre racine réelle.",
-      "url": "#"
-    },
-    "dumb": {
-      "type": "fixed",
-      "name": "Monabanq",
-      "url": "https://monabanq.com"
-    },
-    "hintOnly": true,
-    "easterEggs": [],
-    "tags": [
-      "egg"
     ]
   },
   {
@@ -2642,7 +2614,13 @@
       "name": "Udemy",
       "url": "https://www.udemy.com"
     },
-    "easterEggs": [],
+    "easterEggs": [
+      {
+        "answer": 25,
+        "name": "Vingt-cinq",
+        "url": "https://fr.wikipedia.org/wiki/25_(nombre)"
+      }
+    ],
     "tags": [
       "coursera",
       "udemy",

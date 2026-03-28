@@ -284,6 +284,18 @@
     .result-container.show { display: block; }
     .quiz-container.hide { display: none; }
 
+    .result-chain-hint {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      max-width: 28rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .result-chain-hint[hidden] { display: none !important; }
+
     .result-link {
       display: inline-flex;
       align-items: center;
@@ -754,6 +766,7 @@
 
       <!-- RESULT (standard) -->
       <div class="result-container" id="resultContainer">
+        <p class="result-chain-hint" id="resultChainHint" hidden></p>
         <div class="result-site-name" id="resultSiteName"></div>
         <a class="result-link" id="resultLink" target="_blank" rel="noopener noreferrer">Accéder au site →</a>
         <br>
@@ -786,6 +799,7 @@
     const quizInput = document.getElementById("quizInput");
     const quizBtn = document.getElementById("quizBtn");
     const resultSiteName = document.getElementById("resultSiteName");
+    const resultChainHint = document.getElementById("resultChainHint");
     const resultLink = document.getElementById("resultLink");
     const retryBtn = document.getElementById("retryBtn");
     const menuToggle = document.getElementById("menuToggle");
@@ -893,7 +907,7 @@
       } catch {
         categories = [];
       }
-      if (categories.length) buildGrid(categories.filter((c) => !c.hidden));
+      if (categories.length) buildGrid(categories);
     }
 
     loadCategories();
@@ -908,12 +922,13 @@
 
     function openQuiz(category) {
       currentCategory = category;
-      if (resultLink) {
-        resultLink.onclick = null;
-        resultLink.style.display = "";
-      }
       modalEmoji.textContent = category.emoji;
       modalTitle.textContent = category.name;
+
+      if (resultChainHint) {
+        resultChainHint.hidden = true;
+        resultChainHint.textContent = "";
+      }
 
       quizContainer.classList.remove("hide");
       resultContainer.classList.remove("show");
@@ -954,9 +969,9 @@
       overlay.classList.remove("active");
       document.body.style.overflow = "";
       currentCategory = null;
-      if (resultLink) {
-        resultLink.onclick = null;
-        resultLink.style.display = "";
+      if (resultChainHint) {
+        resultChainHint.hidden = true;
+        resultChainHint.textContent = "";
       }
     }
 
@@ -989,34 +1004,38 @@
       quizContainer.classList.add("hide");
       resultContainer.classList.add("show");
 
+      if (outcome.type === "egg" && outcome.result.chainReveal) {
+        const cr = outcome.result.chainReveal;
+        if (resultChainHint) {
+          resultChainHint.hidden = false;
+          resultChainHint.textContent = cr.hint || "";
+        }
+        resultSiteName.className = "result-site-name egg";
+        resultSiteName.style.cssText = "";
+        resultSiteName.textContent = "Carte cachée";
+        resultLink.className = "result-link egg";
+        resultLink.style.cssText = "";
+        resultLink.removeAttribute("target");
+        resultLink.href = `explore.html?open=${encodeURIComponent(cr.targetSlug || "")}`;
+        resultLink.textContent = `Ouvrir « ${cr.targetLabel || "…"} » →`;
+        return;
+      }
+
+      if (resultChainHint) {
+        resultChainHint.hidden = true;
+        resultChainHint.textContent = "";
+      }
+
       const cls = outcome.type;
       resultSiteName.className = `result-site-name ${cls}`;
       resultSiteName.style.cssText = "";
       resultSiteName.textContent = outcome.result.name;
       resultLink.className = `result-link ${cls}`;
       resultLink.style.cssText = "";
-      resultLink.onclick = null;
-
-      if (outcome.type === "egg" && outcome.result.chainSlug) {
-        resultLink.href = "#";
-        resultLink.textContent = "Continuer →";
-        resultLink.onclick = (e) => {
-          e.preventDefault();
-          const next = categories.find((c) => c.slug === outcome.result.chainSlug);
-          if (!next) return;
-          resultContainer.classList.remove("show");
-          quizContainer.classList.remove("hide");
-          openQuiz(next);
-        };
-        return;
-      }
-
       resultLink.href = outcome.result.url;
+      resultLink.target = "_blank";
+      resultLink.rel = "noopener noreferrer";
       resultLink.textContent = RESULT_LINK_LABEL;
-
-      if (outcome.type === "smart" && currentCategory && currentCategory.hintOnly) {
-        resultLink.style.display = "none";
-      }
     }
 
     function submitAnswer() {
