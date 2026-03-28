@@ -865,10 +865,9 @@
     },
     "easterEggs": [
       {
-        "answer": 16,
-        "requiresChain": "radical",
-        "name": "Racine carrée",
-        "url": "https://fr.wikipedia.org/wiki/Racine_carr%C3%A9e"
+        "answer": -4,
+        "name": "Équation du second degré",
+        "url": "https://fr.wikipedia.org/wiki/%C3%89quation_du_second_degr%C3%A9"
       }
     ],
     "tags": [
@@ -2588,7 +2587,9 @@
     "easterEggs": [
       {
         "answer": -4,
-        "openHiddenSlug": "radical-cache"
+        "chainSlug": "egg-covoiturage-suite",
+        "name": "Autre voie",
+        "url": "#"
       }
     ],
     "tags": [
@@ -2601,26 +2602,28 @@
     ]
   },
   {
-    "slug": "radical-cache",
-    "hidden": true,
-    "name": "Contre-route",
-    "emoji": "↩",
+    "slug": "egg-covoiturage-suite",
+    "name": "Suite",
+    "emoji": "◇",
     "difficulty": 1,
+    "hidden": true,
     "formula": "(-4)^2",
     "correctAnswer": 16,
     "inputMode": "decimal",
     "smart": {
-      "name": "—",
-      "url": "https://fr.wikipedia.org/wiki/Carr%C3%A9_(alg%C3%A8bre)"
+      "name": "√16 n'est pas la seule racine de 16 au sens de x² = 16. Sur « Banque en ligne », donne l'autre racine réelle.",
+      "url": "#"
     },
-    "chainHint": "Banque en ligne : √16 — ce que désigne le radical, ce n’est pas le quatre qu’on affiche d’habitude.",
     "dumb": {
       "type": "fixed",
-      "name": "—",
-      "url": "https://fr.wikipedia.org/wiki/Erreur"
+      "name": "Monabanq",
+      "url": "https://monabanq.com"
     },
+    "hintOnly": true,
     "easterEggs": [],
-    "tags": []
+    "tags": [
+      "egg"
+    ]
   },
   {
     "slug": "mooc",

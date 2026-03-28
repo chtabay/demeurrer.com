@@ -18,7 +18,7 @@ Le sarcasme est structurel, jamais verbalisé. Le site est explicitement ironiqu
 
 ### Page A — Les évidences (`index.html`)
 
-Grille compacte des **100 thèmes** (données `categories.json`) : mêmes règles que l’explorateur (formule KaTeX, easter eggs, `dumb` fixe ou aléatoire), plus la carte **Politique**. Pas d’indicateur sur les cartes qui cachent une réponse alternative.
+Grille compacte des **100 thèmes** (données `categories.json`) : mêmes règles que l’explorateur (formule KaTeX, easter eggs, `dumb` fixe ou aléatoire), plus la carte **Politique**. Pastille discrète sur les cartes qui ont au moins un easter egg.
 
 La carte Politique demande "Pour qui voter ?" et répond toujours "Faux." — quel que soit le choix.
 
@@ -57,7 +57,7 @@ Religion, politique, cuisine, langue, pays... La formule est volontairement comp
 - **0 → Nihilisme** : sur le thème Religion, répondre 0 mène à la page Wikipedia du Nihilisme.
 - **42 → La Grande Question** : sur certains thèmes, répondre 42 mène à la page Wikipedia de la réponse ultime (Guide du voyageur galactique).
 
-Ni la page d’accueil ni l’explorateur n’indiquent quelles cartes ont une réponse cachée.
+Sur la page d’accueil, une petite pastille (couleur secondaire) marque les thèmes qui ont au moins un easter egg ; sur Explorer, pas d’indicateur.
 
 ## Directions artistiques
 

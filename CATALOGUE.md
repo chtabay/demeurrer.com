@@ -6,7 +6,7 @@
 
 | Page | Fichier | Rôle |
 |---|---|---|
-| Évidences | `index.html` | 100 cartes compactes (`categories.json`), formules KaTeX, réponses alternatives possibles ; pas d’indicateur sur la grille |
+| Évidences | `index.html` | 100 cartes compactes (`categories.json`), formules KaTeX, easter eggs ; pastille si egg |
 | Explorer | `explore.html` | Catalogue étendu (100 thèmes), recherche, `categories.json` |
 
 ### Échelle (100 thèmes)

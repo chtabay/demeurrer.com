@@ -83,6 +83,19 @@
       animation: cardIn 0.4s ease forwards;
     }
 
+    .card--has-egg::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
     .card::before {
       content: '';
       position: absolute;
@@ -329,14 +342,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-    }
-
-    .result-site-name.chain-hint {
-      background: none;
-      -webkit-text-fill-color: unset;
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: clamp(1rem, 2.8vw, 1.35rem);
     }
 
     .result-link.egg {
@@ -731,7 +736,7 @@
             id="quizInput"
             placeholder="?"
             autocomplete="off"
-            inputmode="text"
+            inputmode="decimal"
           >
           <br>
           <button class="quiz-btn" id="quizBtn">
@@ -860,6 +865,7 @@
       list.forEach((cat, i) => {
         const card = document.createElement("div");
         card.className = "card";
+        if (cat.easterEggs && cat.easterEggs.length) card.classList.add("card--has-egg");
         card.setAttribute("role", "button");
         card.setAttribute("tabindex", "0");
         card.setAttribute("aria-label", cat.name);
@@ -879,16 +885,9 @@
       });
     }
 
-    function normalizeNumericInput(raw) {
-      return String(raw)
-        .trim()
-        .replace(/[\u2212\u2013\u2014]/g, "-")
-        .replace(",", ".");
-    }
-
     async function loadCategories() {
       try {
-        const r = await fetch("categories.json", { cache: "no-store" });
+        const r = await fetch("categories.json");
         if (!r.ok) throw new Error(r.status);
         categories = await r.json();
       } catch {
@@ -909,13 +908,16 @@
 
     function openQuiz(category) {
       currentCategory = category;
+      if (resultLink) {
+        resultLink.onclick = null;
+        resultLink.style.display = "";
+      }
       modalEmoji.textContent = category.emoji;
       modalTitle.textContent = category.name;
 
       quizContainer.classList.remove("hide");
       resultContainer.classList.remove("show");
       politicalResult.classList.remove("show");
-      resultLink.style.display = "";
       quizInput.value = "";
 
       const isPolitical = category.type === "political";
@@ -933,7 +935,7 @@
         quizFormula.appendChild(q);
       } else {
         renderFormula(category.formula);
-        quizInput.setAttribute("inputmode", "text");
+        quizInput.setAttribute("inputmode", category.inputMode || "decimal");
       }
 
       overlay.classList.add("active");
@@ -952,14 +954,17 @@
       overlay.classList.remove("active");
       document.body.style.overflow = "";
       currentCategory = null;
+      if (resultLink) {
+        resultLink.onclick = null;
+        resultLink.style.display = "";
+      }
     }
 
     function checkAnswer(input, category) {
-      const trimmed = normalizeNumericInput(input);
+      const trimmed = input.trim().replace(",", ".");
       const numericVal = parseFloat(trimmed);
 
       for (const egg of category.easterEggs || []) {
-        if (egg.requiresChain && sessionStorage.getItem("eggChain") !== egg.requiresChain) continue;
         const eggAnswer = typeof egg.answer === "number" ? egg.answer : String(egg.answer);
         if (typeof eggAnswer === "number" && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {
           return { type: "egg", result: egg };
@@ -981,9 +986,6 @@
     }
 
     function showResult(outcome) {
-      if (outcome.type === "egg" && outcome.result.requiresChain) {
-        sessionStorage.removeItem("eggChain");
-      }
       quizContainer.classList.add("hide");
       resultContainer.classList.add("show");
 
@@ -993,8 +995,28 @@
       resultSiteName.textContent = outcome.result.name;
       resultLink.className = `result-link ${cls}`;
       resultLink.style.cssText = "";
+      resultLink.onclick = null;
+
+      if (outcome.type === "egg" && outcome.result.chainSlug) {
+        resultLink.href = "#";
+        resultLink.textContent = "Continuer →";
+        resultLink.onclick = (e) => {
+          e.preventDefault();
+          const next = categories.find((c) => c.slug === outcome.result.chainSlug);
+          if (!next) return;
+          resultContainer.classList.remove("show");
+          quizContainer.classList.remove("hide");
+          openQuiz(next);
+        };
+        return;
+      }
+
       resultLink.href = outcome.result.url;
       resultLink.textContent = RESULT_LINK_LABEL;
+
+      if (outcome.type === "smart" && currentCategory && currentCategory.hintOnly) {
+        resultLink.style.display = "none";
+      }
     }
 
     function submitAnswer() {
@@ -1006,23 +1028,6 @@
         return;
       }
       const outcome = checkAnswer(val, currentCategory);
-      if (outcome.type === "egg" && outcome.result.openHiddenSlug) {
-        const next = categories.find((c) => c.slug === outcome.result.openHiddenSlug);
-        if (next) {
-          openQuiz(next);
-          return;
-        }
-      }
-      if (outcome.type === "smart" && currentCategory.chainHint) {
-        quizContainer.classList.add("hide");
-        resultContainer.classList.add("show");
-        resultSiteName.className = "result-site-name chain-hint";
-        resultSiteName.style.cssText = "";
-        resultSiteName.textContent = currentCategory.chainHint;
-        resultLink.style.display = "none";
-        sessionStorage.setItem("eggChain", "radical");
-        return;
-      }
       showResult(outcome);
     }
 
