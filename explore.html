@@ -775,14 +775,6 @@
         .replace(',', '.');
     }
 
-    function resolveEasterEggs(category) {
-      if (!category) return [];
-      const canonical =
-        category.slug && allCategories.length ? allCategories.find((c) => c.slug === category.slug) : null;
-      const eggs = (canonical && canonical.easterEggs) || category.easterEggs;
-      return Array.isArray(eggs) ? eggs : [];
-    }
-
     const exploreMain   = document.getElementById('exploreMain');
     const searchInput   = document.getElementById('searchInput');
     const searchClear   = document.getElementById('searchClear');
@@ -1025,7 +1017,7 @@
       const trimmed = normalizeNumericInput(input);
       const numericVal = parseFloat(trimmed);
 
-      for (const egg of resolveEasterEggs(category)) {
+      for (const egg of (category.easterEggs || [])) {
         if (egg.requiresChain && sessionStorage.getItem('eggChain') !== egg.requiresChain) continue;
         const eggAnswer = typeof egg.answer === 'number' ? egg.answer : String(egg.answer);
         if (typeof eggAnswer === 'number' && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {
