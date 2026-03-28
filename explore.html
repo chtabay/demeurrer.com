@@ -768,6 +768,21 @@
     let allCategories = [];
     let currentCategory = null;
 
+    function normalizeNumericInput(raw) {
+      return String(raw)
+        .trim()
+        .replace(/[\u2212\u2013\u2014]/g, '-')
+        .replace(',', '.');
+    }
+
+    function resolveEasterEggs(category) {
+      if (!category) return [];
+      const canonical =
+        category.slug && allCategories.length ? allCategories.find((c) => c.slug === category.slug) : null;
+      const eggs = (canonical && canonical.easterEggs) || category.easterEggs;
+      return Array.isArray(eggs) ? eggs : [];
+    }
+
     const exploreMain   = document.getElementById('exploreMain');
     const searchInput   = document.getElementById('searchInput');
     const searchClear   = document.getElementById('searchClear');
@@ -850,7 +865,7 @@
     }
 
     Promise.all([
-      fetch('categories.json').then(r => {
+      fetch('categories.json', { cache: 'no-store' }).then(r => {
         if (!r.ok) throw new Error('categories');
         return r.json();
       }),
@@ -978,7 +993,7 @@
         quizFormula.appendChild(q);
       } else {
         renderFormula(category.formula);
-        quizInput.setAttribute('inputmode', category.inputMode || 'decimal');
+        quizInput.setAttribute('inputmode', 'text');
       }
 
       overlay.classList.add('active');
@@ -1007,10 +1022,10 @@
     }
 
     function checkAnswer(input, category) {
-      const trimmed = input.trim().replace(',', '.');
+      const trimmed = normalizeNumericInput(input);
       const numericVal = parseFloat(trimmed);
 
-      for (const egg of (category.easterEggs || [])) {
+      for (const egg of resolveEasterEggs(category)) {
         if (egg.requiresChain && sessionStorage.getItem('eggChain') !== egg.requiresChain) continue;
         const eggAnswer = typeof egg.answer === 'number' ? egg.answer : String(egg.answer);
         if (typeof eggAnswer === 'number' && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {

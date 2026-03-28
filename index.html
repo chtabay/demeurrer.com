@@ -731,7 +731,7 @@
             id="quizInput"
             placeholder="?"
             autocomplete="off"
-            inputmode="decimal"
+            inputmode="text"
           >
           <br>
           <button class="quiz-btn" id="quizBtn">
@@ -879,9 +879,16 @@
       });
     }
 
+    function normalizeNumericInput(raw) {
+      return String(raw)
+        .trim()
+        .replace(/[\u2212\u2013\u2014]/g, "-")
+        .replace(",", ".");
+    }
+
     async function loadCategories() {
       try {
-        const r = await fetch("categories.json");
+        const r = await fetch("categories.json", { cache: "no-store" });
         if (!r.ok) throw new Error(r.status);
         categories = await r.json();
       } catch {
@@ -926,7 +933,7 @@
         quizFormula.appendChild(q);
       } else {
         renderFormula(category.formula);
-        quizInput.setAttribute("inputmode", category.inputMode || "decimal");
+        quizInput.setAttribute("inputmode", "text");
       }
 
       overlay.classList.add("active");
@@ -948,7 +955,7 @@
     }
 
     function checkAnswer(input, category) {
-      const trimmed = input.trim().replace(",", ".");
+      const trimmed = normalizeNumericInput(input);
       const numericVal = parseFloat(trimmed);
 
       for (const egg of category.easterEggs || []) {
