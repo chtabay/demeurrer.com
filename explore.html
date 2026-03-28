@@ -561,6 +561,13 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
+    .result-site-name.chain-hint {
+      background: none;
+      -webkit-text-fill-color: unset;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: clamp(1rem, 2.8vw, 1.35rem);
+    }
 
     .retry-btn {
       display: inline-block; margin-top: 1rem;
@@ -851,7 +858,8 @@
     ])
       .then(([base, bulk]) => {
         allCategories = [...base, ...bulk];
-        themeCount.textContent = `${allCategories.length} thèmes`;
+        const n = base.filter((c) => !c.hidden).length + bulk.length;
+        themeCount.textContent = `${n} thèmes`;
       })
       .catch(() => {
         themeCount.textContent = '—';
@@ -873,8 +881,9 @@
     });
 
     randomBtn.addEventListener('click', () => {
-      if (!allCategories.length) return;
-      const cat = pickRandom(allCategories);
+      const pool = allCategories.filter((c) => !c.hidden);
+      if (!pool.length) return;
+      const cat = pickRandom(pool);
       searchInput.value = cat.name;
       searchClear.style.display = 'block';
       renderSearch(cat.name);
@@ -884,6 +893,7 @@
       if (!query.trim()) return [];
       const q = normalize(query);
       return allCategories.filter(cat => {
+        if (cat.hidden) return false;
         if (normalize(cat.name).includes(q)) return true;
         if (cat.tags && cat.tags.some(t => normalize(t).includes(q))) return true;
         return false;
@@ -951,6 +961,7 @@
       quizContainer.classList.remove('hide');
       resultContainer.classList.remove('show');
       politicalResult.classList.remove('show');
+      resultLink.style.display = '';
       quizInput.value = '';
 
       const isPolitical = category.type === 'political';
@@ -1000,6 +1011,7 @@
       const numericVal = parseFloat(trimmed);
 
       for (const egg of (category.easterEggs || [])) {
+        if (egg.requiresChain && sessionStorage.getItem('eggChain') !== egg.requiresChain) continue;
         const eggAnswer = typeof egg.answer === 'number' ? egg.answer : String(egg.answer);
         if (typeof eggAnswer === 'number' && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {
           return { type: 'egg', result: egg };
@@ -1021,6 +1033,9 @@
     }
 
     function showResult(outcome) {
+      if (outcome.type === 'egg' && outcome.result.requiresChain) {
+        sessionStorage.removeItem('eggChain');
+      }
       quizContainer.classList.add('hide');
       resultContainer.classList.add('show');
 
@@ -1041,6 +1056,22 @@
         return;
       }
       const outcome = checkAnswer(val, currentCategory);
+      if (outcome.type === 'egg' && outcome.result.openHiddenSlug) {
+        const next = allCategories.find((c) => c.slug === outcome.result.openHiddenSlug);
+        if (next) {
+          openQuiz(next);
+          return;
+        }
+      }
+      if (outcome.type === 'smart' && currentCategory.chainHint) {
+        quizContainer.classList.add('hide');
+        resultContainer.classList.add('show');
+        resultSiteName.className = 'result-site-name chain-hint';
+        resultSiteName.textContent = currentCategory.chainHint;
+        resultLink.style.display = 'none';
+        sessionStorage.setItem('eggChain', 'radical');
+        return;
+      }
       showResult(outcome);
     }
 

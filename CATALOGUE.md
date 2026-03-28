@@ -6,7 +6,7 @@
 
 | Page | Fichier | Rôle |
 |---|---|---|
-| Évidences | `index.html` | 100 cartes compactes (`categories.json`), formules KaTeX, easter eggs ; pastille si egg |
+| Évidences | `index.html` | 100 cartes compactes (`categories.json`), formules KaTeX, réponses alternatives possibles ; pas d’indicateur sur la grille |
 | Explorer | `explore.html` | Catalogue étendu (100 thèmes), recherche, `categories.json` |
 
 ### Échelle (100 thèmes)
@@ -39,7 +39,7 @@
 | Console de jeux | log₂(32) | **5** |
 | Langage, Régime politique, Meilleure langue, … | divers | **4** |
 
-Le fichier **`categories-bulk.json`** fait tourner une liste de formules (souvent équivalentes à 4 pour la blague « 2+2 ») ; l’easter egg **5 → 1984** n’est présent que là où la formule affichée est exactement `2+2`.
+Le fichier **`categories-bulk.json`** fait tourner une liste de formules (souvent équivalentes à 4 pour la blague « 2+2 ») ; l’easter egg **5 → 1984** n’est présent que là où la formule affichée est exactement `2+2` **et** le thème entre dans le sous-ensemble « Orwell » (information, communication, surveillance au sens large — voir récapitulatif des easter eggs).
 
 ---
 
@@ -48,7 +48,7 @@ Le fichier **`categories-bulk.json`** fait tourner une liste de formules (souven
 Formule universelle : **2 + 2 = ?**
 
 Réponse correcte → lien "smart". Toute autre réponse → lien "dumb".
-Exception : répondre **5** → 1984 (George Orwell), Wikipédia.
+Exception (uniquement sur les thèmes `2+2` « Orwell », voir ci-dessous) : répondre **5** → 1984 (George Orwell), Wikipédia. Les autres cartes en `2+2` n’ont pas cet egg.
 
 | # | Thème | Smart | Dumb |
 |---|---|---|---|
@@ -85,11 +85,11 @@ Exception : répondre **5** → 1984 (George Orwell), Wikipédia.
 - Résultat : toujours **Faux.**
 - Pas de lien.
 
-### Easter egg global (Page A)
+### Easter egg Orwell (Page A, sous-ensemble)
 
 | Réponse | Destination | Condition |
 |---|---|---|
-| 5 | [1984 (George Orwell)](https://fr.wikipedia.org/wiki/1984_(roman)) | Formule = `2+2` uniquement |
+| 5 | [1984 (George Orwell)](https://fr.wikipedia.org/wiki/1984_(roman)) | Formule = `2+2` **et** thème dans la liste Orwell (ci-dessous) |
 
 ---
 
@@ -116,7 +116,7 @@ Source : `categories.json` — 100 entrées.
 
 ### Difficulté 1 — Les évidences
 
-Toutes les entrées de la Page A sont dupliquées ici avec les mêmes formules `2+2` et le même easter egg `5 → 1984`.
+Les entrées de la Page A sont dupliquées ici avec les mêmes formules ; l’easter egg `5 → 1984` ne concerne que les thèmes `2+2` du sous-ensemble Orwell (voir récapitulatif).
 
 S'y ajoutent :
 
@@ -157,7 +157,7 @@ S'y ajoutent :
 
 ### 44 nouveaux thèmes — Sites web réels (difficulté 1–2)
 
-Noms opaques (ne révèlent pas la paire smart/dumb). Formules variées, toutes = 4. Easter egg `5 → 1984` uniquement sur les formules `2+2`.
+Noms opaques (ne révèlent pas la paire smart/dumb). Formules variées, toutes = 4. Easter egg `5 → 1984` uniquement sur les formules `2+2` **et** thèmes Orwell (ex. `newsletter` oui, `location de vacances` non).
 
 #### E-commerce / Marketplace
 
@@ -276,7 +276,7 @@ Routage "dumb" = **pool aléatoire**. Le site ne tranche pas entre les mauvaises
 
 | Formule concernée | Réponse | Destination | Logique |
 |---|---|---|---|
-| `2+2` (toutes les entrées) | 5 | 1984 (George Orwell) | Référence culturelle directe : "2+2=5" dans le roman |
+| `2+2` sur **10 thèmes** (slugs : `moteur-de-recherche`, `messagerie`, `reseau-social`, `boite-mail`, `intelligence-artificielle`, `actualites`, `traduction`, `visioconference`, `stockage-cloud`, `newsletter`) | 5 | 1984 (George Orwell) | Référence « 2+2=5 » : réservée aux thèmes où un lien (même lointain) avec information, langage, surveillance ou propagande est plausible |
 | `√144 - 8` (Langage prog., Automatisation) | 42 | La grande question sur la vie, l'univers et le reste | Référence au Guide du voyageur galactique |
 | `∫₀^π sin(x) dx` (Religion) | 0 | Nihilisme | Si rien n'existe → nihilisme |
 

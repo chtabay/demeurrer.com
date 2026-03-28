@@ -83,19 +83,6 @@
       animation: cardIn 0.4s ease forwards;
     }
 
-    .card--has-egg::after {
-      content: "";
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent-secondary);
-      opacity: 0.75;
-      pointer-events: none;
-    }
-
     .card::before {
       content: '';
       position: absolute;
@@ -342,6 +329,14 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+
+    .result-site-name.chain-hint {
+      background: none;
+      -webkit-text-fill-color: unset;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: clamp(1rem, 2.8vw, 1.35rem);
     }
 
     .result-link.egg {
@@ -865,7 +860,6 @@
       list.forEach((cat, i) => {
         const card = document.createElement("div");
         card.className = "card";
-        if (cat.easterEggs && cat.easterEggs.length) card.classList.add("card--has-egg");
         card.setAttribute("role", "button");
         card.setAttribute("tabindex", "0");
         card.setAttribute("aria-label", cat.name);
@@ -893,7 +887,7 @@
       } catch {
         categories = [];
       }
-      if (categories.length) buildGrid(categories);
+      if (categories.length) buildGrid(categories.filter((c) => !c.hidden));
     }
 
     loadCategories();
@@ -914,6 +908,7 @@
       quizContainer.classList.remove("hide");
       resultContainer.classList.remove("show");
       politicalResult.classList.remove("show");
+      resultLink.style.display = "";
       quizInput.value = "";
 
       const isPolitical = category.type === "political";
@@ -957,6 +952,7 @@
       const numericVal = parseFloat(trimmed);
 
       for (const egg of category.easterEggs || []) {
+        if (egg.requiresChain && sessionStorage.getItem("eggChain") !== egg.requiresChain) continue;
         const eggAnswer = typeof egg.answer === "number" ? egg.answer : String(egg.answer);
         if (typeof eggAnswer === "number" && !isNaN(numericVal) && Math.abs(numericVal - eggAnswer) < 0.01) {
           return { type: "egg", result: egg };
@@ -978,6 +974,9 @@
     }
 
     function showResult(outcome) {
+      if (outcome.type === "egg" && outcome.result.requiresChain) {
+        sessionStorage.removeItem("eggChain");
+      }
       quizContainer.classList.add("hide");
       resultContainer.classList.add("show");
 
@@ -1000,6 +999,23 @@
         return;
       }
       const outcome = checkAnswer(val, currentCategory);
+      if (outcome.type === "egg" && outcome.result.openHiddenSlug) {
+        const next = categories.find((c) => c.slug === outcome.result.openHiddenSlug);
+        if (next) {
+          openQuiz(next);
+          return;
+        }
+      }
+      if (outcome.type === "smart" && currentCategory.chainHint) {
+        quizContainer.classList.add("hide");
+        resultContainer.classList.add("show");
+        resultSiteName.className = "result-site-name chain-hint";
+        resultSiteName.style.cssText = "";
+        resultSiteName.textContent = currentCategory.chainHint;
+        resultLink.style.display = "none";
+        sessionStorage.setItem("eggChain", "radical");
+        return;
+      }
       showResult(outcome);
     }
 

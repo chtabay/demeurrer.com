@@ -7,12 +7,29 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google", "url": "https://google.com" },
-    "dumb": { "type": "fixed", "name": "Bing", "url": "https://bing.com" },
+    "smart": {
+      "name": "Google",
+      "url": "https://google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Bing",
+      "url": "https://bing.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["google", "bing", "search", "chercher", "recherche"]
+    "tags": [
+      "google",
+      "bing",
+      "search",
+      "chercher",
+      "recherche"
+    ]
   },
   {
     "slug": "location-immobiliere",
@@ -22,12 +39,26 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Seventee", "url": "https://www.seventee.com" },
-    "dumb": { "type": "fixed", "name": "LeBonCoin", "url": "https://leboncoin.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["louer", "logement", "appartement", "maison", "immobilier", "annonce", "seventee", "leboncoin"]
+    "smart": {
+      "name": "Seventee",
+      "url": "https://www.seventee.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "LeBonCoin",
+      "url": "https://leboncoin.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "louer",
+      "logement",
+      "appartement",
+      "maison",
+      "immobilier",
+      "annonce",
+      "seventee",
+      "leboncoin"
+    ]
   },
   {
     "slug": "plateforme-video",
@@ -37,12 +68,23 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "YouTube", "url": "https://youtube.com" },
-    "dumb": { "type": "fixed", "name": "Dailymotion", "url": "https://dailymotion.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["youtube", "dailymotion", "video", "vidéo", "stream"]
+    "smart": {
+      "name": "YouTube",
+      "url": "https://youtube.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Dailymotion",
+      "url": "https://dailymotion.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "youtube",
+      "dailymotion",
+      "video",
+      "vidéo",
+      "stream"
+    ]
   },
   {
     "slug": "streaming-musical",
@@ -52,12 +94,23 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Spotify", "url": "https://spotify.com" },
-    "dumb": { "type": "fixed", "name": "Deezer", "url": "https://deezer.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["musique", "spotify", "deezer", "écouter", "playlist"]
+    "smart": {
+      "name": "Spotify",
+      "url": "https://spotify.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Deezer",
+      "url": "https://deezer.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "musique",
+      "spotify",
+      "deezer",
+      "écouter",
+      "playlist"
+    ]
   },
   {
     "slug": "messagerie",
@@ -67,12 +120,29 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "WhatsApp", "url": "https://whatsapp.com" },
-    "dumb": { "type": "fixed", "name": "Skype", "url": "https://skype.com" },
+    "smart": {
+      "name": "WhatsApp",
+      "url": "https://whatsapp.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Skype",
+      "url": "https://skype.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["message", "chat", "whatsapp", "skype", "discuter"]
+    "tags": [
+      "message",
+      "chat",
+      "whatsapp",
+      "skype",
+      "discuter"
+    ]
   },
   {
     "slug": "reseau-social",
@@ -82,12 +152,29 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Instagram", "url": "https://instagram.com" },
-    "dumb": { "type": "fixed", "name": "Facebook", "url": "https://facebook.com" },
+    "smart": {
+      "name": "Instagram",
+      "url": "https://instagram.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Facebook",
+      "url": "https://facebook.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["instagram", "facebook", "social", "réseau", "followers"]
+    "tags": [
+      "instagram",
+      "facebook",
+      "social",
+      "réseau",
+      "followers"
+    ]
   },
   {
     "slug": "shopping-en-ligne",
@@ -97,12 +184,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Amazon", "url": "https://amazon.fr" },
-    "dumb": { "type": "fixed", "name": "Wish", "url": "https://wish.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["acheter", "commander", "amazon", "wish", "shopping", "achat"]
+    "smart": {
+      "name": "Amazon",
+      "url": "https://amazon.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Wish",
+      "url": "https://wish.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "acheter",
+      "commander",
+      "amazon",
+      "wish",
+      "shopping",
+      "achat"
+    ]
   },
   {
     "slug": "gps-navigation",
@@ -112,12 +211,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Waze", "url": "https://waze.com" },
-    "dumb": { "type": "fixed", "name": "Mappy", "url": "https://mappy.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["gps", "itinéraire", "route", "waze", "mappy", "trajet"]
+    "smart": {
+      "name": "Waze",
+      "url": "https://waze.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Mappy",
+      "url": "https://mappy.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "gps",
+      "itinéraire",
+      "route",
+      "waze",
+      "mappy",
+      "trajet"
+    ]
   },
   {
     "slug": "boite-mail",
@@ -127,12 +238,29 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Gmail", "url": "https://mail.google.com" },
-    "dumb": { "type": "fixed", "name": "Yahoo Mail", "url": "https://mail.yahoo.com" },
+    "smart": {
+      "name": "Gmail",
+      "url": "https://mail.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Yahoo Mail",
+      "url": "https://mail.yahoo.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["email", "mail", "courrier", "gmail", "yahoo"]
+    "tags": [
+      "email",
+      "mail",
+      "courrier",
+      "gmail",
+      "yahoo"
+    ]
   },
   {
     "slug": "livraison-repas",
@@ -142,12 +270,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Uber Eats", "url": "https://ubereats.com" },
-    "dumb": { "type": "fixed", "name": "Just Eat", "url": "https://just-eat.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["manger", "livrer", "uber eats", "just eat", "commande", "restaurant"]
+    "smart": {
+      "name": "Uber Eats",
+      "url": "https://ubereats.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Just Eat",
+      "url": "https://just-eat.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "manger",
+      "livrer",
+      "uber eats",
+      "just eat",
+      "commande",
+      "restaurant"
+    ]
   },
   {
     "slug": "vtc",
@@ -157,12 +297,23 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Uber", "url": "https://uber.com" },
-    "dumb": { "type": "fixed", "name": "Bolt", "url": "https://bolt.eu" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["taxi", "uber", "bolt", "chauffeur", "transport"]
+    "smart": {
+      "name": "Uber",
+      "url": "https://uber.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Bolt",
+      "url": "https://bolt.eu"
+    },
+    "easterEggs": [],
+    "tags": [
+      "taxi",
+      "uber",
+      "bolt",
+      "chauffeur",
+      "transport"
+    ]
   },
   {
     "slug": "films-series",
@@ -172,12 +323,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Netflix", "url": "https://netflix.com" },
-    "dumb": { "type": "fixed", "name": "Pluto TV", "url": "https://pluto.tv" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["netflix", "pluto", "film", "série", "regarder", "streaming"]
+    "smart": {
+      "name": "Netflix",
+      "url": "https://netflix.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Pluto TV",
+      "url": "https://pluto.tv"
+    },
+    "easterEggs": [],
+    "tags": [
+      "netflix",
+      "pluto",
+      "film",
+      "série",
+      "regarder",
+      "streaming"
+    ]
   },
   {
     "slug": "reservation-hotel",
@@ -187,12 +350,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Booking.com", "url": "https://booking.com" },
-    "dumb": { "type": "fixed", "name": "Trivago", "url": "https://trivago.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["hôtel", "booking", "trivago", "réserver", "voyage", "séjour"]
+    "smart": {
+      "name": "Booking.com",
+      "url": "https://booking.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Trivago",
+      "url": "https://trivago.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "hôtel",
+      "booking",
+      "trivago",
+      "réserver",
+      "voyage",
+      "séjour"
+    ]
   },
   {
     "slug": "reserver-vol",
@@ -202,12 +377,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Flights", "url": "https://google.com/travel/flights" },
-    "dumb": { "type": "fixed", "name": "Lastminute", "url": "https://lastminute.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["avion", "vol", "billet", "google flights", "lastminute", "voyage"]
+    "smart": {
+      "name": "Google Flights",
+      "url": "https://google.com/travel/flights"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Lastminute",
+      "url": "https://lastminute.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "avion",
+      "vol",
+      "billet",
+      "google flights",
+      "lastminute",
+      "voyage"
+    ]
   },
   {
     "slug": "hebergement-code",
@@ -217,12 +404,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "GitHub", "url": "https://github.com" },
-    "dumb": { "type": "fixed", "name": "SourceForge", "url": "https://sourceforge.net" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["github", "sourceforge", "git", "code", "repository", "développeur"]
+    "smart": {
+      "name": "GitHub",
+      "url": "https://github.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "SourceForge",
+      "url": "https://sourceforge.net"
+    },
+    "easterEggs": [],
+    "tags": [
+      "github",
+      "sourceforge",
+      "git",
+      "code",
+      "repository",
+      "développeur"
+    ]
   },
   {
     "slug": "design-graphique",
@@ -232,12 +431,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Figma", "url": "https://figma.com" },
-    "dumb": { "type": "fixed", "name": "Canva", "url": "https://canva.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["figma", "canva", "design", "graphisme", "maquette", "ui"]
+    "smart": {
+      "name": "Figma",
+      "url": "https://figma.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Canva",
+      "url": "https://canva.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "figma",
+      "canva",
+      "design",
+      "graphisme",
+      "maquette",
+      "ui"
+    ]
   },
   {
     "slug": "intelligence-artificielle",
@@ -247,12 +458,31 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "ChatGPT", "url": "https://chatgpt.com" },
-    "dumb": { "type": "fixed", "name": "Copilot", "url": "https://copilot.microsoft.com" },
+    "smart": {
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Copilot",
+      "url": "https://copilot.microsoft.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["ia", "ai", "chatgpt", "copilot", "intelligence", "artificielle", "robot"]
+    "tags": [
+      "ia",
+      "ai",
+      "chatgpt",
+      "copilot",
+      "intelligence",
+      "artificielle",
+      "robot"
+    ]
   },
   {
     "slug": "actualites",
@@ -262,12 +492,30 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google News", "url": "https://news.google.com" },
-    "dumb": { "type": "fixed", "name": "Yahoo Actu", "url": "https://fr.news.yahoo.com" },
+    "smart": {
+      "name": "Google News",
+      "url": "https://news.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Yahoo Actu",
+      "url": "https://fr.news.yahoo.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["news", "info", "journal", "presse", "google news", "yahoo"]
+    "tags": [
+      "news",
+      "info",
+      "journal",
+      "presse",
+      "google news",
+      "yahoo"
+    ]
   },
   {
     "slug": "paiement-en-ligne",
@@ -277,12 +525,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "PayPal", "url": "https://paypal.com" },
-    "dumb": { "type": "fixed", "name": "Paylib", "url": "https://paylib.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["payer", "paypal", "paylib", "paiement", "argent", "carte"]
+    "smart": {
+      "name": "PayPal",
+      "url": "https://paypal.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Paylib",
+      "url": "https://paylib.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "payer",
+      "paypal",
+      "paylib",
+      "paiement",
+      "argent",
+      "carte"
+    ]
   },
   {
     "slug": "jeux-video",
@@ -292,12 +552,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Steam", "url": "https://store.steampowered.com" },
-    "dumb": { "type": "fixed", "name": "Epic Games", "url": "https://store.epicgames.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["jeu", "gaming", "steam", "epic", "jouer", "gamer"]
+    "smart": {
+      "name": "Steam",
+      "url": "https://store.steampowered.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Epic Games",
+      "url": "https://store.epicgames.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "jeu",
+      "gaming",
+      "steam",
+      "epic",
+      "jouer",
+      "gamer"
+    ]
   },
   {
     "slug": "compte-prorata",
@@ -307,12 +579,24 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "The Fair Cost", "url": "https://www.thefaircost.com" },
-    "dumb": { "type": "fixed", "name": "SAEBTP", "url": "https://www.saebtp.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["prorata", "btp", "chantier", "thefaircost", "saebtp", "construction"]
+    "smart": {
+      "name": "The Fair Cost",
+      "url": "https://www.thefaircost.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "SAEBTP",
+      "url": "https://www.saebtp.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "prorata",
+      "btp",
+      "chantier",
+      "thefaircost",
+      "saebtp",
+      "construction"
+    ]
   },
   {
     "slug": "traduction",
@@ -322,12 +606,29 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "DeepL", "url": "https://www.deepl.com" },
-    "dumb": { "type": "fixed", "name": "Google Traduction", "url": "https://translate.google.com" },
+    "smart": {
+      "name": "DeepL",
+      "url": "https://www.deepl.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Google Traduction",
+      "url": "https://translate.google.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["traduire", "deepl", "google translate", "langue", "traducteur"]
+    "tags": [
+      "traduire",
+      "deepl",
+      "google translate",
+      "langue",
+      "traducteur"
+    ]
   },
   {
     "slug": "visioconference",
@@ -337,12 +638,30 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Meet", "url": "https://meet.google.com" },
-    "dumb": { "type": "fixed", "name": "Microsoft Teams", "url": "https://teams.microsoft.com" },
+    "smart": {
+      "name": "Google Meet",
+      "url": "https://meet.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Microsoft Teams",
+      "url": "https://teams.microsoft.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["visio", "meet", "teams", "zoom", "réunion", "appel"]
+    "tags": [
+      "visio",
+      "meet",
+      "teams",
+      "zoom",
+      "réunion",
+      "appel"
+    ]
   },
   {
     "slug": "stockage-cloud",
@@ -352,12 +671,30 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Drive", "url": "https://drive.google.com" },
-    "dumb": { "type": "fixed", "name": "OneDrive", "url": "https://onedrive.live.com" },
+    "smart": {
+      "name": "Google Drive",
+      "url": "https://drive.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "OneDrive",
+      "url": "https://onedrive.live.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["cloud", "drive", "onedrive", "stockage", "fichier", "sauvegarde"]
+    "tags": [
+      "cloud",
+      "drive",
+      "onedrive",
+      "stockage",
+      "fichier",
+      "sauvegarde"
+    ]
   },
   {
     "slug": "politique",
@@ -365,7 +702,15 @@
     "emoji": "🗳️",
     "type": "political",
     "difficulty": 1,
-    "tags": ["vote", "voter", "élection", "gauche", "droite", "parti", "politique"]
+    "tags": [
+      "vote",
+      "voter",
+      "élection",
+      "gauche",
+      "droite",
+      "parti",
+      "politique"
+    ]
   },
   {
     "slug": "navigateur-web",
@@ -375,10 +720,24 @@
     "formula": "8-4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Chrome", "url": "https://google.com/chrome" },
-    "dumb": { "type": "fixed", "name": "Internet Explorer", "url": "https://fr.wikipedia.org/wiki/Internet_Explorer" },
+    "smart": {
+      "name": "Chrome",
+      "url": "https://google.com/chrome"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Internet Explorer",
+      "url": "https://fr.wikipedia.org/wiki/Internet_Explorer"
+    },
     "easterEggs": [],
-    "tags": ["chrome", "internet explorer", "navigateur", "browser", "firefox", "safari"]
+    "tags": [
+      "chrome",
+      "internet explorer",
+      "navigateur",
+      "browser",
+      "firefox",
+      "safari"
+    ]
   },
   {
     "slug": "os-mobile",
@@ -388,10 +747,24 @@
     "formula": "6-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "iOS", "url": "https://apple.com/ios" },
-    "dumb": { "type": "fixed", "name": "Windows Phone", "url": "https://fr.wikipedia.org/wiki/Windows_Phone" },
+    "smart": {
+      "name": "iOS",
+      "url": "https://apple.com/ios"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Windows Phone",
+      "url": "https://fr.wikipedia.org/wiki/Windows_Phone"
+    },
     "easterEggs": [],
-    "tags": ["iphone", "android", "ios", "windows phone", "mobile", "smartphone"]
+    "tags": [
+      "iphone",
+      "android",
+      "ios",
+      "windows phone",
+      "mobile",
+      "smartphone"
+    ]
   },
   {
     "slug": "reseau-social-pro",
@@ -401,10 +774,24 @@
     "formula": "1+3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "LinkedIn", "url": "https://linkedin.com" },
-    "dumb": { "type": "fixed", "name": "Viadeo", "url": "https://fr.wikipedia.org/wiki/Viadeo" },
+    "smart": {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Viadeo",
+      "url": "https://fr.wikipedia.org/wiki/Viadeo"
+    },
     "easterEggs": [],
-    "tags": ["linkedin", "viadeo", "professionnel", "emploi", "cv", "recrutement"]
+    "tags": [
+      "linkedin",
+      "viadeo",
+      "professionnel",
+      "emploi",
+      "cv",
+      "recrutement"
+    ]
   },
   {
     "slug": "gestion-projet",
@@ -414,10 +801,24 @@
     "formula": "20 \\div 5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Notion", "url": "https://notion.so" },
-    "dumb": { "type": "fixed", "name": "Trello", "url": "https://trello.com" },
+    "smart": {
+      "name": "Notion",
+      "url": "https://notion.so"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Trello",
+      "url": "https://trello.com"
+    },
     "easterEggs": [],
-    "tags": ["notion", "trello", "projet", "organisation", "tâche", "kanban"]
+    "tags": [
+      "notion",
+      "trello",
+      "projet",
+      "organisation",
+      "tâche",
+      "kanban"
+    ]
   },
   {
     "slug": "encyclopedie",
@@ -427,10 +828,23 @@
     "formula": "2^2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Wikipédia", "url": "https://fr.wikipedia.org" },
-    "dumb": { "type": "fixed", "name": "Encarta", "url": "https://fr.wikipedia.org/wiki/Encarta" },
+    "smart": {
+      "name": "Wikipédia",
+      "url": "https://fr.wikipedia.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Encarta",
+      "url": "https://fr.wikipedia.org/wiki/Encarta"
+    },
     "easterEggs": [],
-    "tags": ["wikipedia", "encyclopédie", "savoir", "connaissance", "encarta"]
+    "tags": [
+      "wikipedia",
+      "encyclopédie",
+      "savoir",
+      "connaissance",
+      "encarta"
+    ]
   },
   {
     "slug": "banque-en-ligne",
@@ -440,10 +854,31 @@
     "formula": "\\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Boursorama", "url": "https://boursorama.com" },
-    "dumb": { "type": "fixed", "name": "Monabanq", "url": "https://monabanq.com" },
-    "easterEggs": [],
-    "tags": ["banque", "boursorama", "monabanq", "compte", "argent", "épargne"]
+    "smart": {
+      "name": "Boursorama",
+      "url": "https://boursorama.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Monabanq",
+      "url": "https://monabanq.com"
+    },
+    "easterEggs": [
+      {
+        "answer": 16,
+        "requiresChain": "radical",
+        "name": "Racine carrée",
+        "url": "https://fr.wikipedia.org/wiki/Racine_carr%C3%A9e"
+      }
+    ],
+    "tags": [
+      "banque",
+      "boursorama",
+      "monabanq",
+      "compte",
+      "argent",
+      "épargne"
+    ]
   },
   {
     "slug": "editeur-code",
@@ -453,10 +888,24 @@
     "formula": "16 \\div 4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "VS Code", "url": "https://code.visualstudio.com" },
-    "dumb": { "type": "fixed", "name": "Notepad", "url": "https://fr.wikipedia.org/wiki/Bloc-notes_(Windows)" },
+    "smart": {
+      "name": "VS Code",
+      "url": "https://code.visualstudio.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Notepad",
+      "url": "https://fr.wikipedia.org/wiki/Bloc-notes_(Windows)"
+    },
     "easterEggs": [],
-    "tags": ["vscode", "notepad", "éditeur", "code", "développement", "ide"]
+    "tags": [
+      "vscode",
+      "notepad",
+      "éditeur",
+      "code",
+      "développement",
+      "ide"
+    ]
   },
   {
     "slug": "tableur",
@@ -466,10 +915,24 @@
     "formula": "2 \\times 2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Sheets", "url": "https://sheets.google.com" },
-    "dumb": { "type": "fixed", "name": "Excel", "url": "https://office.live.com/start/Excel.aspx" },
+    "smart": {
+      "name": "Google Sheets",
+      "url": "https://sheets.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Excel",
+      "url": "https://office.live.com/start/Excel.aspx"
+    },
     "easterEggs": [],
-    "tags": ["excel", "sheets", "tableau", "calcul", "données", "cellule"]
+    "tags": [
+      "excel",
+      "sheets",
+      "tableau",
+      "calcul",
+      "données",
+      "cellule"
+    ]
   },
   {
     "slug": "pizza",
@@ -479,10 +942,24 @@
     "formula": "12-8",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Margherita", "url": "https://fr.wikipedia.org/wiki/Pizza_Margherita" },
-    "dumb": { "type": "fixed", "name": "Hawaïenne", "url": "https://fr.wikipedia.org/wiki/Pizza_hawa%C3%AFenne" },
+    "smart": {
+      "name": "Margherita",
+      "url": "https://fr.wikipedia.org/wiki/Pizza_Margherita"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Hawaïenne",
+      "url": "https://fr.wikipedia.org/wiki/Pizza_hawa%C3%AFenne"
+    },
     "easterEggs": [],
-    "tags": ["pizza", "margherita", "hawaïenne", "ananas", "manger", "italien"]
+    "tags": [
+      "pizza",
+      "margherita",
+      "hawaïenne",
+      "ananas",
+      "manger",
+      "italien"
+    ]
   },
   {
     "slug": "super-heros",
@@ -492,10 +969,24 @@
     "formula": "7-3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Batman", "url": "https://fr.wikipedia.org/wiki/Batman" },
-    "dumb": { "type": "fixed", "name": "Aquaman", "url": "https://fr.wikipedia.org/wiki/Aquaman" },
+    "smart": {
+      "name": "Batman",
+      "url": "https://fr.wikipedia.org/wiki/Batman"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Aquaman",
+      "url": "https://fr.wikipedia.org/wiki/Aquaman"
+    },
     "easterEggs": [],
-    "tags": ["batman", "aquaman", "comics", "dc", "marvel", "héros"]
+    "tags": [
+      "batman",
+      "aquaman",
+      "comics",
+      "dc",
+      "marvel",
+      "héros"
+    ]
   },
   {
     "slug": "animal-compagnie",
@@ -505,10 +996,24 @@
     "formula": "3!-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Chat", "url": "https://fr.wikipedia.org/wiki/Chat" },
-    "dumb": { "type": "fixed", "name": "Poisson rouge", "url": "https://fr.wikipedia.org/wiki/Poisson_rouge" },
+    "smart": {
+      "name": "Chat",
+      "url": "https://fr.wikipedia.org/wiki/Chat"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Poisson rouge",
+      "url": "https://fr.wikipedia.org/wiki/Poisson_rouge"
+    },
     "easterEggs": [],
-    "tags": ["chat", "chien", "animal", "poisson", "compagnie", "pet"]
+    "tags": [
+      "chat",
+      "chien",
+      "animal",
+      "poisson",
+      "compagnie",
+      "pet"
+    ]
   },
   {
     "slug": "boisson-chaude",
@@ -518,10 +1023,24 @@
     "formula": "9-5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Café", "url": "https://fr.wikipedia.org/wiki/Caf%C3%A9_(boisson)" },
-    "dumb": { "type": "fixed", "name": "Chicorée", "url": "https://fr.wikipedia.org/wiki/Chicor%C3%A9e" },
+    "smart": {
+      "name": "Café",
+      "url": "https://fr.wikipedia.org/wiki/Caf%C3%A9_(boisson)"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Chicorée",
+      "url": "https://fr.wikipedia.org/wiki/Chicor%C3%A9e"
+    },
     "easterEggs": [],
-    "tags": ["café", "thé", "chicorée", "boire", "matin", "expresso"]
+    "tags": [
+      "café",
+      "thé",
+      "chicorée",
+      "boire",
+      "matin",
+      "expresso"
+    ]
   },
   {
     "slug": "fromage",
@@ -531,10 +1050,24 @@
     "formula": "28 \\div 7",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Comté", "url": "https://fr.wikipedia.org/wiki/Comt%C3%A9_(fromage)" },
-    "dumb": { "type": "fixed", "name": "Babybel", "url": "https://fr.wikipedia.org/wiki/Mini_Babybel" },
+    "smart": {
+      "name": "Comté",
+      "url": "https://fr.wikipedia.org/wiki/Comt%C3%A9_(fromage)"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Babybel",
+      "url": "https://fr.wikipedia.org/wiki/Mini_Babybel"
+    },
     "easterEggs": [],
-    "tags": ["fromage", "comté", "babybel", "france", "lait", "plateau"]
+    "tags": [
+      "fromage",
+      "comté",
+      "babybel",
+      "france",
+      "lait",
+      "plateau"
+    ]
   },
   {
     "slug": "langage-programmation",
@@ -544,12 +1077,30 @@
     "formula": "\\sqrt{144} - 8",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Python", "url": "https://python.org" },
-    "dumb": { "type": "fixed", "name": "PHP", "url": "https://php.net" },
+    "smart": {
+      "name": "Python",
+      "url": "https://python.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "PHP",
+      "url": "https://php.net"
+    },
     "easterEggs": [
-      { "answer": 42, "name": "42 (la réponse)", "url": "https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l%27univers_et_le_reste" }
+      {
+        "answer": 42,
+        "name": "42 (la réponse)",
+        "url": "https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l%27univers_et_le_reste"
+      }
     ],
-    "tags": ["python", "php", "code", "développer", "programme", "langage"]
+    "tags": [
+      "python",
+      "php",
+      "code",
+      "développer",
+      "programme",
+      "langage"
+    ]
   },
   {
     "slug": "framework-js",
@@ -559,10 +1110,24 @@
     "formula": "\\frac{7!}{1260}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "React", "url": "https://react.dev" },
-    "dumb": { "type": "fixed", "name": "jQuery", "url": "https://jquery.com" },
+    "smart": {
+      "name": "React",
+      "url": "https://react.dev"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "jQuery",
+      "url": "https://jquery.com"
+    },
     "easterEggs": [],
-    "tags": ["react", "jquery", "javascript", "js", "frontend", "web"]
+    "tags": [
+      "react",
+      "jquery",
+      "javascript",
+      "js",
+      "frontend",
+      "web"
+    ]
   },
   {
     "slug": "base-donnees",
@@ -572,10 +1137,24 @@
     "formula": "\\log_{10}(10000)",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "PostgreSQL", "url": "https://postgresql.org" },
-    "dumb": { "type": "fixed", "name": "Access", "url": "https://fr.wikipedia.org/wiki/Microsoft_Access" },
+    "smart": {
+      "name": "PostgreSQL",
+      "url": "https://postgresql.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Access",
+      "url": "https://fr.wikipedia.org/wiki/Microsoft_Access"
+    },
     "easterEggs": [],
-    "tags": ["postgresql", "access", "sql", "base", "données", "database"]
+    "tags": [
+      "postgresql",
+      "access",
+      "sql",
+      "base",
+      "données",
+      "database"
+    ]
   },
   {
     "slug": "cybersecurite",
@@ -585,10 +1164,24 @@
     "formula": "\\lceil \\pi \\rceil",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Proton", "url": "https://proton.me" },
-    "dumb": { "type": "fixed", "name": "Norton", "url": "https://norton.com" },
+    "smart": {
+      "name": "Proton",
+      "url": "https://proton.me"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Norton",
+      "url": "https://norton.com"
+    },
     "easterEggs": [],
-    "tags": ["proton", "norton", "sécurité", "antivirus", "vie privée", "vpn"]
+    "tags": [
+      "proton",
+      "norton",
+      "sécurité",
+      "antivirus",
+      "vie privée",
+      "vpn"
+    ]
   },
   {
     "slug": "crypto-monnaie",
@@ -598,10 +1191,24 @@
     "formula": "2^3 - \\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Bitcoin", "url": "https://bitcoin.org" },
-    "dumb": { "type": "fixed", "name": "Dogecoin", "url": "https://dogecoin.com" },
+    "smart": {
+      "name": "Bitcoin",
+      "url": "https://bitcoin.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Dogecoin",
+      "url": "https://dogecoin.com"
+    },
     "easterEggs": [],
-    "tags": ["bitcoin", "dogecoin", "crypto", "blockchain", "monnaie", "trading"]
+    "tags": [
+      "bitcoin",
+      "dogecoin",
+      "crypto",
+      "blockchain",
+      "monnaie",
+      "trading"
+    ]
   },
   {
     "slug": "hebergement-web",
@@ -611,10 +1218,24 @@
     "formula": "\\frac{24}{6}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Vercel", "url": "https://vercel.com" },
-    "dumb": { "type": "fixed", "name": "OVH", "url": "https://ovhcloud.com" },
+    "smart": {
+      "name": "Vercel",
+      "url": "https://vercel.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "OVH",
+      "url": "https://ovhcloud.com"
+    },
     "easterEggs": [],
-    "tags": ["vercel", "ovh", "hébergement", "serveur", "deploy", "hosting"]
+    "tags": [
+      "vercel",
+      "ovh",
+      "hébergement",
+      "serveur",
+      "deploy",
+      "hosting"
+    ]
   },
   {
     "slug": "photo-stock",
@@ -624,10 +1245,24 @@
     "formula": "\\frac{\\sqrt{64}}{2}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Unsplash", "url": "https://unsplash.com" },
-    "dumb": { "type": "fixed", "name": "Shutterstock", "url": "https://shutterstock.com" },
+    "smart": {
+      "name": "Unsplash",
+      "url": "https://unsplash.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Shutterstock",
+      "url": "https://shutterstock.com"
+    },
     "easterEggs": [],
-    "tags": ["unsplash", "shutterstock", "photo", "image", "libre", "stock"]
+    "tags": [
+      "unsplash",
+      "shutterstock",
+      "photo",
+      "image",
+      "libre",
+      "stock"
+    ]
   },
   {
     "slug": "podcast",
@@ -637,10 +1272,24 @@
     "formula": "\\binom{4}{3}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Spotify Podcasts", "url": "https://podcasters.spotify.com" },
-    "dumb": { "type": "fixed", "name": "Apple Podcasts", "url": "https://podcasts.apple.com" },
+    "smart": {
+      "name": "Spotify Podcasts",
+      "url": "https://podcasters.spotify.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Apple Podcasts",
+      "url": "https://podcasts.apple.com"
+    },
     "easterEggs": [],
-    "tags": ["podcast", "écouter", "spotify", "apple", "émission", "audio"]
+    "tags": [
+      "podcast",
+      "écouter",
+      "spotify",
+      "apple",
+      "émission",
+      "audio"
+    ]
   },
   {
     "slug": "clavier",
@@ -650,10 +1299,24 @@
     "formula": "\\frac{2^4}{4}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "AZERTY", "url": "https://fr.wikipedia.org/wiki/AZERTY" },
-    "dumb": { "type": "fixed", "name": "QWERTY", "url": "https://fr.wikipedia.org/wiki/QWERTY" },
+    "smart": {
+      "name": "AZERTY",
+      "url": "https://fr.wikipedia.org/wiki/AZERTY"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "QWERTY",
+      "url": "https://fr.wikipedia.org/wiki/QWERTY"
+    },
     "easterEggs": [],
-    "tags": ["azerty", "qwerty", "clavier", "taper", "disposition", "bépo"]
+    "tags": [
+      "azerty",
+      "qwerty",
+      "clavier",
+      "taper",
+      "disposition",
+      "bépo"
+    ]
   },
   {
     "slug": "console-jeux",
@@ -663,10 +1326,25 @@
     "formula": "\\log_2(32)",
     "correctAnswer": 5,
     "inputMode": "decimal",
-    "smart": { "name": "PC", "url": "https://fr.wikipedia.org/wiki/Jeu_vid%C3%A9o_sur_ordinateur_personnel" },
-    "dumb": { "type": "fixed", "name": "Stadia", "url": "https://fr.wikipedia.org/wiki/Google_Stadia" },
+    "smart": {
+      "name": "PC",
+      "url": "https://fr.wikipedia.org/wiki/Jeu_vid%C3%A9o_sur_ordinateur_personnel"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Stadia",
+      "url": "https://fr.wikipedia.org/wiki/Google_Stadia"
+    },
     "easterEggs": [],
-    "tags": ["pc", "stadia", "console", "playstation", "xbox", "nintendo", "gaming"]
+    "tags": [
+      "pc",
+      "stadia",
+      "console",
+      "playstation",
+      "xbox",
+      "nintendo",
+      "gaming"
+    ]
   },
   {
     "slug": "religion",
@@ -676,24 +1354,63 @@
     "formula": "\\int_0^{\\pi} \\sin(x)\\,dx",
     "correctAnswer": 2,
     "inputMode": "decimal",
-    "smart": { "name": "Athéisme", "url": "https://fr.wikipedia.org/wiki/Ath%C3%A9isme" },
+    "smart": {
+      "name": "Athéisme",
+      "url": "https://fr.wikipedia.org/wiki/Ath%C3%A9isme"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Christianisme", "url": "https://fr.wikipedia.org/wiki/Christianisme" },
-        { "name": "Islam", "url": "https://fr.wikipedia.org/wiki/Islam" },
-        { "name": "Bouddhisme", "url": "https://fr.wikipedia.org/wiki/Bouddhisme" },
-        { "name": "Hindouisme", "url": "https://fr.wikipedia.org/wiki/Hindouisme" },
-        { "name": "Judaïsme", "url": "https://fr.wikipedia.org/wiki/Juda%C3%AFsme" },
-        { "name": "Sikhisme", "url": "https://fr.wikipedia.org/wiki/Sikhisme" },
-        { "name": "Shintoïsme", "url": "https://fr.wikipedia.org/wiki/Shinto%C3%AFsme" },
-        { "name": "Jaïnisme", "url": "https://fr.wikipedia.org/wiki/Ja%C3%AFnisme" }
+        {
+          "name": "Christianisme",
+          "url": "https://fr.wikipedia.org/wiki/Christianisme"
+        },
+        {
+          "name": "Islam",
+          "url": "https://fr.wikipedia.org/wiki/Islam"
+        },
+        {
+          "name": "Bouddhisme",
+          "url": "https://fr.wikipedia.org/wiki/Bouddhisme"
+        },
+        {
+          "name": "Hindouisme",
+          "url": "https://fr.wikipedia.org/wiki/Hindouisme"
+        },
+        {
+          "name": "Judaïsme",
+          "url": "https://fr.wikipedia.org/wiki/Juda%C3%AFsme"
+        },
+        {
+          "name": "Sikhisme",
+          "url": "https://fr.wikipedia.org/wiki/Sikhisme"
+        },
+        {
+          "name": "Shintoïsme",
+          "url": "https://fr.wikipedia.org/wiki/Shinto%C3%AFsme"
+        },
+        {
+          "name": "Jaïnisme",
+          "url": "https://fr.wikipedia.org/wiki/Ja%C3%AFnisme"
+        }
       ]
     },
     "easterEggs": [
-      { "answer": 0, "name": "Nihilisme", "url": "https://fr.wikipedia.org/wiki/Nihilisme" }
+      {
+        "answer": 0,
+        "name": "Nihilisme",
+        "url": "https://fr.wikipedia.org/wiki/Nihilisme"
+      }
     ],
-    "tags": ["dieu", "foi", "croyance", "athéisme", "église", "prière", "spiritualité"]
+    "tags": [
+      "dieu",
+      "foi",
+      "croyance",
+      "athéisme",
+      "église",
+      "prière",
+      "spiritualité"
+    ]
   },
   {
     "slug": "meilleure-cuisine",
@@ -703,20 +1420,49 @@
     "formula": "\\prod_{k=1}^{3} k",
     "correctAnswer": 6,
     "inputMode": "decimal",
-    "smart": { "name": "Cuisine française", "url": "https://fr.wikipedia.org/wiki/Cuisine_fran%C3%A7aise" },
+    "smart": {
+      "name": "Cuisine française",
+      "url": "https://fr.wikipedia.org/wiki/Cuisine_fran%C3%A7aise"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Cuisine italienne", "url": "https://fr.wikipedia.org/wiki/Cuisine_italienne" },
-        { "name": "Cuisine chinoise", "url": "https://fr.wikipedia.org/wiki/Cuisine_chinoise" },
-        { "name": "Cuisine indienne", "url": "https://fr.wikipedia.org/wiki/Cuisine_indienne" },
-        { "name": "Cuisine mexicaine", "url": "https://fr.wikipedia.org/wiki/Cuisine_mexicaine" },
-        { "name": "Cuisine japonaise", "url": "https://fr.wikipedia.org/wiki/Cuisine_japonaise" },
-        { "name": "Cuisine thaïlandaise", "url": "https://fr.wikipedia.org/wiki/Cuisine_tha%C3%AFlandaise" }
+        {
+          "name": "Cuisine italienne",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_italienne"
+        },
+        {
+          "name": "Cuisine chinoise",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_chinoise"
+        },
+        {
+          "name": "Cuisine indienne",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_indienne"
+        },
+        {
+          "name": "Cuisine mexicaine",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_mexicaine"
+        },
+        {
+          "name": "Cuisine japonaise",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_japonaise"
+        },
+        {
+          "name": "Cuisine thaïlandaise",
+          "url": "https://fr.wikipedia.org/wiki/Cuisine_tha%C3%AFlandaise"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["gastronomie", "cuisine", "nourriture", "restaurant", "chef", "recette", "manger"]
+    "tags": [
+      "gastronomie",
+      "cuisine",
+      "nourriture",
+      "restaurant",
+      "chef",
+      "recette",
+      "manger"
+    ]
   },
   {
     "slug": "meilleur-pays",
@@ -726,21 +1472,52 @@
     "formula": "\\ln(e^3)",
     "correctAnswer": 3,
     "inputMode": "decimal",
-    "smart": { "name": "Suisse", "url": "https://fr.wikipedia.org/wiki/Suisse" },
+    "smart": {
+      "name": "Suisse",
+      "url": "https://fr.wikipedia.org/wiki/Suisse"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "France", "url": "https://fr.wikipedia.org/wiki/France" },
-        { "name": "États-Unis", "url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis" },
-        { "name": "Canada", "url": "https://fr.wikipedia.org/wiki/Canada" },
-        { "name": "Japon", "url": "https://fr.wikipedia.org/wiki/Japon" },
-        { "name": "Australie", "url": "https://fr.wikipedia.org/wiki/Australie" },
-        { "name": "Norvège", "url": "https://fr.wikipedia.org/wiki/Norv%C3%A8ge" },
-        { "name": "Nouvelle-Zélande", "url": "https://fr.wikipedia.org/wiki/Nouvelle-Z%C3%A9lande" }
+        {
+          "name": "France",
+          "url": "https://fr.wikipedia.org/wiki/France"
+        },
+        {
+          "name": "États-Unis",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis"
+        },
+        {
+          "name": "Canada",
+          "url": "https://fr.wikipedia.org/wiki/Canada"
+        },
+        {
+          "name": "Japon",
+          "url": "https://fr.wikipedia.org/wiki/Japon"
+        },
+        {
+          "name": "Australie",
+          "url": "https://fr.wikipedia.org/wiki/Australie"
+        },
+        {
+          "name": "Norvège",
+          "url": "https://fr.wikipedia.org/wiki/Norv%C3%A8ge"
+        },
+        {
+          "name": "Nouvelle-Zélande",
+          "url": "https://fr.wikipedia.org/wiki/Nouvelle-Z%C3%A9lande"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["pays", "vivre", "émigrer", "suisse", "qualité de vie", "expatrié"]
+    "tags": [
+      "pays",
+      "vivre",
+      "émigrer",
+      "suisse",
+      "qualité de vie",
+      "expatrié"
+    ]
   },
   {
     "slug": "meilleure-langue",
@@ -750,20 +1527,48 @@
     "formula": "\\frac{d}{dx}(x^4)\\bigg|_{x=1}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Français", "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ais" },
+    "smart": {
+      "name": "Français",
+      "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ais"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Anglais", "url": "https://fr.wikipedia.org/wiki/Anglais" },
-        { "name": "Espagnol", "url": "https://fr.wikipedia.org/wiki/Espagnol" },
-        { "name": "Mandarin", "url": "https://fr.wikipedia.org/wiki/Mandarin_(langue)" },
-        { "name": "Arabe", "url": "https://fr.wikipedia.org/wiki/Arabe" },
-        { "name": "Allemand", "url": "https://fr.wikipedia.org/wiki/Allemand" },
-        { "name": "Portugais", "url": "https://fr.wikipedia.org/wiki/Portugais" }
+        {
+          "name": "Anglais",
+          "url": "https://fr.wikipedia.org/wiki/Anglais"
+        },
+        {
+          "name": "Espagnol",
+          "url": "https://fr.wikipedia.org/wiki/Espagnol"
+        },
+        {
+          "name": "Mandarin",
+          "url": "https://fr.wikipedia.org/wiki/Mandarin_(langue)"
+        },
+        {
+          "name": "Arabe",
+          "url": "https://fr.wikipedia.org/wiki/Arabe"
+        },
+        {
+          "name": "Allemand",
+          "url": "https://fr.wikipedia.org/wiki/Allemand"
+        },
+        {
+          "name": "Portugais",
+          "url": "https://fr.wikipedia.org/wiki/Portugais"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["langue", "français", "parler", "linguistique", "idiome", "dialecte"]
+    "tags": [
+      "langue",
+      "français",
+      "parler",
+      "linguistique",
+      "idiome",
+      "dialecte"
+    ]
   },
   {
     "slug": "meilleur-sport",
@@ -773,20 +1578,48 @@
     "formula": "\\det\\begin{pmatrix} 3 & 1 \\\\ 2 & 4 \\end{pmatrix}",
     "correctAnswer": 10,
     "inputMode": "decimal",
-    "smart": { "name": "Football", "url": "https://fr.wikipedia.org/wiki/Football" },
+    "smart": {
+      "name": "Football",
+      "url": "https://fr.wikipedia.org/wiki/Football"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Rugby", "url": "https://fr.wikipedia.org/wiki/Rugby_%C3%A0_XV" },
-        { "name": "Tennis", "url": "https://fr.wikipedia.org/wiki/Tennis" },
-        { "name": "Basketball", "url": "https://fr.wikipedia.org/wiki/Basket-ball" },
-        { "name": "Cricket", "url": "https://fr.wikipedia.org/wiki/Cricket" },
-        { "name": "Golf", "url": "https://fr.wikipedia.org/wiki/Golf" },
-        { "name": "Pétanque", "url": "https://fr.wikipedia.org/wiki/P%C3%A9tanque" }
+        {
+          "name": "Rugby",
+          "url": "https://fr.wikipedia.org/wiki/Rugby_%C3%A0_XV"
+        },
+        {
+          "name": "Tennis",
+          "url": "https://fr.wikipedia.org/wiki/Tennis"
+        },
+        {
+          "name": "Basketball",
+          "url": "https://fr.wikipedia.org/wiki/Basket-ball"
+        },
+        {
+          "name": "Cricket",
+          "url": "https://fr.wikipedia.org/wiki/Cricket"
+        },
+        {
+          "name": "Golf",
+          "url": "https://fr.wikipedia.org/wiki/Golf"
+        },
+        {
+          "name": "Pétanque",
+          "url": "https://fr.wikipedia.org/wiki/P%C3%A9tanque"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["sport", "football", "foot", "match", "équipe", "jouer"]
+    "tags": [
+      "sport",
+      "football",
+      "foot",
+      "match",
+      "équipe",
+      "jouer"
+    ]
   },
   {
     "slug": "forme-art",
@@ -796,20 +1629,48 @@
     "formula": "\\sum_{n=1}^{\\infty} \\frac{1}{2^n}",
     "correctAnswer": 1,
     "inputMode": "decimal",
-    "smart": { "name": "Cinéma", "url": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma" },
+    "smart": {
+      "name": "Cinéma",
+      "url": "https://fr.wikipedia.org/wiki/Cin%C3%A9ma"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Peinture", "url": "https://fr.wikipedia.org/wiki/Peinture_(art)" },
-        { "name": "Sculpture", "url": "https://fr.wikipedia.org/wiki/Sculpture" },
-        { "name": "Musique", "url": "https://fr.wikipedia.org/wiki/Musique" },
-        { "name": "Danse", "url": "https://fr.wikipedia.org/wiki/Danse" },
-        { "name": "Photographie", "url": "https://fr.wikipedia.org/wiki/Photographie" },
-        { "name": "Théâtre", "url": "https://fr.wikipedia.org/wiki/Th%C3%A9%C3%A2tre" }
+        {
+          "name": "Peinture",
+          "url": "https://fr.wikipedia.org/wiki/Peinture_(art)"
+        },
+        {
+          "name": "Sculpture",
+          "url": "https://fr.wikipedia.org/wiki/Sculpture"
+        },
+        {
+          "name": "Musique",
+          "url": "https://fr.wikipedia.org/wiki/Musique"
+        },
+        {
+          "name": "Danse",
+          "url": "https://fr.wikipedia.org/wiki/Danse"
+        },
+        {
+          "name": "Photographie",
+          "url": "https://fr.wikipedia.org/wiki/Photographie"
+        },
+        {
+          "name": "Théâtre",
+          "url": "https://fr.wikipedia.org/wiki/Th%C3%A9%C3%A2tre"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["art", "cinéma", "culture", "musée", "artiste", "création"]
+    "tags": [
+      "art",
+      "cinéma",
+      "culture",
+      "musée",
+      "artiste",
+      "création"
+    ]
   },
   {
     "slug": "regime-politique",
@@ -819,19 +1680,44 @@
     "formula": "\\frac{\\Gamma(5)}{6}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Démocratie", "url": "https://fr.wikipedia.org/wiki/D%C3%A9mocratie" },
+    "smart": {
+      "name": "Démocratie",
+      "url": "https://fr.wikipedia.org/wiki/D%C3%A9mocratie"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Monarchie", "url": "https://fr.wikipedia.org/wiki/Monarchie" },
-        { "name": "Oligarchie", "url": "https://fr.wikipedia.org/wiki/Oligarchie" },
-        { "name": "Théocratie", "url": "https://fr.wikipedia.org/wiki/Th%C3%A9ocratie" },
-        { "name": "Autocratie", "url": "https://fr.wikipedia.org/wiki/Autocratie" },
-        { "name": "Anarchie", "url": "https://fr.wikipedia.org/wiki/Anarchie" }
+        {
+          "name": "Monarchie",
+          "url": "https://fr.wikipedia.org/wiki/Monarchie"
+        },
+        {
+          "name": "Oligarchie",
+          "url": "https://fr.wikipedia.org/wiki/Oligarchie"
+        },
+        {
+          "name": "Théocratie",
+          "url": "https://fr.wikipedia.org/wiki/Th%C3%A9ocratie"
+        },
+        {
+          "name": "Autocratie",
+          "url": "https://fr.wikipedia.org/wiki/Autocratie"
+        },
+        {
+          "name": "Anarchie",
+          "url": "https://fr.wikipedia.org/wiki/Anarchie"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["régime", "démocratie", "gouvernement", "pouvoir", "état", "constitution"]
+    "tags": [
+      "régime",
+      "démocratie",
+      "gouvernement",
+      "pouvoir",
+      "état",
+      "constitution"
+    ]
   },
   {
     "slug": "meilleur-os",
@@ -841,18 +1727,41 @@
     "formula": "\\int_0^2 x\\,dx",
     "correctAnswer": 2,
     "inputMode": "decimal",
-    "smart": { "name": "Linux", "url": "https://fr.wikipedia.org/wiki/Linux" },
+    "smart": {
+      "name": "Linux",
+      "url": "https://fr.wikipedia.org/wiki/Linux"
+    },
     "dumb": {
       "type": "random",
       "pool": [
-        { "name": "Windows", "url": "https://fr.wikipedia.org/wiki/Microsoft_Windows" },
-        { "name": "macOS", "url": "https://fr.wikipedia.org/wiki/MacOS" },
-        { "name": "ChromeOS", "url": "https://fr.wikipedia.org/wiki/Chrome_OS" },
-        { "name": "FreeBSD", "url": "https://fr.wikipedia.org/wiki/FreeBSD" }
+        {
+          "name": "Windows",
+          "url": "https://fr.wikipedia.org/wiki/Microsoft_Windows"
+        },
+        {
+          "name": "macOS",
+          "url": "https://fr.wikipedia.org/wiki/MacOS"
+        },
+        {
+          "name": "ChromeOS",
+          "url": "https://fr.wikipedia.org/wiki/Chrome_OS"
+        },
+        {
+          "name": "FreeBSD",
+          "url": "https://fr.wikipedia.org/wiki/FreeBSD"
+        }
       ]
     },
     "easterEggs": [],
-    "tags": ["linux", "windows", "macos", "os", "système", "exploitation", "ubuntu"]
+    "tags": [
+      "linux",
+      "windows",
+      "macos",
+      "os",
+      "système",
+      "exploitation",
+      "ubuntu"
+    ]
   },
   {
     "slug": "vente-entre-particuliers",
@@ -862,12 +1771,25 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Vinted", "url": "https://www.vinted.fr" },
-    "dumb": { "type": "fixed", "name": "eBay", "url": "https://www.ebay.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["vinted", "ebay", "occasion", "vendre", "acheter", "seconde main", "fripe"]
+    "smart": {
+      "name": "Vinted",
+      "url": "https://www.vinted.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "eBay",
+      "url": "https://www.ebay.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "vinted",
+      "ebay",
+      "occasion",
+      "vendre",
+      "acheter",
+      "seconde main",
+      "fripe"
+    ]
   },
   {
     "slug": "comparateur-prix",
@@ -877,10 +1799,24 @@
     "formula": "8-4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Idealo", "url": "https://www.idealo.fr" },
-    "dumb": { "type": "fixed", "name": "Google Shopping", "url": "https://shopping.google.com" },
+    "smart": {
+      "name": "Idealo",
+      "url": "https://www.idealo.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Google Shopping",
+      "url": "https://shopping.google.com"
+    },
     "easterEggs": [],
-    "tags": ["comparateur", "prix", "idealo", "shopping", "comparer", "promo"]
+    "tags": [
+      "comparateur",
+      "prix",
+      "idealo",
+      "shopping",
+      "comparer",
+      "promo"
+    ]
   },
   {
     "slug": "artisanat-en-ligne",
@@ -890,10 +1826,24 @@
     "formula": "1+3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Etsy", "url": "https://www.etsy.com" },
-    "dumb": { "type": "fixed", "name": "Amazon Handmade", "url": "https://www.amazon.fr/handmade" },
+    "smart": {
+      "name": "Etsy",
+      "url": "https://www.etsy.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Amazon Handmade",
+      "url": "https://www.amazon.fr/handmade"
+    },
     "easterEggs": [],
-    "tags": ["etsy", "artisanat", "fait main", "handmade", "créateur", "bijoux"]
+    "tags": [
+      "etsy",
+      "artisanat",
+      "fait main",
+      "handmade",
+      "créateur",
+      "bijoux"
+    ]
   },
   {
     "slug": "mode-en-ligne",
@@ -903,10 +1853,25 @@
     "formula": "6-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Zalando", "url": "https://www.zalando.fr" },
-    "dumb": { "type": "fixed", "name": "Shein", "url": "https://www.shein.com" },
+    "smart": {
+      "name": "Zalando",
+      "url": "https://www.zalando.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Shein",
+      "url": "https://www.shein.com"
+    },
     "easterEggs": [],
-    "tags": ["zalando", "shein", "mode", "vêtement", "fashion", "habit", "fringue"]
+    "tags": [
+      "zalando",
+      "shein",
+      "mode",
+      "vêtement",
+      "fashion",
+      "habit",
+      "fringue"
+    ]
   },
   {
     "slug": "voiture-occasion",
@@ -916,10 +1881,25 @@
     "formula": "2^2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "La Centrale", "url": "https://www.lacentrale.fr" },
-    "dumb": { "type": "fixed", "name": "AutoScout24", "url": "https://www.autoscout24.fr" },
+    "smart": {
+      "name": "La Centrale",
+      "url": "https://www.lacentrale.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "AutoScout24",
+      "url": "https://www.autoscout24.fr"
+    },
     "easterEggs": [],
-    "tags": ["voiture", "auto", "occasion", "acheter", "véhicule", "la centrale", "autoscout"]
+    "tags": [
+      "voiture",
+      "auto",
+      "occasion",
+      "acheter",
+      "véhicule",
+      "la centrale",
+      "autoscout"
+    ]
   },
   {
     "slug": "neo-banque",
@@ -929,10 +1909,24 @@
     "formula": "\\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Revolut", "url": "https://www.revolut.com" },
-    "dumb": { "type": "fixed", "name": "N26", "url": "https://n26.com" },
+    "smart": {
+      "name": "Revolut",
+      "url": "https://www.revolut.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "N26",
+      "url": "https://n26.com"
+    },
     "easterEggs": [],
-    "tags": ["revolut", "n26", "banque", "néo-banque", "fintech", "carte"]
+    "tags": [
+      "revolut",
+      "n26",
+      "banque",
+      "néo-banque",
+      "fintech",
+      "carte"
+    ]
   },
   {
     "slug": "investissement-bourse",
@@ -942,10 +1936,24 @@
     "formula": "20 \\div 5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Trading 212", "url": "https://www.trading212.com" },
-    "dumb": { "type": "fixed", "name": "eToro", "url": "https://www.etoro.com" },
+    "smart": {
+      "name": "Trading 212",
+      "url": "https://www.trading212.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "eToro",
+      "url": "https://www.etoro.com"
+    },
     "easterEggs": [],
-    "tags": ["bourse", "trading", "investir", "action", "etf", "portefeuille"]
+    "tags": [
+      "bourse",
+      "trading",
+      "investir",
+      "action",
+      "etf",
+      "portefeuille"
+    ]
   },
   {
     "slug": "gestion-budget",
@@ -955,10 +1963,24 @@
     "formula": "2 \\times 2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Bankin", "url": "https://bankin.com" },
-    "dumb": { "type": "fixed", "name": "Linxo", "url": "https://www.linxo.com" },
+    "smart": {
+      "name": "Bankin",
+      "url": "https://bankin.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Linxo",
+      "url": "https://www.linxo.com"
+    },
     "easterEggs": [],
-    "tags": ["budget", "bankin", "linxo", "dépenses", "finances", "comptes"]
+    "tags": [
+      "budget",
+      "bankin",
+      "linxo",
+      "dépenses",
+      "finances",
+      "comptes"
+    ]
   },
   {
     "slug": "financement-participatif",
@@ -968,10 +1990,23 @@
     "formula": "12-8",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "KissKissBankBank", "url": "https://www.kisskissbankbank.com" },
-    "dumb": { "type": "fixed", "name": "Ulule", "url": "https://www.ulule.com" },
+    "smart": {
+      "name": "KissKissBankBank",
+      "url": "https://www.kisskissbankbank.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Ulule",
+      "url": "https://www.ulule.com"
+    },
     "easterEggs": [],
-    "tags": ["crowdfunding", "financement", "participatif", "projet", "campagne"]
+    "tags": [
+      "crowdfunding",
+      "financement",
+      "participatif",
+      "projet",
+      "campagne"
+    ]
   },
   {
     "slug": "assurance-en-ligne",
@@ -981,10 +2016,24 @@
     "formula": "7-3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Alan", "url": "https://alan.com" },
-    "dumb": { "type": "fixed", "name": "Luko", "url": "https://www.luko.eu" },
+    "smart": {
+      "name": "Alan",
+      "url": "https://alan.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Luko",
+      "url": "https://www.luko.eu"
+    },
     "easterEggs": [],
-    "tags": ["assurance", "alan", "luko", "mutuelle", "santé", "habitation"]
+    "tags": [
+      "assurance",
+      "alan",
+      "luko",
+      "mutuelle",
+      "santé",
+      "habitation"
+    ]
   },
   {
     "slug": "traitement-texte",
@@ -994,10 +2043,24 @@
     "formula": "9-5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Docs", "url": "https://docs.google.com" },
-    "dumb": { "type": "fixed", "name": "Word Online", "url": "https://www.office.com/launch/word" },
+    "smart": {
+      "name": "Google Docs",
+      "url": "https://docs.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Word Online",
+      "url": "https://www.office.com/launch/word"
+    },
     "easterEggs": [],
-    "tags": ["google docs", "word", "texte", "document", "rédaction", "écrire"]
+    "tags": [
+      "google docs",
+      "word",
+      "texte",
+      "document",
+      "rédaction",
+      "écrire"
+    ]
   },
   {
     "slug": "presentation-en-ligne",
@@ -1007,10 +2070,24 @@
     "formula": "28 \\div 7",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Slides", "url": "https://slides.google.com" },
-    "dumb": { "type": "fixed", "name": "Prezi", "url": "https://prezi.com" },
+    "smart": {
+      "name": "Google Slides",
+      "url": "https://slides.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Prezi",
+      "url": "https://prezi.com"
+    },
     "easterEggs": [],
-    "tags": ["slides", "présentation", "prezi", "diapo", "powerpoint", "exposé"]
+    "tags": [
+      "slides",
+      "présentation",
+      "prezi",
+      "diapo",
+      "powerpoint",
+      "exposé"
+    ]
   },
   {
     "slug": "prise-de-notes",
@@ -1020,10 +2097,24 @@
     "formula": "\\frac{24}{6}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Obsidian", "url": "https://obsidian.md" },
-    "dumb": { "type": "fixed", "name": "Evernote", "url": "https://evernote.com" },
+    "smart": {
+      "name": "Obsidian",
+      "url": "https://obsidian.md"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Evernote",
+      "url": "https://evernote.com"
+    },
     "easterEggs": [],
-    "tags": ["obsidian", "evernote", "notes", "écrire", "markdown", "organiser"]
+    "tags": [
+      "obsidian",
+      "evernote",
+      "notes",
+      "écrire",
+      "markdown",
+      "organiser"
+    ]
   },
   {
     "slug": "automatisation",
@@ -1033,12 +2124,30 @@
     "formula": "\\sqrt{144} - 8",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Zapier", "url": "https://zapier.com" },
-    "dumb": { "type": "fixed", "name": "IFTTT", "url": "https://ifttt.com" },
+    "smart": {
+      "name": "Zapier",
+      "url": "https://zapier.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "IFTTT",
+      "url": "https://ifttt.com"
+    },
     "easterEggs": [
-      { "answer": 42, "name": "42 (la réponse)", "url": "https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l%27univers_et_le_reste" }
+      {
+        "answer": 42,
+        "name": "42 (la réponse)",
+        "url": "https://fr.wikipedia.org/wiki/La_grande_question_sur_la_vie,_l%27univers_et_le_reste"
+      }
     ],
-    "tags": ["zapier", "ifttt", "automatisation", "workflow", "no-code", "intégration"]
+    "tags": [
+      "zapier",
+      "ifttt",
+      "automatisation",
+      "workflow",
+      "no-code",
+      "intégration"
+    ]
   },
   {
     "slug": "gestionnaire-mots-de-passe",
@@ -1048,10 +2157,24 @@
     "formula": "\\log_{10}(10000)",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "1Password", "url": "https://1password.com" },
-    "dumb": { "type": "fixed", "name": "LastPass", "url": "https://www.lastpass.com" },
+    "smart": {
+      "name": "1Password",
+      "url": "https://1password.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "LastPass",
+      "url": "https://www.lastpass.com"
+    },
     "easterEggs": [],
-    "tags": ["1password", "lastpass", "mot de passe", "sécurité", "coffre", "identifiant"]
+    "tags": [
+      "1password",
+      "lastpass",
+      "mot de passe",
+      "sécurité",
+      "coffre",
+      "identifiant"
+    ]
   },
   {
     "slug": "signature-electronique",
@@ -1061,10 +2184,24 @@
     "formula": "16 \\div 4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "DocuSign", "url": "https://www.docusign.com" },
-    "dumb": { "type": "fixed", "name": "Yousign", "url": "https://yousign.com" },
+    "smart": {
+      "name": "DocuSign",
+      "url": "https://www.docusign.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Yousign",
+      "url": "https://yousign.com"
+    },
     "easterEggs": [],
-    "tags": ["docusign", "yousign", "signature", "contrat", "signer", "document"]
+    "tags": [
+      "docusign",
+      "yousign",
+      "signature",
+      "contrat",
+      "signer",
+      "document"
+    ]
   },
   {
     "slug": "formulaire-en-ligne",
@@ -1074,10 +2211,24 @@
     "formula": "3!-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Typeform", "url": "https://www.typeform.com" },
-    "dumb": { "type": "fixed", "name": "Google Forms", "url": "https://docs.google.com/forms" },
+    "smart": {
+      "name": "Typeform",
+      "url": "https://www.typeform.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Google Forms",
+      "url": "https://docs.google.com/forms"
+    },
     "easterEggs": [],
-    "tags": ["typeform", "google forms", "formulaire", "sondage", "questionnaire", "enquête"]
+    "tags": [
+      "typeform",
+      "google forms",
+      "formulaire",
+      "sondage",
+      "questionnaire",
+      "enquête"
+    ]
   },
   {
     "slug": "crm",
@@ -1087,10 +2238,25 @@
     "formula": "2^3 - \\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "HubSpot", "url": "https://www.hubspot.com" },
-    "dumb": { "type": "fixed", "name": "Salesforce", "url": "https://www.salesforce.com" },
+    "smart": {
+      "name": "HubSpot",
+      "url": "https://www.hubspot.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Salesforce",
+      "url": "https://www.salesforce.com"
+    },
     "easterEggs": [],
-    "tags": ["hubspot", "salesforce", "crm", "client", "vente", "relation client", "commercial"]
+    "tags": [
+      "hubspot",
+      "salesforce",
+      "crm",
+      "client",
+      "vente",
+      "relation client",
+      "commercial"
+    ]
   },
   {
     "slug": "newsletter",
@@ -1100,12 +2266,30 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Substack", "url": "https://substack.com" },
-    "dumb": { "type": "fixed", "name": "Mailchimp", "url": "https://mailchimp.com" },
+    "smart": {
+      "name": "Substack",
+      "url": "https://substack.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Mailchimp",
+      "url": "https://mailchimp.com"
+    },
     "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
+      {
+        "answer": 5,
+        "name": "1984 (George Orwell)",
+        "url": "https://fr.wikipedia.org/wiki/1984_(roman)"
+      }
     ],
-    "tags": ["substack", "mailchimp", "newsletter", "email", "abonnement", "lettre"]
+    "tags": [
+      "substack",
+      "mailchimp",
+      "newsletter",
+      "email",
+      "abonnement",
+      "lettre"
+    ]
   },
   {
     "slug": "messagerie-equipe",
@@ -1115,10 +2299,24 @@
     "formula": "8-4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Slack", "url": "https://slack.com" },
-    "dumb": { "type": "fixed", "name": "Discord", "url": "https://discord.com" },
+    "smart": {
+      "name": "Slack",
+      "url": "https://slack.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Discord",
+      "url": "https://discord.com"
+    },
     "easterEggs": [],
-    "tags": ["slack", "discord", "équipe", "chat", "canal", "workspace"]
+    "tags": [
+      "slack",
+      "discord",
+      "équipe",
+      "chat",
+      "canal",
+      "workspace"
+    ]
   },
   {
     "slug": "microblogging",
@@ -1128,10 +2326,25 @@
     "formula": "1+3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "X (Twitter)", "url": "https://x.com" },
-    "dumb": { "type": "fixed", "name": "Threads", "url": "https://www.threads.net" },
+    "smart": {
+      "name": "X (Twitter)",
+      "url": "https://x.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Threads",
+      "url": "https://www.threads.net"
+    },
     "easterEggs": [],
-    "tags": ["twitter", "x", "threads", "tweet", "post", "réseau social", "micro"]
+    "tags": [
+      "twitter",
+      "x",
+      "threads",
+      "tweet",
+      "post",
+      "réseau social",
+      "micro"
+    ]
   },
   {
     "slug": "forum-en-ligne",
@@ -1141,10 +2354,25 @@
     "formula": "6-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Reddit", "url": "https://www.reddit.com" },
-    "dumb": { "type": "fixed", "name": "Quora", "url": "https://www.quora.com" },
+    "smart": {
+      "name": "Reddit",
+      "url": "https://www.reddit.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Quora",
+      "url": "https://www.quora.com"
+    },
     "easterEggs": [],
-    "tags": ["reddit", "quora", "forum", "discussion", "communauté", "question", "réponse"]
+    "tags": [
+      "reddit",
+      "quora",
+      "forum",
+      "discussion",
+      "communauté",
+      "question",
+      "réponse"
+    ]
   },
   {
     "slug": "ci-cd",
@@ -1154,10 +2382,25 @@
     "formula": "\\frac{\\sqrt{64}}{2}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "GitHub Actions", "url": "https://github.com/features/actions" },
-    "dumb": { "type": "fixed", "name": "Jenkins", "url": "https://www.jenkins.io" },
+    "smart": {
+      "name": "GitHub Actions",
+      "url": "https://github.com/features/actions"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Jenkins",
+      "url": "https://www.jenkins.io"
+    },
     "easterEggs": [],
-    "tags": ["ci", "cd", "github actions", "jenkins", "pipeline", "déploiement", "intégration continue"]
+    "tags": [
+      "ci",
+      "cd",
+      "github actions",
+      "jenkins",
+      "pipeline",
+      "déploiement",
+      "intégration continue"
+    ]
   },
   {
     "slug": "monitoring-applicatif",
@@ -1167,10 +2410,24 @@
     "formula": "\\binom{4}{3}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Datadog", "url": "https://www.datadoghq.com" },
-    "dumb": { "type": "fixed", "name": "New Relic", "url": "https://newrelic.com" },
+    "smart": {
+      "name": "Datadog",
+      "url": "https://www.datadoghq.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "New Relic",
+      "url": "https://newrelic.com"
+    },
     "easterEggs": [],
-    "tags": ["datadog", "new relic", "monitoring", "observabilité", "alerte", "métrique"]
+    "tags": [
+      "datadog",
+      "new relic",
+      "monitoring",
+      "observabilité",
+      "alerte",
+      "métrique"
+    ]
   },
   {
     "slug": "conteneurisation",
@@ -1180,10 +2437,24 @@
     "formula": "\\frac{2^4}{4}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Docker", "url": "https://www.docker.com" },
-    "dumb": { "type": "fixed", "name": "Podman", "url": "https://podman.io" },
+    "smart": {
+      "name": "Docker",
+      "url": "https://www.docker.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Podman",
+      "url": "https://podman.io"
+    },
     "easterEggs": [],
-    "tags": ["docker", "podman", "conteneur", "container", "devops", "image"]
+    "tags": [
+      "docker",
+      "podman",
+      "conteneur",
+      "container",
+      "devops",
+      "image"
+    ]
   },
   {
     "slug": "dns-cdn",
@@ -1193,10 +2464,25 @@
     "formula": "\\lceil \\pi \\rceil",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Cloudflare", "url": "https://www.cloudflare.com" },
-    "dumb": { "type": "fixed", "name": "GoDaddy", "url": "https://www.godaddy.com" },
+    "smart": {
+      "name": "Cloudflare",
+      "url": "https://www.cloudflare.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "GoDaddy",
+      "url": "https://www.godaddy.com"
+    },
     "easterEggs": [],
-    "tags": ["cloudflare", "godaddy", "dns", "cdn", "domaine", "réseau", "performance"]
+    "tags": [
+      "cloudflare",
+      "godaddy",
+      "dns",
+      "cdn",
+      "domaine",
+      "réseau",
+      "performance"
+    ]
   },
   {
     "slug": "client-api",
@@ -1206,10 +2492,25 @@
     "formula": "\\log_2(16)",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Postman", "url": "https://www.postman.com" },
-    "dumb": { "type": "fixed", "name": "Insomnia", "url": "https://insomnia.rest" },
+    "smart": {
+      "name": "Postman",
+      "url": "https://www.postman.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Insomnia",
+      "url": "https://insomnia.rest"
+    },
     "easterEggs": [],
-    "tags": ["postman", "insomnia", "api", "requête", "rest", "test", "endpoint"]
+    "tags": [
+      "postman",
+      "insomnia",
+      "api",
+      "requête",
+      "rest",
+      "test",
+      "endpoint"
+    ]
   },
   {
     "slug": "location-vacances",
@@ -1219,12 +2520,25 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Airbnb", "url": "https://www.airbnb.fr" },
-    "dumb": { "type": "fixed", "name": "Abritel", "url": "https://www.abritel.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["airbnb", "abritel", "vacances", "location", "séjour", "maison", "gîte"]
+    "smart": {
+      "name": "Airbnb",
+      "url": "https://www.airbnb.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Abritel",
+      "url": "https://www.abritel.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "airbnb",
+      "abritel",
+      "vacances",
+      "location",
+      "séjour",
+      "maison",
+      "gîte"
+    ]
   },
   {
     "slug": "location-voiture",
@@ -1234,10 +2548,25 @@
     "formula": "2^2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Getaround", "url": "https://www.getaround.com" },
-    "dumb": { "type": "fixed", "name": "Sixt", "url": "https://www.sixt.fr" },
+    "smart": {
+      "name": "Getaround",
+      "url": "https://www.getaround.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Sixt",
+      "url": "https://www.sixt.fr"
+    },
     "easterEggs": [],
-    "tags": ["getaround", "sixt", "location", "voiture", "louer", "auto", "véhicule"]
+    "tags": [
+      "getaround",
+      "sixt",
+      "location",
+      "voiture",
+      "louer",
+      "auto",
+      "véhicule"
+    ]
   },
   {
     "slug": "covoiturage",
@@ -1247,10 +2576,51 @@
     "formula": "\\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "BlaBlaCar", "url": "https://www.blablacar.fr" },
-    "dumb": { "type": "fixed", "name": "Karos", "url": "https://www.karos.fr" },
+    "smart": {
+      "name": "BlaBlaCar",
+      "url": "https://www.blablacar.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Karos",
+      "url": "https://www.karos.fr"
+    },
+    "easterEggs": [
+      {
+        "answer": -4,
+        "openHiddenSlug": "radical-cache"
+      }
+    ],
+    "tags": [
+      "blablacar",
+      "karos",
+      "covoiturage",
+      "trajet",
+      "partage",
+      "conducteur"
+    ]
+  },
+  {
+    "slug": "radical-cache",
+    "hidden": true,
+    "name": "Contre-route",
+    "emoji": "↩",
+    "difficulty": 1,
+    "formula": "(-4)^2",
+    "correctAnswer": 16,
+    "inputMode": "decimal",
+    "smart": {
+      "name": "—",
+      "url": "https://fr.wikipedia.org/wiki/Carr%C3%A9_(alg%C3%A8bre)"
+    },
+    "chainHint": "Banque en ligne : √16 — ce que désigne le radical, ce n’est pas le quatre qu’on affiche d’habitude.",
+    "dumb": {
+      "type": "fixed",
+      "name": "—",
+      "url": "https://fr.wikipedia.org/wiki/Erreur"
+    },
     "easterEggs": [],
-    "tags": ["blablacar", "karos", "covoiturage", "trajet", "partage", "conducteur"]
+    "tags": []
   },
   {
     "slug": "mooc",
@@ -1260,10 +2630,25 @@
     "formula": "20 \\div 5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Coursera", "url": "https://www.coursera.org" },
-    "dumb": { "type": "fixed", "name": "Udemy", "url": "https://www.udemy.com" },
+    "smart": {
+      "name": "Coursera",
+      "url": "https://www.coursera.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Udemy",
+      "url": "https://www.udemy.com"
+    },
     "easterEggs": [],
-    "tags": ["coursera", "udemy", "mooc", "cours", "formation", "apprendre", "en ligne"]
+    "tags": [
+      "coursera",
+      "udemy",
+      "mooc",
+      "cours",
+      "formation",
+      "apprendre",
+      "en ligne"
+    ]
   },
   {
     "slug": "apprentissage-langues",
@@ -1273,10 +2658,25 @@
     "formula": "2 \\times 2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Duolingo", "url": "https://www.duolingo.com" },
-    "dumb": { "type": "fixed", "name": "Babbel", "url": "https://www.babbel.com" },
+    "smart": {
+      "name": "Duolingo",
+      "url": "https://www.duolingo.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Babbel",
+      "url": "https://www.babbel.com"
+    },
     "easterEggs": [],
-    "tags": ["duolingo", "babbel", "langue", "apprendre", "anglais", "espagnol", "vocabulaire"]
+    "tags": [
+      "duolingo",
+      "babbel",
+      "langue",
+      "apprendre",
+      "anglais",
+      "espagnol",
+      "vocabulaire"
+    ]
   },
   {
     "slug": "site-emploi",
@@ -1286,10 +2686,25 @@
     "formula": "12-8",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Indeed", "url": "https://www.indeed.fr" },
-    "dumb": { "type": "fixed", "name": "France Travail", "url": "https://www.francetravail.fr" },
+    "smart": {
+      "name": "Indeed",
+      "url": "https://www.indeed.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "France Travail",
+      "url": "https://www.francetravail.fr"
+    },
     "easterEggs": [],
-    "tags": ["indeed", "france travail", "emploi", "travail", "offre", "recrutement", "candidature"]
+    "tags": [
+      "indeed",
+      "france travail",
+      "emploi",
+      "travail",
+      "offre",
+      "recrutement",
+      "candidature"
+    ]
   },
   {
     "slug": "plateforme-freelance",
@@ -1299,10 +2714,24 @@
     "formula": "7-3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Malt", "url": "https://www.malt.fr" },
-    "dumb": { "type": "fixed", "name": "Fiverr", "url": "https://www.fiverr.com" },
+    "smart": {
+      "name": "Malt",
+      "url": "https://www.malt.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Fiverr",
+      "url": "https://www.fiverr.com"
+    },
     "easterEggs": [],
-    "tags": ["malt", "fiverr", "freelance", "indépendant", "mission", "prestataire"]
+    "tags": [
+      "malt",
+      "fiverr",
+      "freelance",
+      "indépendant",
+      "mission",
+      "prestataire"
+    ]
   },
   {
     "slug": "rendez-vous-medical",
@@ -1312,10 +2741,25 @@
     "formula": "9-5",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Doctolib", "url": "https://www.doctolib.fr" },
-    "dumb": { "type": "fixed", "name": "Maiia", "url": "https://www.maiia.com" },
+    "smart": {
+      "name": "Doctolib",
+      "url": "https://www.doctolib.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Maiia",
+      "url": "https://www.maiia.com"
+    },
     "easterEggs": [],
-    "tags": ["doctolib", "maiia", "médecin", "rdv", "santé", "consultation", "praticien"]
+    "tags": [
+      "doctolib",
+      "maiia",
+      "médecin",
+      "rdv",
+      "santé",
+      "consultation",
+      "praticien"
+    ]
   },
   {
     "slug": "suivi-sportif",
@@ -1325,10 +2769,25 @@
     "formula": "28 \\div 7",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Strava", "url": "https://www.strava.com" },
-    "dumb": { "type": "fixed", "name": "Nike Run Club", "url": "https://www.nike.com/nrc-app" },
+    "smart": {
+      "name": "Strava",
+      "url": "https://www.strava.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Nike Run Club",
+      "url": "https://www.nike.com/nrc-app"
+    },
     "easterEggs": [],
-    "tags": ["strava", "nike", "sport", "course", "vélo", "running", "fitness"]
+    "tags": [
+      "strava",
+      "nike",
+      "sport",
+      "course",
+      "vélo",
+      "running",
+      "fitness"
+    ]
   },
   {
     "slug": "recette-cuisine",
@@ -1338,12 +2797,25 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Marmiton", "url": "https://www.marmiton.org" },
-    "dumb": { "type": "fixed", "name": "750g", "url": "https://www.750g.com" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["marmiton", "750g", "recette", "cuisine", "plat", "ingrédient", "préparer"]
+    "smart": {
+      "name": "Marmiton",
+      "url": "https://www.marmiton.org"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "750g",
+      "url": "https://www.750g.com"
+    },
+    "easterEggs": [],
+    "tags": [
+      "marmiton",
+      "750g",
+      "recette",
+      "cuisine",
+      "plat",
+      "ingrédient",
+      "préparer"
+    ]
   },
   {
     "slug": "meteo",
@@ -1353,10 +2825,24 @@
     "formula": "16 \\div 4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Météo France", "url": "https://meteofrance.com" },
-    "dumb": { "type": "fixed", "name": "AccuWeather", "url": "https://www.accuweather.com" },
+    "smart": {
+      "name": "Météo France",
+      "url": "https://meteofrance.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "AccuWeather",
+      "url": "https://www.accuweather.com"
+    },
     "easterEggs": [],
-    "tags": ["météo", "temps", "prévision", "pluie", "soleil", "température"]
+    "tags": [
+      "météo",
+      "temps",
+      "prévision",
+      "pluie",
+      "soleil",
+      "température"
+    ]
   },
   {
     "slug": "cartographie",
@@ -1366,10 +2852,24 @@
     "formula": "3!-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Google Maps", "url": "https://maps.google.com" },
-    "dumb": { "type": "fixed", "name": "OpenStreetMap", "url": "https://www.openstreetmap.org" },
+    "smart": {
+      "name": "Google Maps",
+      "url": "https://maps.google.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org"
+    },
     "easterEggs": [],
-    "tags": ["google maps", "openstreetmap", "carte", "plan", "itinéraire", "lieu"]
+    "tags": [
+      "google maps",
+      "openstreetmap",
+      "carte",
+      "plan",
+      "itinéraire",
+      "lieu"
+    ]
   },
   {
     "slug": "avis-en-ligne",
@@ -1379,10 +2879,24 @@
     "formula": "8-4",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Trustpilot", "url": "https://www.trustpilot.com" },
-    "dumb": { "type": "fixed", "name": "TripAdvisor", "url": "https://www.tripadvisor.fr" },
+    "smart": {
+      "name": "Trustpilot",
+      "url": "https://www.trustpilot.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "TripAdvisor",
+      "url": "https://www.tripadvisor.fr"
+    },
     "easterEggs": [],
-    "tags": ["trustpilot", "tripadvisor", "avis", "évaluation", "note", "commentaire"]
+    "tags": [
+      "trustpilot",
+      "tripadvisor",
+      "avis",
+      "évaluation",
+      "note",
+      "commentaire"
+    ]
   },
   {
     "slug": "billetterie-evenements",
@@ -1392,10 +2906,25 @@
     "formula": "1+3",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Ticketmaster", "url": "https://www.ticketmaster.fr" },
-    "dumb": { "type": "fixed", "name": "Fnac Spectacles", "url": "https://www.fnacspectacles.com" },
+    "smart": {
+      "name": "Ticketmaster",
+      "url": "https://www.ticketmaster.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Fnac Spectacles",
+      "url": "https://www.fnacspectacles.com"
+    },
     "easterEggs": [],
-    "tags": ["ticketmaster", "fnac", "billet", "concert", "spectacle", "événement", "place"]
+    "tags": [
+      "ticketmaster",
+      "fnac",
+      "billet",
+      "concert",
+      "spectacle",
+      "événement",
+      "place"
+    ]
   },
   {
     "slug": "livres-numeriques",
@@ -1405,10 +2934,25 @@
     "formula": "6-2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Kindle", "url": "https://www.amazon.fr/kindle-dbs/hz/signup" },
-    "dumb": { "type": "fixed", "name": "Kobo", "url": "https://www.kobo.com" },
+    "smart": {
+      "name": "Kindle",
+      "url": "https://www.amazon.fr/kindle-dbs/hz/signup"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "Kobo",
+      "url": "https://www.kobo.com"
+    },
     "easterEggs": [],
-    "tags": ["kindle", "kobo", "ebook", "livre", "lire", "liseuse", "numérique"]
+    "tags": [
+      "kindle",
+      "kobo",
+      "ebook",
+      "livre",
+      "lire",
+      "liseuse",
+      "numérique"
+    ]
   },
   {
     "slug": "petites-annonces",
@@ -1418,12 +2962,25 @@
     "formula": "2+2",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Leboncoin", "url": "https://www.leboncoin.fr" },
-    "dumb": { "type": "fixed", "name": "ParuVendu", "url": "https://www.paruvendu.fr" },
-    "easterEggs": [
-      { "answer": 5, "name": "1984 (George Orwell)", "url": "https://fr.wikipedia.org/wiki/1984_(roman)" }
-    ],
-    "tags": ["leboncoin", "paruvendu", "annonce", "vendre", "acheter", "occasion", "petite annonce"]
+    "smart": {
+      "name": "Leboncoin",
+      "url": "https://www.leboncoin.fr"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "ParuVendu",
+      "url": "https://www.paruvendu.fr"
+    },
+    "easterEggs": [],
+    "tags": [
+      "leboncoin",
+      "paruvendu",
+      "annonce",
+      "vendre",
+      "acheter",
+      "occasion",
+      "petite annonce"
+    ]
   },
   {
     "slug": "bons-plans-promos",
@@ -1433,9 +2990,24 @@
     "formula": "\\sqrt{16}",
     "correctAnswer": 4,
     "inputMode": "decimal",
-    "smart": { "name": "Dealabs", "url": "https://www.dealabs.com" },
-    "dumb": { "type": "fixed", "name": "iGraal", "url": "https://www.igraal.com" },
+    "smart": {
+      "name": "Dealabs",
+      "url": "https://www.dealabs.com"
+    },
+    "dumb": {
+      "type": "fixed",
+      "name": "iGraal",
+      "url": "https://www.igraal.com"
+    },
     "easterEggs": [],
-    "tags": ["dealabs", "igraal", "promo", "bon plan", "réduction", "cashback", "deal"]
+    "tags": [
+      "dealabs",
+      "igraal",
+      "promo",
+      "bon plan",
+      "réduction",
+      "cashback",
+      "deal"
+    ]
   }
 ]
