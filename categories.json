@@ -1328,7 +1328,13 @@
       "name": "Stadia",
       "url": "https://fr.wikipedia.org/wiki/Google_Stadia"
     },
-    "easterEggs": [],
+    "easterEggs": [
+      {
+        "answer": 32,
+        "name": "32 (antécédent)",
+        "url": "https://fr.wikipedia.org/wiki/32_(nombre)"
+      }
+    ],
     "tags": [
       "pc",
       "stadia",
@@ -2582,9 +2588,9 @@
       {
         "answer": -4,
         "chainReveal": {
-          "hint": "Sur la carte « MOOC », la division est un leurre : enchaîne « 20 » et « 5 » comme un seul entier écrit.",
-          "targetSlug": "mooc",
-          "targetLabel": "MOOC"
+          "hint": "Plus de radical. Sur la carte « Console de jeux », le site te demande l’image du logarithme ; la piste veut l’**antécédent** — le nombre que le symbole interroge avant de prendre le log.",
+          "targetSlug": "console-jeux",
+          "targetLabel": "Console de jeux"
         }
       }
     ],
@@ -2614,13 +2620,7 @@
       "name": "Udemy",
       "url": "https://www.udemy.com"
     },
-    "easterEggs": [
-      {
-        "answer": 25,
-        "name": "Vingt-cinq",
-        "url": "https://fr.wikipedia.org/wiki/25_(nombre)"
-      }
-    ],
+    "easterEggs": [],
     "tags": [
       "coursera",
       "udemy",
