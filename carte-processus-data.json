@@ -1,0 +1,346 @@
+{
+  "meta": {
+    "title": "Carte processus — diagramme en couches",
+    "subtitle": "Repérez les processus de l'agence par couche fonctionnelle ; sélectionnez un processus pour afficher des familles d'outils et exemples de solutions possibles (suggestions, pas une liste imposée).",
+    "legendCycles": {
+      "bien": "Cycle bien",
+      "annonce": "Cycle annonce",
+      "locataire": "Cycle locataire"
+    }
+  },
+  "layers": [
+    {
+      "id": "pilotage",
+      "order": 1,
+      "label": "Pilotage & gouvernance",
+      "hint": "Vision portefeuille, risques, performance mandats."
+    },
+    {
+      "id": "acquisition",
+      "order": 2,
+      "label": "Acquisition & conversion",
+      "hint": "Marché, visibilité, transformation lead → bail."
+    },
+    {
+      "id": "relation",
+      "order": 3,
+      "label": "Relation locative & exécution",
+      "hint": "Entrée, vie du bail, sortie, service au quotidien."
+    },
+    {
+      "id": "transverse",
+      "order": 4,
+      "label": "Finance, juridique & conformité",
+      "hint": "Compta, recouvrement, cadre légal et preuve."
+    },
+    {
+      "id": "patrimoine",
+      "order": 5,
+      "label": "Patrimoine technique & sinistres",
+      "hint": "Maintenance, travaux, assurance, continuité du bien."
+    },
+    {
+      "id": "socle",
+      "order": 6,
+      "label": "Socle numérique & intégration",
+      "hint": "Données, flux, identité, automatisation."
+    }
+  ],
+  "processes": [
+    {
+      "id": "portefeuille-kpi",
+      "label": "Veille portefeuille & tableaux de bord",
+      "short": "KPI & risques",
+      "layerId": "pilotage",
+      "cycles": ["bien"],
+      "metiers": ["direction"],
+      "description": "Consolider mandats, vacance, sinistres et marge pour prioriser arbitrages et ressources.",
+      "tools": [
+        { "category": "BI & pilotage", "items": ["Tableaux de bord métier (BI)", "Exports consolidés multi-agences si réseau", "Alertes seuils (vacance, impayé)"] },
+        { "category": "Données", "items": ["Entrepôt ou lake métier", "Qualité et référentiels de données mandats/biens"] },
+        { "category": "IA assistée", "items": ["Résumés de tendances sur portefeuille", "Détection d'anomalies (écarts vs marché)"] }
+      ]
+    },
+    {
+      "id": "mandat-strategie",
+      "label": "Stratégie mandat & renouvellement",
+      "short": "Mandat",
+      "layerId": "pilotage",
+      "cycles": ["bien"],
+      "metiers": ["direction"],
+      "description": "Décider investissements, sorties de mandat, ajustements honoraires et positionnement.",
+      "tools": [
+        { "category": "CRM / gestion mandats", "items": ["Fiche mandat avec historique décisions", "Workflow validation avenants"] },
+        { "category": "Documentation", "items": ["GED juridique mandats", "Archivage des versions de mandat"] },
+        { "category": "Collaboration", "items": ["Espace bailleur sécurisé", "Comités rendus avec actions"] }
+      ]
+    },
+    {
+      "id": "politique-selection",
+      "label": "Politique de sélection locataire",
+      "short": "Sélection",
+      "layerId": "pilotage",
+      "cycles": ["locataire"],
+      "metiers": ["direction", "juridique"],
+      "description": "Cadrer critères objectifs, traçabilité et conformité anti-discrimination.",
+      "tools": [
+        { "category": "Conformité", "items": ["Grilles critères versionnées", "Journal d'exceptions et validations"] },
+        { "category": "Formation", "items": ["Micro-learning intégré au CRM", "Quiz conformité périodiques"] },
+        { "category": "Audit", "items": ["Contrôles spot sur dossiers", "Tableaux de bord d'équité"] }
+      ]
+    },
+    {
+      "id": "annonces-multicanal",
+      "label": "Création & diffusion d'annonces",
+      "short": "Annonces",
+      "layerId": "acquisition",
+      "cycles": ["annonce", "bien"],
+      "metiers": ["commercial", "gestionnaire"],
+      "description": "Rédiger, valider conformité, publier et suivre la performance par canal.",
+      "tools": [
+        { "category": "Diffusion", "items": ["Publipostage multi-portails", "Suivi des versions publiées"] },
+        { "category": "Contenu", "items": ["Dam photos / médias", "Modèles textes conformes"] },
+        { "category": "Performance", "items": ["UTM & analytics par canal", "A/B testing fiches"] },
+        { "category": "IA", "items": ["Assistants rédaction + relecture conformité", "Traduction / adaptation ton"] }
+      ]
+    },
+    {
+      "id": "leads-visites",
+      "label": "Leads, qualification & visites",
+      "short": "Leads & visites",
+      "layerId": "acquisition",
+      "cycles": ["annonce", "locataire"],
+      "metiers": ["commercial", "gestionnaire"],
+      "description": "Capturer, répondre, planifier visites et comptes rendus structurés.",
+      "tools": [
+        { "category": "CRM", "items": ["Files leads avec SLA de réponse", "Agenda partagé & rappels"] },
+        { "category": "Communication", "items": ["Messagerie omnicanal (mail, SMS, chat)", "Templates de réponse"] },
+        { "category": "Terrain", "items": ["Apps mobile visite + CR", "Signature électronique de créneaux"] }
+      ]
+    },
+    {
+      "id": "dossiers-arbitrage",
+      "label": "Montage dossiers & arbitrage bailleur",
+      "short": "Dossiers",
+      "layerId": "acquisition",
+      "cycles": ["locataire"],
+      "metiers": ["commercial", "gestionnaire", "compta"],
+      "description": "Assembler pièces, cohérence financière, recommandation et décision traçable.",
+      "tools": [
+        { "category": "Dossier candidat", "items": ["Portail dépôt sécurisé", "Vérification documents (KYC light)"] },
+        { "category": "Décision", "items": ["Grilles comparatives", "Journal de décision bailleur"] },
+        { "category": "Signature", "items": ["Signature électronique bail / avenants", "Parcours multi-signataires"] }
+      ]
+    },
+    {
+      "id": "entree-locataire",
+      "label": "Entrée locataire & état des lieux",
+      "short": "Entrée & EDL",
+      "layerId": "relation",
+      "cycles": ["locataire", "bien"],
+      "metiers": ["gestionnaire", "technique"],
+      "description": "Paramétrage loyer, EDL, compteurs, remise des clés et preuves.",
+      "tools": [
+        { "category": "Opérationnel", "items": ["Apps EDL numériques + photos", "Checklists par typologie de bien"] },
+        { "category": "Paiement", "items": ["Prélèvement SEPA", "Encaissement dépôt de garantie"] },
+        { "category": "GED", "items": ["Lien automatique pièces ↔ dossier locataire"] }
+      ]
+    },
+    {
+      "id": "vie-bail-demandes",
+      "label": "Vie du bail & demandes",
+      "short": "Demandes",
+      "layerId": "relation",
+      "cycles": ["locataire", "bien"],
+      "metiers": ["gestionnaire", "technique"],
+      "description": "Tickets demandes, qualification, ordres de service, suivi jusqu'à résolution.",
+      "tools": [
+        { "category": "Ticketing", "items": ["File par priorité / SLA", "Base de connaissances"] },
+        { "category": "Mobile / locataire", "items": ["Espace locataire / portail", "Notifications push / email"] },
+        { "category": "Orchestration", "items": ["Règles d'escalade automatiques", "Liaison prestataires"] }
+      ]
+    },
+    {
+      "id": "quittancement",
+      "label": "Quittancement & charges",
+      "short": "Quittances",
+      "layerId": "relation",
+      "cycles": ["locataire", "bien"],
+      "metiers": ["compta", "gestionnaire"],
+      "description": "Échéances, régularisations, transparence et contestations courtes.",
+      "tools": [
+        { "category": "Compta locative", "items": ["Moteur de quittancement", "Gestion indexation"] },
+        { "category": "Facturation", "items": ["Factures électroniques", "Relances automatiques"] },
+        { "category": "Self-service", "items": ["Historique de paiement locataire", "Téléchargement quittances"] }
+      ]
+    },
+    {
+      "id": "sortie-locataire",
+      "label": "Sortie locataire & état des lieux sortie",
+      "short": "Sortie",
+      "layerId": "relation",
+      "cycles": ["locataire", "bien"],
+      "metiers": ["gestionnaire", "compta", "juridique"],
+      "description": "Préavis, EDL sortie, régularisation charges, restitution dépôt, clôture.",
+      "tools": [
+        { "category": "Process", "items": ["Checklists de sortie", "Calculs de retenues documentés"] },
+        { "category": "Paiement", "items": ["Virements sortie", "Lettres de relance encadrées"] },
+        { "category": "Médiation", "items": ["Espace d'échange traçable", "Proposition transactionnelle"] }
+      ]
+    },
+    {
+      "id": "compta-syndication",
+      "label": "Comptabilité mandant & clôtures",
+      "short": "Compta mandant",
+      "layerId": "transverse",
+      "cycles": ["bien"],
+      "metiers": ["compta", "direction"],
+      "description": "Rapprochements, arrêtés, transmission comptable et audit.",
+      "tools": [
+        { "category": "Comptabilité", "items": ["ERP ou compta locative", "Exports vers cabinet"] },
+        { "category": "Contrôle", "items": ["Rapprochement bancaire", "Workflow validation écritures"] },
+        { "category": "Archivage", "items": ["Conservation probatoire", "Horodatage"] }
+      ]
+    },
+    {
+      "id": "recouvrement",
+      "label": "Recouvrement & impayés",
+      "short": "Recouvrement",
+      "layerId": "transverse",
+      "cycles": ["locataire"],
+      "metiers": ["compta", "juridique"],
+      "description": "Relances, plans de paiement, escalade et interface contentieux.",
+      "tools": [
+        { "category": "Automatisation", "items": ["Scénarios de relance", "Scoring risque impayé"] },
+        { "category": "Juridique", "items": ["Génération courriers types", "Suivi d'échéances procédurales"] },
+        { "category": "Interop", "items": ["Passerelles huissier / avocat", "Portails tiers de paiement"] }
+      ]
+    },
+    {
+      "id": "juridique-baux",
+      "label": "Baux, clauses & veille",
+      "short": "Baux",
+      "layerId": "transverse",
+      "cycles": ["bien", "locataire"],
+      "metiers": ["juridique", "gestionnaire"],
+      "description": "Modèles actualisés, clauses sensibles, sinistres à impact juridique.",
+      "tools": [
+        { "category": "Juridique", "items": ["Bibliothèque de clauses", "Veille législative intégrée"] },
+        { "category": "Rédaction", "items": ["Génération contrats paramétrique", "Comparaison de versions"] },
+        { "category": "Preuve", "items": ["Journal des preuves et courriers", "Conservation sécurisée"] }
+      ]
+    },
+    {
+      "id": "conformite-pub",
+      "label": "Conformité annonces & diagnostics",
+      "short": "Conformité",
+      "layerId": "transverse",
+      "cycles": ["annonce", "bien"],
+      "metiers": ["juridique", "commercial"],
+      "description": "Contrôles pré-publication, diagnostics, urbanisme et mentions obligatoires.",
+      "tools": [
+        { "category": "Checklists", "items": ["Moteur de règles par typologie", "Blocage publication si incomplet"] },
+        { "category": "Diagnostics", "items": ["Gestion dates d'expiration", "Rappels automatiques"] },
+        { "category": "IA", "items": ["Détection formulations à risque", "Suggestions de reformulation"] }
+      ]
+    },
+    {
+      "id": "maintenance-courante",
+      "label": "Maintenance & interventions courantes",
+      "short": "Maintenance",
+      "layerId": "patrimoine",
+      "cycles": ["bien", "locataire"],
+      "metiers": ["technique", "gestionnaire"],
+      "description": "Qualification, dispatch prestataires, réception et historique technique.",
+      "tools": [
+        { "category": "GMAO / tickets", "items": ["Carnet d'entretien numérique", "Ordres de travail"] },
+        { "category": "Réseau", "items": ["Annuaire prestataires qualifiés", "Notation et SLA"] },
+        { "category": "Terrain", "items": ["Apps technicien", "Photos avant/après"] }
+      ]
+    },
+    {
+      "id": "travaux-projets",
+      "label": "Travaux & projets",
+      "short": "Travaux",
+      "layerId": "patrimoine",
+      "cycles": ["bien", "annonce"],
+      "metiers": ["technique", "direction"],
+      "description": "Devis comparés, planning chantier, réception et mise à jour annonce.",
+      "tools": [
+        { "category": "Projet", "items": ["Gestion de projet léger (jalons)", "Comparateur de devis"] },
+        { "category": "Budget", "items": ["Suivi budget vs engagement", "Validation seuils mandat"] },
+        { "category": "Collaboration", "items": ["Espace chantier bailleur/presta", "Rapports photo"] }
+      ]
+    },
+    {
+      "id": "sinistres-assurance",
+      "label": "Sinistres & assurance",
+      "short": "Sinistres",
+      "layerId": "patrimoine",
+      "cycles": ["bien", "locataire"],
+      "metiers": ["technique", "juridique"],
+      "description": "Déclaration, chronologie, interface assureur et suivi indemnisation.",
+      "tools": [
+        { "category": "Dossier sinistre", "items": ["Timeline événements", "Dossier pièces unique"] },
+        { "category": "Interop", "items": ["Portails assureurs", "API statut dossier"] },
+        { "category": "Communication", "items": ["Modèles de déclaration", "Suivi parties prenantes"] }
+      ]
+    },
+    {
+      "id": "ged-master",
+      "label": "GED & preuve documentaire",
+      "short": "GED",
+      "layerId": "socle",
+      "cycles": ["bien", "annonce", "locataire"],
+      "metiers": ["gestionnaire", "compta", "juridique"],
+      "description": "Centraliser, indexer, droits d'accès et traçabilité pour tous les métiers.",
+      "tools": [
+        { "category": "GED", "items": ["Indexation full-text", "Workflows de validation"] },
+        { "category": "Sécurité", "items": ["Contrôle d'accès par rôle", "Journal d'accès"] },
+        { "category": "Interop", "items": ["API de dépôt depuis CRM", "Signature électronique"] }
+      ]
+    },
+    {
+      "id": "integration-donnees",
+      "label": "Intégration & qualité des données",
+      "short": "Intégration",
+      "layerId": "socle",
+      "cycles": ["bien", "annonce", "locataire"],
+      "metiers": ["direction"],
+      "description": "Référentiels biens/locataires, synchronisation outils, gouvernance données.",
+      "tools": [
+        { "category": "iPaaS / ETL", "items": ["Connecteurs CRM ↔ compta ↔ GED", "Règles de déduplication"] },
+        { "category": "MDM", "items": ["Référentiel golden record bien", "Identité locataire unique"] },
+        { "category": "Qualité", "items": ["Contrôles de cohérence", "Data catalog"] }
+      ]
+    },
+    {
+      "id": "identite-securite",
+      "label": "Identité, accès & sécurité",
+      "short": "Sécurité",
+      "layerId": "socle",
+      "cycles": ["bien", "annonce", "locataire"],
+      "metiers": ["direction", "juridique"],
+      "description": "SSO, MFA, habilitations, journaux et conformité RGPD.",
+      "tools": [
+        { "category": "IAM", "items": ["SSO entreprise", "MFA pour accès sensibles"] },
+        { "category": "RGPD", "items": ["Registre traitements", "Portail droits personnes"] },
+        { "category": "SOC", "items": ["SIEM léger PME", "Alertes accès anormaux"] }
+      ]
+    },
+    {
+      "id": "ia-automation",
+      "label": "Automatisation & IA métier",
+      "short": "IA & auto",
+      "layerId": "socle",
+      "cycles": ["bien", "annonce", "locataire"],
+      "metiers": ["direction", "commercial", "gestionnaire"],
+      "description": "Orchestration de tâches, assistants spécialisés, garde-fous humains.",
+      "tools": [
+        { "category": "Orchestration", "items": ["RPA sur tâches répétitives", "Webhooks entre systèmes"] },
+        { "category": "IA", "items": ["Assistants par métier (prompts)", "Extraction d'infos depuis documents"] },
+        { "category": "Gouvernance IA", "items": ["Journal des prompts / réponses", "Revue humaine obligatoire"] }
+      ]
+    }
+  ]
+}

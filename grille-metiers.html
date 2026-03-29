@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="neon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schéma fonctionnel — métiers × cycles × 5 pourquoi</title>
+  <meta name="description" content="Schéma fonctionnel détaillé : métiers, cycles bien / annonce / locataire, chaînes de cartes d'actions et 5 pourquoi.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="themes.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .noise-overlay {
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+    }
+
+    .bg-gradient {
+      position: fixed; inset: 0; z-index: -1;
+      background:
+        var(--pattern-bg, none),
+        var(--gradient-bg-1, none),
+        var(--gradient-bg-2, none),
+        var(--bg-primary);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      display: grid;
+      grid-template-columns: 44px 1fr 44px;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1rem;
+      background: color-mix(in srgb, var(--bg-primary) 88%, transparent);
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .header-nav-btn:hover { color: var(--text-primary); border-color: var(--card-border-hover); }
+
+    .header-brand {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .drawer-backdrop {
+      position: fixed; inset: 0; z-index: 910;
+      background: var(--overlay-bg);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .drawer-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+    .drawer {
+      position: fixed; top: 0; right: 0; z-index: 920;
+      width: min(20rem, 92vw);
+      height: 100vh; max-height: 100dvh;
+      background: var(--bg-card);
+      border-left: 1px solid var(--card-border);
+      box-shadow: -12px 0 40px rgba(0, 0, 0, 0.2);
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+    .drawer.is-open { transform: translateX(0); }
+
+    .drawer-panel { padding: 1.25rem 1.25rem 2rem; }
+
+    .drawer-section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin: 1.25rem 0 0.65rem;
+    }
+    .drawer-section-title:first-child { margin-top: 0; }
+
+    .theme-switcher-drawer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: min(52vh, 26rem);
+      overflow-y: auto;
+      padding-right: 0.25rem;
+    }
+
+    .theme-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      width: 100%;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      background: var(--input-bg);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      transition: border-color 0.2s;
+    }
+    .theme-row:hover { border-color: var(--card-border-hover); }
+    .theme-row.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-glow); }
+
+    .theme-swatch {
+      width: 28px; height: 28px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      border: 2px solid var(--card-border);
+    }
+    .theme-row[data-pick="neon"] .theme-swatch { background: linear-gradient(135deg, #0a0a0f 45%, #7c5cfc 45%, #fc5c9c); }
+    .theme-row[data-pick="minimal"] .theme-swatch { background: linear-gradient(135deg, #fafaf9 50%, #18181b 50%); }
+    .theme-row[data-pick="encre"] .theme-swatch {
+      background: linear-gradient(90deg, transparent 48%, rgba(93, 124, 184, 0.35) 48%, rgba(93, 124, 184, 0.35) 52%, transparent 52%),
+        linear-gradient(#0c0e14 55%, #ff5c45 55%);
+    }
+    .theme-row[data-pick="metal"] .theme-swatch {
+      background: repeating-linear-gradient(-20deg, #1a1f27, #1a1f27 2px, #7ec8e3 2px, #7ec8e3 3px);
+    }
+
+    main.page-main {
+      max-width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: calc(4.5rem + 1rem) 1.25rem 3.5rem;
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 52rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      opacity: 0.9;
+      max-width: 48rem;
+      margin-bottom: 2rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.85;
+    }
+    .legend-dot--annonce { background: var(--accent-secondary); }
+    .legend-dot--loc { background: color-mix(in srgb, var(--accent) 60%, var(--accent-secondary)); }
+
+    .role-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .role-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .role-title {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .role-one {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      flex: 1 1 220px;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cell {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1rem 0.9rem 1.15rem;
+      min-width: 0;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .cell:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .phases-wrap {
+      margin-top: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .phase-block {
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .phase-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary);
+    }
+
+    .phase-objectif {
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .action-chain {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0.15rem 0.65rem;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chain-unit {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 0.45rem;
+      scroll-snap-align: start;
+    }
+
+    .action-card {
+      flex: 0 0 auto;
+      width: min(300px, 78vw);
+      background: color-mix(in srgb, var(--input-bg) 88%, transparent);
+      border: 1px solid var(--card-border);
+      border-radius: calc(var(--radius) - 4px);
+      padding: 0.75rem 0.8rem 0.85rem;
+    }
+
+    .action-card__k {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .action-card__title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.45rem;
+      color: var(--text-primary);
+    }
+
+    .action-card__liv {
+      font-size: 0.74rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .action-card__liv-k {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+    }
+
+    .why-stack__title {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      margin: 0.5rem 0 0.4rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed color-mix(in srgb, var(--card-border) 80%, transparent);
+    }
+
+    .why-stack {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .why-step {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 0.4rem;
+      align-items: start;
+    }
+
+    .why-step__n {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--bg-primary);
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      flex-shrink: 0;
+    }
+
+    .why-step__q {
+      font-size: 0.72rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .why-step__a {
+      font-size: 0.72rem;
+      line-height: 1.48;
+      color: var(--text-secondary);
+    }
+
+    .chain-arrow {
+      flex: 0 0 auto;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: color-mix(in srgb, var(--accent) 55%, var(--text-secondary));
+      padding: 0 0.15rem;
+      user-select: none;
+    }
+
+    @media (max-width: 1100px) {
+      .action-card {
+        width: min(320px, 88vw);
+      }
+    }
+
+    .cell-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .cell-label.annonce { color: var(--accent-secondary); }
+    .cell-label.loc {
+      color: color-mix(in srgb, var(--accent) 70%, var(--text-primary));
+    }
+
+    .cell-hint {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.65rem;
+      line-height: 1.4;
+    }
+
+    .essentiel {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .subh {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      margin: 0.65rem 0 0.35rem;
+    }
+
+    .subh--schema {
+      margin-top: 0.85rem;
+    }
+
+    ul.compact {
+      list-style: none;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+    ul.compact li {
+      padding-left: 0.85rem;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+    ul.compact li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+    }
+
+    .ia-box {
+      margin-top: 0.85rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--card-border));
+    }
+
+    .ia-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .ia-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .copy-btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .ia-text {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+    }
+
+    .load-err {
+      color: var(--fail);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+  <div class="bg-gradient"></div>
+
+  <header class="site-header">
+    <a href="index.html" class="header-nav-btn" aria-label="Retour" title="Retour">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 14L6 9l5-5"/>
+      </svg>
+    </a>
+    <span class="header-brand">Métiers × cycles</span>
+    <button type="button" class="header-nav-btn" id="menuToggle" aria-expanded="false" aria-controls="drawerPanel" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="18" x2="20" y2="18"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Thèmes">
+    <div class="drawer-panel" id="drawerPanel">
+      <p class="drawer-section-title">Direction artistique</p>
+      <div class="theme-switcher-drawer" role="group" aria-label="Thème">
+        <button type="button" class="theme-row active" data-pick="neon"><span class="theme-swatch" aria-hidden="true"></span> Neon</button>
+        <button type="button" class="theme-row" data-pick="minimal"><span class="theme-swatch" aria-hidden="true"></span> Minimal</button>
+        <button type="button" class="theme-row" data-pick="encre"><span class="theme-swatch" aria-hidden="true"></span> Encre</button>
+        <button type="button" class="theme-row" data-pick="metal"><span class="theme-swatch" aria-hidden="true"></span> Métal</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="page-main" id="mainRoot">
+    <p class="load-err" id="loadErr" hidden>Impossible de charger la grille. Vérifiez que <code>grille-metiers-data.json</code> est bien présent.</p>
+    <div id="contentRoot" hidden></div>
+  </main>
+
+  <script>
+    const VALID_THEMES = new Set([
+      "neon", "minimal", "vintage", "brutalist", "encre", "halftone", "bifleur", "gres",
+      "ligne-claire", "riso", "metal", "op-art", "deco", "chlorophylle", "pixel", "voxel"
+    ]);
+
+    function setDrawerOpen(open) {
+      const drawer = document.getElementById("drawer");
+      const backdrop = document.getElementById("drawerBackdrop");
+      const menuToggle = document.getElementById("menuToggle");
+      if (!drawer || !backdrop) return;
+      drawer.classList.toggle("is-open", open);
+      backdrop.classList.toggle("is-open", open);
+      drawer.setAttribute("aria-hidden", String(!open));
+      backdrop.setAttribute("aria-hidden", String(!open));
+      if (menuToggle) menuToggle.setAttribute("aria-expanded", String(open));
+    }
+
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      const drawer = document.getElementById("drawer");
+      setDrawerOpen(!drawer.classList.contains("is-open"));
+    });
+    document.getElementById("drawerBackdrop").addEventListener("click", () => setDrawerOpen(false));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setDrawerOpen(false);
+    });
+
+    document.querySelectorAll(".theme-row").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const theme = btn.dataset.pick;
+        document.documentElement.setAttribute("data-theme", theme);
+        document.querySelectorAll(".theme-row").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        localStorage.setItem("theme", theme);
+        setDrawerOpen(false);
+      });
+    });
+
+    let savedTheme = localStorage.getItem("theme");
+    if (savedTheme && !VALID_THEMES.has(savedTheme)) {
+      savedTheme = "neon";
+      localStorage.setItem("theme", savedTheme);
+    }
+    if (savedTheme && VALID_THEMES.has(savedTheme)) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.querySelectorAll(".theme-row").forEach((b) => {
+        b.classList.toggle("active", b.dataset.pick === savedTheme);
+      });
+    }
+
+    function escapeHtml(s) {
+      const d = document.createElement("div");
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    function renderWhys(whys) {
+      if (!Array.isArray(whys) || whys.length === 0) return "";
+      return whys
+        .map((w, i) => {
+          const n = i + 1;
+          return `
+            <li class="why-step">
+              <span class="why-step__n" title="Pourquoi ${n}">${n}</span>
+              <div class="why-step__body">
+                <p class="why-step__q">${escapeHtml(w.pourquoi || "")}</p>
+                <p class="why-step__a">${escapeHtml(w.reponse || "")}</p>
+              </div>
+            </li>
+          `;
+        })
+        .join("");
+    }
+
+    function renderActionCard(act, index, total) {
+      const liv = act.livrable
+        ? `<p class="action-card__liv"><span class="action-card__liv-k">Livrable</span>${escapeHtml(act.livrable)}</p>`
+        : "";
+      const arrow = index < total - 1 ? `<span class="chain-arrow" aria-hidden="true">→</span>` : "";
+      return `
+        <div class="chain-unit">
+          <article class="action-card">
+            <p class="action-card__k">Action</p>
+            <h4 class="action-card__title">${escapeHtml(act.label || "")}</h4>
+            ${liv}
+            <p class="why-stack__title">Les 5 pourquoi</p>
+            <ol class="why-stack">${renderWhys(act.whys)}</ol>
+          </article>
+          ${arrow}
+        </div>
+      `;
+    }
+
+    function renderPhasesDetailed(roleId, cycleKey, phasesDetailed) {
+      if (!Array.isArray(phasesDetailed) || phasesDetailed.length === 0) {
+        return `<p class="cell-hint">Aucune phase détaillée.</p>`;
+      }
+      return phasesDetailed
+        .map((phase, pi) => {
+          const actions = Array.isArray(phase.actions) ? phase.actions : [];
+          const chain = actions.map((a, i) => renderActionCard(a, i, actions.length)).join("");
+          const obj = phase.objectif
+            ? `<p class="phase-objectif">${escapeHtml(phase.objectif)}</p>`
+            : "";
+          const pid = `phase-${roleId}-${cycleKey}-${pi}`;
+          return `
+            <section class="phase-block" aria-labelledby="${pid}">
+              <h3 class="phase-title" id="${pid}">${escapeHtml(phase.title || "Phase")}</h3>
+              ${obj}
+              <div class="action-chain" tabindex="0" role="region" aria-label="Enchaînement des cartes d'actions pour ${escapeHtml(phase.title || "cette phase")}">
+                ${chain}
+              </div>
+            </section>
+          `;
+        })
+        .join("");
+    }
+
+    function render(data) {
+      const meta = data.meta || {};
+      const cycleLabels = data.cycleLabels || {};
+      const root = document.getElementById("contentRoot");
+      const keys = data.cycleKeys || ["bien", "annonce", "locataire"];
+
+      const legend = keys
+        .map((k) => {
+          const L = cycleLabels[k] || {};
+          const cls = k === "annonce" ? "legend-dot--annonce" : k === "locataire" ? "legend-dot--loc" : "";
+          return `<span class="legend-item"><span class="legend-dot ${cls}" aria-hidden="true"></span>${escapeHtml(L.title || k)}</span>`;
+        })
+        .join("");
+
+      const rolesHtml = (data.roles || [])
+        .map((role) => {
+          const cells = keys
+            .map((k) => {
+              const L = cycleLabels[k] || {};
+              const c = (role.cycles && role.cycles[k]) || {};
+              const tools = Array.isArray(c.tools) ? c.tools : [];
+              const labelClass = k === "annonce" ? "annonce" : k === "locataire" ? "loc" : "";
+              const tags = tools.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+              const ia = c.iaMetier || "";
+              const cellId = `ia-${role.id}-${k}`;
+              const phasesHtml = renderPhasesDetailed(role.id, k, c.phasesDetailed);
+
+              return `
+            <article class="cell" aria-labelledby="h-${role.id}-${k}">
+              <p class="cell-label ${labelClass}" id="h-${role.id}-${k}">${escapeHtml(L.short || k)}</p>
+              <p class="cell-hint">${escapeHtml(L.hint || "")}</p>
+              <p class="essentiel">${escapeHtml(c.essentiel || "")}</p>
+              <p class="subh">Outils & leviers</p>
+              <div class="tags">${tags}</div>
+              <div class="ia-box">
+                <div class="ia-head">
+                  <span class="ia-label">Défi IA métier</span>
+                  <button type="button" class="copy-btn" data-copy-target="${cellId}">Copier le prompt</button>
+                </div>
+                <p class="ia-text" id="${cellId}">${escapeHtml(ia)}</p>
+              </div>
+              <p class="subh subh--schema">Schéma fonctionnel — phases & actions</p>
+              <div class="phases-wrap">${phasesHtml}</div>
+            </article>
+          `;
+            })
+            .join("");
+
+          return `
+          <section class="role-block" aria-labelledby="title-${role.id}">
+            <div class="role-head">
+              <h2 class="role-title" id="title-${role.id}"><span aria-hidden="true">${escapeHtml(role.emoji || "")}</span> ${escapeHtml(role.title || "")}</h2>
+              <p class="role-one">${escapeHtml(role.oneLiner || "")}</p>
+            </div>
+            <div class="matrix">${cells}</div>
+          </section>
+        `;
+        })
+        .join("");
+
+      root.innerHTML = `
+        <h1 class="page-title">${escapeHtml(meta.pageTitle || "Grille métiers × cycles")}</h1>
+        <p class="hero-lead">${escapeHtml(meta.lead || "")}</p>
+        <p class="hero-footnote">${escapeHtml(meta.footnote || "")}</p>
+        <div class="legend-row">${legend}</div>
+        ${rolesHtml}
+      `;
+      root.hidden = false;
+
+      root.querySelectorAll(".copy-btn").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const id = btn.getAttribute("data-copy-target");
+          const el = id ? document.getElementById(id) : null;
+          const text = el ? el.textContent : "";
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = "Copié";
+            setTimeout(() => {
+              btn.textContent = "Copier le prompt";
+            }, 1800);
+          } catch {
+            btn.textContent = "Échec";
+            setTimeout(() => {
+              btn.textContent = "Copier le prompt";
+            }, 1800);
+          }
+        });
+      });
+    }
+
+    fetch("grille-metiers-data.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
+      .then(render)
+      .catch(() => {
+        document.getElementById("loadErr").hidden = false;
+      });
+  </script>
+</body>
+</html>
